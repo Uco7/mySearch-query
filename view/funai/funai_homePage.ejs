@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUNAI Admission Queries</title>
+
+    <!-- include header file -->
+    <%- include('../includeFolder/_headers.ejs') %>
+    <!--include  header file -->
+
+    <main class="container  ">
+        <!-- General Queries Section -->
+        <%- include('../includeFolder/_admission_queryLink.ejs') %>
+
+        <!-- General Queries Section -->
+        
+        <!-- JavaScript for Dropdown Functionality -->
+      
+        
+
+        <!-- Specific Department/Faculty Queries Section -->
+        <section class="section-txt">
+            <h2 class="heading">A-E Funai Department/Faculty Queries</h2>
+            <ul class="list-group mb-4">
+                
+                <!-- Engineering Admission Requirements -->
+                <li class="list-group-item">
+                    <a href="#" class="text-decoration-none toggle-btn" data-target="engineering">FUNAI admission requirements for the Faculty of Engineering</a>
+                    <div class="dropdown-content" id="engineering">
+                        <p>The Faculty of Engineering at AE-FUNAI offers programs such as Electrical, Civil, Mechanical, and Computer Engineering.</p>
+                        <ul>
+                            <li>Minimum UTME score: 200</li>
+                            <li>Five O'Level credits, including Mathematics, Physics, Chemistry, and English</li>
+                            <li>Post-UTME screening and possible departmental interview</li>
+                        </ul>
+                        <p>Visit the <a href="https://funai.edu.ng" target="_blank">official FUNAI website</a> for more details.</p>
+                    </div>
+                </li>
+        
+                <!-- Law Admission Process -->
+                <li class="list-group-item">
+                    <a href="#" class="text-decoration-none toggle-btn" data-target="law">How to apply for Law at FUNAI?</a>
+                    <div class="dropdown-content" id="law">
+                        <p>The Law program at FUNAI is highly competitive. Candidates must:</p>
+                        <ul>
+                            <li>Score a minimum of 240 in UTME</li>
+                            <li>Obtain at least five O'Level credits, including English and Government</li>
+                            <li>Pass the Post-UTME screening</li>
+                        </ul>
+                    </div>
+                </li>
+        
+                <!-- Medicine Admission Requirements -->
+                <li class="list-group-item">
+                    <a href="#" class="text-decoration-none toggle-btn" data-target="medicine">FUNAI Medicine admission requirements</a>
+                    <div class="dropdown-content" id="medicine">
+                        <p>Admission into the Medicine and Surgery program is highly competitive.</p>
+                        <ul>
+                            <li>Minimum UTME score: 250</li>
+                            <li>Five O'Level credits in Biology, Chemistry, Physics, Mathematics, and English</li>
+                            <li>Excellent performance in the Post-UTME and possible interview</li>
+                        </ul>
+                    </div>
+                </li>
+        
+                <!-- Faculty of Science Courses -->
+                <li class="list-group-item">
+                    <a href="#" class="text-decoration-none toggle-btn" data-target="science">Faculty of Science courses offered at FUNAI</a>
+                    <div class="dropdown-content" id="science">
+                        <p>The Faculty of Science offers the following undergraduate programs:</p>
+                        <ul>
+                            <li>Computer Science</li>
+                            <li>Microbiology</li>
+                            <li>Biotechnology</li>
+                            <li>Mathematics and Statistics</li>
+                            <li>Physics and Astronomy</li>
+                            <li>Geology</li>
+                        </ul>
+                    </div>
+                </li>
+        
+                <!-- Postgraduate Programs in Education -->
+                <li class="list-group-item">
+                    <a href="#" class="text-decoration-none toggle-btn" data-target="postgraduate">FUNAI postgraduate programs in education</a>
+                    <div class="dropdown-content" id="postgraduate">
+                        <p>FUNAI offers various postgraduate programs in the Faculty of Education, including:</p>
+                        <ul>
+                            <li>Postgraduate Diploma in Education (PGDE)</li>
+                            <li>Master of Education (M.Ed) in Guidance and Counseling, Educational Management, and more</li>
+                            <li>Doctorate (Ph.D.) in various education-related disciplines</li>
+                        </ul>
+                    </div>
+                </li>
+        
+                <!-- Nursing Admissions -->
+                <li class="list-group-item">
+                    <a href="#" class="text-decoration-none toggle-btn" data-target="nursing">Is FUNAI accepting applications for Nursing this year?</a>
+                    <div class="dropdown-content" id="nursing">
+                        <p>FUNAI’s Nursing Science program is now available, and admission is open for eligible candidates.</p>
+                        <ul>
+                            <li>Minimum UTME score: 220</li>
+                            <li>Required O'Level subjects: Biology, Chemistry, Physics, Mathematics, and English</li>
+                            <li>Pass the Post-UTME screening test</li>
+                        </ul>
+                    </div>
+                </li>
+        
+            </ul>
+        </section>
+        
+      
+        <div class="container"> <p><a href="../UNN/change_course_dept.html">Steps to Change Course/Department</a></p></div>
+
+        
+
+        <!-- Examination and Entrance Test Queries Section -->
+        <section class="section-txt">
+            <h2 class=" heading">Examination and Entrance Test Queries</h2>
+            <ul class="list-group mb-4">
+                <!-- Post UTME Form Release Date -->
+                <li class="list-group-item">
+                    <a href="#" class="text-decoration-none" data-bs-toggle="collapse" data-bs-target="#postUtmForm">
+                        FUNAI Post UTME Form Release Date
+                    </a>
+                    <div id="postUtmForm" class="collapse mt-2">
+                        The FUNAI Post UTME form is usually released between June and August each year. Candidates should frequently check the <a href="https://funai.edu.ng" target="_blank">official FUNAI website</a> for updates.
+                    </div>
+                </li>
+        
+                <!-- Post UTME Past Questions -->
+                <li class="list-group-item">
+                    <a href="#" class="text-decoration-none" data-bs-toggle="collapse" data-bs-target="#postUtmQuestions">
+                        FUNAI Post UTME Past Questions
+                    </a>
+                    <div id="postUtmQuestions" class="collapse mt-2">
+                        Studying past questions is crucial for effective preparation. Download authentic FUNAI Post UTME past questions from <a href="https://www.preps.ng/funai-post-utme-past-questions" target="_blank">PrepsNG</a>.
+                    </div>
+                </li>
+        
+                <!-- How to Prepare for Post UTME -->
+                <li class="list-group-item">
+                    <a href="#" class="text-decoration-none" data-bs-toggle="collapse" data-bs-target="#preparePostUtm">
+                        How to Prepare for FUNAI Post UTME
+                    </a>
+                    <div id="preparePostUtm" class="collapse mt-2">
+                        To excel, candidates should:
+                        <ul>
+                            <li>Review past questions.</li>
+                            <li>Focus on JAMB subjects relevant to their course.</li>
+                            <li>Take mock exams under timed conditions.</li>
+                            <li>Strengthen weak areas through targeted study.</li>
+                        </ul>
+                    </div>
+                </li>
+        
+                <!-- Admission Requirements for Direct Entry Students -->
+                <li class="list-group-item">
+                    <a href="#" class="text-decoration-none" data-bs-toggle="collapse" data-bs-target="#directEntryReq">
+                        FUNAI Admission Requirements for Direct Entry Students
+                    </a>
+                    <div id="directEntryReq" class="collapse mt-2">
+                        Direct Entry applicants need at least two A-Level passes or an NCE/OND/HND with merit. They must register through JAMB Direct Entry and choose FUNAI as their first-choice institution.
+                    </div>
+                </li>
+        
+                <!-- Post UTME Cut-off Marks -->
+                <li class="list-group-item">
+                    <a href="#" class="text-decoration-none" data-bs-toggle="collapse" data-bs-target="#postUtmCutoff">
+                        FUNAI Cut-off Marks for Post UTME
+                    </a>
+                    <div id="postUtmCutoff" class="collapse mt-2">
+                        The cut-off mark varies by department. A general requirement is 160-200, but competitive courses like Medicine may require scores above 250.
+                    </div>
+                </li>
+        
+                <!-- Entrance Exam for FUNAI Admission -->
+                <li class="list-group-item">
+                    <a href="funaiExamination_entryQuery.html" class="text-decoration-none">
+                        Is there any entrance exam for FUNAI admission?
+                    </a>
+                </li>
+            </ul>
+        </section>
+        
+
+        <!-- Other sections -->
+        <!-- Repeat the above structure for Accommodation, Financial Aid, and other queries -->
+    </main>
+
+   
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+   
+      <!-- JavaScript for Dropdown Functionality -->
+      <script>
+        document.querySelectorAll(".toggle-btn").forEach(button => {
+            button.addEventListener("click", function(event) {
+                event.preventDefault();
+                let targetId = this.getAttribute("data-target");
+                let content = document.getElementById(targetId);
+                content.style.display = (content.style.display === "none" || content.style.display === "") ? "block" : "none";
+            });
+        });
+    </script>
+    <footer class="footer bg-dark text-white text-center p-3">
+        <p>&copy; 2025 FUNAI Admission Queries. All rights reserved.</p>
+    </footer>
+    
+
+    
+</body>
+
+</html>

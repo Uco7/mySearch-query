@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNN Past Questions Download</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../puplic/css/funaiStyle.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">School</div>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        <ul class="nav-links">
+            <li class="nav-li"><a href="#">Home</a></li>
+            <li class="nav-li"><a href="#">Programs</a></li>
+            <li class="nav-li"><a href="#">Scholarships</a></li>
+            <li class="contact-link"><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <div class="image">   </div>
+
+    <div class="container mt-4">
+        <h2 class="text-center text-primary">Where to Download UNN Past Questions</h2>
+        <p class="text-center">Find and download past questions for your courses.</p>
+
+        <!-- Dropdown for Quick Navigation -->
+        <div class="mb-3">
+            <label for="downloadSection" class="form-label"><b>Select a Download Source:</b></label>
+            <select id="downloadSection" class="form-select" onchange="navigateToSection()">
+                <option value="">-- Choose an option --</option>
+                <option value="officialSite">UNN Official Website</option>
+                <option value="studentPortal">UNN Student Portal</option>
+                <option value="facultyWebsites">Faculty & Departmental Websites</option>
+                <option value="studyGroups">UNN Facebook & WhatsApp Study Groups</option>
+                <option value="pastQuestionsSites">Past Questions Websites</option>
+            </select>
+        </div>
+
+        <!-- Official Website Section -->
+        <div id="officialSite" class="mt-4">
+            <h4 class="text-success">📌 UNN Official Website</h4>
+            <p>Visit the official UNN website to download past questions:</p>
+            <ul>
+                <li>Go to <a href="https://www.unn.edu.ng" target="_blank">UNN e-Library</a></li>
+                <li>Find the "Past Questions" section</li>
+                <li>Select your faculty, department, and course</li>
+                <li>Download past questions in PDF format</li>
+            </ul>
+        </div>
+
+        <!-- Student Portal Section -->
+        <div id="studentPortal" class="mt-4">
+            <h4 class="text-success">📌 UNN Student Portal</h4>
+            <p>You can also check the student portal for available past questions:</p>
+            <ul>
+                <li>Go to <a href="https://unnportal.unn.edu.ng" target="_blank">UNN Student Portal</a></li>
+                <li>Log in using your Matric Number and Password</li>
+                <li>Navigate to "Academic Resources" and look for past questions</li>
+            </ul>
+        </div>
+
+        <!-- Faculty & Departmental Websites -->
+        <div id="facultyWebsites" class="mt-4">
+            <h4 class="text-success">📌 Faculty & Departmental Websites</h4>
+            <p>Some faculties and departments upload past questions on their official websites. You can:</p>
+            <ul>
+                <li>Check your faculty or department's website</li>
+                <li>Ask your course rep for links to past questions</li>
+            </ul>
+        </div>
+
+        <!-- Study Groups Section -->
+        <div id="studyGroups" class="mt-4">
+            <h4 class="text-success">📌 UNN Facebook & WhatsApp Study Groups</h4>
+            <p>Many past questions are shared in online study groups:</p>
+            <ul>
+                <li>Join UNN WhatsApp or Facebook groups</li>
+                <li>Ask senior students or course reps for past questions</li>
+            </ul>
+        </div>
+
+        <!-- Past Questions Websites -->
+        <div id="pastQuestionsSites" class="mt-4">
+            <h4 class="text-success">📌 Past Questions Websites</h4>
+            <p>You can also download past questions from these educational sites:</p>
+            <ul>
+                <li><a href="https://www.naijapastquestions.com" target="_blank">Naija Past Questions</a></li>
+                <li><a href="https://www.pastexampapers.com" target="_blank">Past Exam Papers</a></li>
+            </ul>
+            <p class="text-danger"><b>Warning:</b> Be careful of websites that require payment!</p>
+        </div>
+
+        <!-- Important Notes -->
+        <div class="mt-4">
+            <h4 class="text-danger">Important Notes:</h4>
+            <ul>
+                <li>Past questions help you understand exam patterns.</li>
+                <li>Always verify the authenticity of any source before making payments.</li>
+                <li>Discuss solutions in study groups.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" onclick="scrollToTop()">↑ Top</button>
+
+    <script>
+        // Function to Navigate to Selected Section
+        function navigateToSection() {
+            let section = document.getElementById("downloadSection").value;
+            if (section) {
+                document.getElementById(section).scrollIntoView({ behavior: "smooth" });
+            }
+        }
+
+        // Scroll to Top Function
+        window.onscroll = function() {
+            let scrollTopBtn = document.querySelector(".scroll-top");
+            if (document.documentElement.scrollTop > 100) {
+                scrollTopBtn.style.display = "block";
+            } else {
+                scrollTopBtn.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    </script>
+<footer>
+    <p>&copy; 2024 FUNAI</p>
+</footer>
+</body>
+</html>

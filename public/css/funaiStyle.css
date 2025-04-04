@@ -1,0 +1,432 @@
+:root{
+    --bg-color:#4CAF50;
+    /* --section-bg: rgb(255, 253, 253) ; */
+    --section-bg: #fff ;
+    --text-color:#4CAF50;
+    --note-text-color:rgb(255, 28, 28);
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-color: #f9f9f9; */
+    background-color: rgb(247, 252, 250);
+    position: relative;
+}
+/* scroll-top styling///// */
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* scroll-top styling  end ///// */
+em{
+    color: var(--bg-color);
+}
+/* drop down stye//////// */
+
+.dropdown-content {
+    display: none;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-left: 3px solid #007bff;
+    margin-top: 5px;
+}
+.toggle-btn {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* drop down stye////////  end   */
+
+/* Header Styling */
+.header {
+    background-color: var(--bg-color);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* .image{
+    background-image: url(../images/ucProfilr.jpg);
+    width: 100%; 
+height: 400px; 
+background-repeat:no-repeat;
+
+background-size: 100% 900px ;
+
+
+} */
+.slide h2{
+    text-align: center;
+    color: white;
+    margin-top: 10%;
+    z-index:1;
+ 
+}
+    .slider {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        /* max-width: 800px;
+        height: 400px; */
+        overflow: hidden;
+        margin: auto;
+    }
+    
+    .slides {
+        display: flex;
+        width: 100%;
+        animation: slide 18s infinite ease-in-out;
+        position: relative;
+    }
+    
+    .slide {
+        width: 100%;
+        flex: 0 0 100%;
+        height: 400px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+    
+    .slide::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Dark transparent background */
+        z-index: 1;
+    }
+    
+    .slide:nth-child(1) { background-image: url('../images/ucProfilr.jpg'); 
+        width: 100%; 
+height: 400px; 
+background-repeat:no-repeat;
+
+background-size: 100% 480px ;
+    }
+    .slide:nth-child(2) { background-image: url('../images/ucProfilr.jpg'); 
+        width: 100%; 
+height: 400px; 
+background-repeat:no-repeat;
+
+background-size: 100% 480px ;
+    }
+    .slide:nth-child(3) { background-image: url('../images/ucProfilr.jpg'); 
+        width: 100%; 
+height: 400px; 
+background-repeat:no-repeat;
+
+background-size: 100% 480px ;
+    }
+    
+    @keyframes slide {
+        0%, 25% { transform: translateX(0); }
+        33%, 58% { transform: translateX(-100%); }
+        66%, 91% { transform: translateX(-200%); }
+        100% { transform: translateX(0); }
+    }
+
+ .text-color{
+    color: var(--text-color);
+}
+/* .note{
+    color: var(--note-text-color);
+} */
+ul .contact-link{
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+.heading-top{
+    background-color: var(--bg-color);
+    color: white;
+    padding: 15px 20px;
+    /* margin-top: 10em; */
+    text-align: center;
+}
+.heading{
+    background-color: var(--bg-color);;
+    color: white;
+    padding: 15px 20px;
+ 
+    text-align: center;
+}
+/* //////////////////////////////////////  end */
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+.nav-links .nav-li {
+    transition: 0.5s ease-in-out;
+}
+
+.nav-links .nav-li:hover {
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+    border-bottom-color:papayawhip;
+}
+
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+.container {
+    padding: 20px;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+/* funai exammination and accomadation queries  ////////////// start */
+.section-txt{
+    padding: 20px;
+    align-items: center;
+    background:var(--section-bg);
+    border: 1px solid #ddd;
+    margin: 20px auto;
+    /* max-width: 900px; */
+}
+
+.section-txt  li{
+ 
+ 
+ padding: 20px;
+ margin: 10px;
+}
+/* .section-txt>ul{
+ 
+ list-style: number;
+ padding: 20px;
+ margin: 10px;
+} */
+.section-txt .child-ul{
+    padding: 20px;
+    margin: 10px;
+    list-style: number;
+ 
+}
+.section-txt .child-ul li{
+    padding: 20px;
+    margin: 10px;
+   
+ 
+}
+.child-ul li{
+    padding: 20px;
+    margin: 10px;
+    list-style: number;
+}
+/* styling finacial aid nav.............. navigation style ul li elements.// */
+.nav-ul-wrapper .child-ul{
+    list-style: none;
+    font-size: large;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-ul-wrapper .child-ul li{
+    padding: 10;
+    margin: 20px;
+    border-bottom: 4px solid ;
+   
+}
+.nav-ul-wrapper .child-ul li a{
+    padding: 10;
+    margin: 20px;
+    text-decoration: none;
+  
+    color: yellow
+   
+}
+
+/* end...................................... */
+
+
+/* funai exammination and accomadation queries  ////////////// end */
+
+/* facaulty and dep styling ..... */
+
+
+.note {
+    background-color: #ffcc00;
+    padding: 20px;
+    color: #333;
+    font-weight: bold;
+    margin-left: 2rem;margin-right: 2rem; margin-bottom: 2rem; margin-top: 4rem;
+    border-radius: 5px;
+}
+/* facaulty and dep styling   end ..... */
+/* Responsive design */
+
+  /* unn folder style  change courses file////////////// */
+.navigation{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: large;
+    font-weight: 400;
+
+}
+.navigation a{ 
+    text-decoration: none;
+    color: white;
+    margin: 20px;
+   
+
+}
+.table-container{
+    /* background: #f8f9fa; */
+    padding: 30px;
+    border-radius: 10px;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+}
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+        border: 1px solid black;
+
+    
+}
+tr:hover {
+    background-color: var(--bg-color) !important;
+    color: white !important;
+    transition: 0.3s;
+}
+td, th {
+    padding: 10px;
+    /* border: 1px solid black; */
+    border: none;
+}
+thead{
+    background-color: var(--bg-color) !important;
+    color: white;
+
+
+}
+
+
+.hover-ul li:hover{
+    background-color: var(--bg-color);
+    color: white;
+
+}
+  /* unn folder style  change courses file////////////// */
+/* Responsive Navigation */
+/* facaulty and dep styling ..... */
+@media (max-width: 768px) {
+    body {
+        font-size: 0.9em;
+    }
+    header {
+        font-size: 1.5em;
+        padding: 10px 0;
+    }
+    section {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    .note {
+        padding: 15px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.3em;
+    }
+    h2 {
+        font-size: 1.3em;
+    }
+    li {
+        font-size: 1em;
+    }
+    .note {
+        font-size: 0.9em;
+    }
+}
+/* facaulty and dep styling  end ..... */
+/* in unn folder -course program file style */
+
+@media screen and (max-width: 600px) {
+    table {
+        font-size: 14px;
+    }
+}
+/* in unn folder reg-course file style  end */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-color);
+        padding: 10px 0;
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+/* ///////////////////////// end  */

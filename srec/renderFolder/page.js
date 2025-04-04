@@ -1,0 +1,32 @@
+module.exports={
+    funai_homePage:(req,res)=>{
+        res.render("./funai/funai_homePage")
+    },
+    funai_admission_guide:(req,res)=>{
+        res.render("./funai/funaiAdmiission_guide")
+    },
+    funaiFaculies_dept:(req,res)=>{
+        res.render("./funai/funaiFaculies_dept")
+    },
+    Funai_aids:(req,res)=>{
+        res.render("./funai/Funai_aids")
+    },
+    FunaiAccomadation_transportation:(req,res)=>{
+        res.render("./funai/FunaiAccomadation_transportation")
+    },
+    funaiAddmission_prcess:(req,res)=>{
+        res.render("./funai/funaiAddmission_prcess")
+    },
+    funaiAdmisionPortal_logine:(req,res)=>{
+        res.render("./funai/funaiAdmisionPortal_login")
+    },
+    funaiExamination_entryQuery:(req,res)=>{
+        res.render("./funai/funaiExamination_entryQuery")
+    },
+    postGradute_program:(req,res)=>{
+        res.render("./funai/postGradute_program")
+    },
+    home:(req,res)=>{
+        res.render("index")
+    }
+}

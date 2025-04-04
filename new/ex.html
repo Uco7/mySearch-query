@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNN Admission Guide</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            position: relative;
+        }
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-4">
+        <h2 class="text-center">UNN Admission Guide</h2>
+
+        <div class="accordion mt-3" id="admissionGuide">
+            
+            <!-- How to Apply for Admission -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                        How to Apply for Admission?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#admissionGuide">
+                    <div class="accordion-body">
+                        <ol>
+                            <li>Visit the UNN admission portal at <a href="https://www.unn.edu.ng">www.unn.edu.ng</a></li>
+                            <li>Click on the "Admissions" tab and select "Apply Now"</li>
+                            <li>Create an account or log in if you already have one</li>
+                            <li>Fill out the online application form and upload required documents</li>
+                            <li>Pay the application fee online</li>
+                            <li>Submit the form and print your application slip</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admission Requirements -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                        What are the Admission Requirements?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#admissionGuide">
+                    <div class="accordion-body">
+                        <p>Below are the general admission requirements for UNN:</p>
+                        <ul>
+                            <li>Minimum of five O’Level credits including English and Mathematics</li>
+                            <li>JAMB UTME score meets the departmental cut-off mark</li>
+                            <li>Successful completion of post-UTME screening</li>
+                            <li>Birth certificate or age declaration</li>
+                            <li>Original and photocopies of credentials</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admission Deadline -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                        When is the Admission Deadline?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#admissionGuide">
+                    <div class="accordion-body">
+                        <p>The admission deadline for UNN varies each year. Generally, applications close:</p>
+                        <ul>
+                            <li>First batch: Around August</li>
+                            <li>Second batch: Around October</li>
+                            <li>Supplementary admissions: Early December</li>
+                        </ul>
+                        <p>Visit the <a href="https://www.unn.edu.ng" target="_blank">UNN website</a> for the latest updates.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How to Check Admission Status -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                        How to Check Admission Status?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#admissionGuide">
+                    <div class="accordion-body">
+                        <ol>
+                            <li>Go to the UNN admission status portal: <a href="https://www.unn.edu.ng">www.unn.edu.ng</a></li>
+                            <li>Click on “Check Admission Status”</li>
+                            <li>Enter your JAMB registration number</li>
+                            <li>Click on the “Check Status” button</li>
+                            <li>If admitted, follow the instructions to proceed with acceptance</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" onclick="scrollToTop()">↑ Top</button>
+
+    <script>
+        // Show Scroll-to-Top Button on Scroll
+        window.onscroll = function() {
+            let scrollTopBtn = document.querySelector(".scroll-top");
+            if (document.documentElement.scrollTop > 100) {
+                scrollTopBtn.style.display = "block";
+            } else {
+                scrollTopBtn.style.display = "none";
+            }
+        };
+
+        // Function to Scroll to Top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    </script>
+
+</body>
+</html>
