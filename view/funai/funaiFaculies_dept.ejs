@@ -4,10 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>AE-FUNAI Undergraduate Specific Requirements</title>
-       <!-- include header file -->
-    <%- include('../includeFolder/_headers.ejs') %>
-    <!--include  header file -->
+    <title>AE-FUNAI Undergraduate Specific Requirements | FUNAI Admission</title>
+
+    <!-- Meta Description -->
+    <meta name="description" content="Check AE-FUNAI's specific undergraduate requirements, including courses, UTME subjects, and cut-off marks for various faculties and departments for the 2024/2025 academic session.">
+    
+    <!-- Meta Keywords -->
+    <meta name="keywords" content="AE-FUNAI, undergraduate requirements, FUNAI admission, faculty of agriculture, engineering admission, law admission, 2024/2025 admission, specific departmental requirements, UTME subjects, cut-off marks, FUNAI admission portal">
+
+    <!-- Author -->
+    <meta name="author" content="AE-FUNAI Admissions Team">
+
+    <!-- Open Graph Meta Tags (for social media sharing) -->
+    <meta property="og:title" content="AE-FUNAI Undergraduate Specific Requirements">
+    <meta property="og:description" content="Detailed admission requirements for AE-FUNAI undergraduate programs, including cut-off marks, departmental prerequisites, and how to apply for the 2024/2025 session.">
+    <meta property="og:image" content="URL_to_image.jpg"> <!-- You can specify an image URL here for social media preview -->
+    <meta property="og:url" content="https://www.funai.edu.ng/undergraduate-requirements">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AE-FUNAI Undergraduate Specific Requirements">
+    <meta name="twitter:description" content="Find AE-FUNAI's specific undergraduate admission requirements, cut-off marks, and UTME subject combinations for various programs.">
+    <meta name="twitter:image" content="URL_to_image.jpg"> <!-- You can specify an image URL here for Twitter preview -->
+
+    <!-- include header file -->
+<%- include('../includeFolder/_headers.ejs') %>
+<!--include  header file -->
+    <!-- General Queries Section -->
+    <%- include('../includeFolder/_admission_queryLink.ejs') %>
+
+    <!-- General Queries Section -->
 
     <header  class="heading-top"> 
         <h1>AE-FUNAI Undergraduate Faculty/Departmental Specific Requirements</h1>
@@ -87,7 +114,9 @@
     <header class="heading-top">
         <h1>FUNAI Admission Information</h1>
     </header>
+    <%- include('../includeFolder/hot_link_2.ejs') %>
 
+    <!-- hot link_1...........................///////////// -->
     <section class="section-txt" >
         <h2 class="heading">1. Admission Requirements for the Faculty of Engineering</h2>
         <p>To gain admission into the Faculty of Engineering at FUNAI, you must meet the following criteria:</p>
@@ -208,8 +237,13 @@
         </ul>
         <p>For a full list of courses and details, visit the <a href="https://funai.edu.ng/undergraduate-programs" target="_blank">Undergraduate Programs Portal</a>.</p>
     </div>
-    <footer>
-        <p>&copy; 2025 FUNAI. All rights reserved.</p>
-    </footer>
+    <%- include('../includeFolder/hot_link_1.ejs') %>
+
+    <!-- hot link_1...........................///////////// -->
+       <!-- foooter................./////////////////// -->
+       <%- include('../includeFolder/_footer.ejs') %>
+
+       <!-- foooter................./////////////////// -->
+
 </body>
 </html>

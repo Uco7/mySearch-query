@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List of Nigerian Institutions</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Discover a comprehensive list of Nigerian educational institutions including universities, polytechnics, and colleges. Filter institutions by category and learn more.">
+  <meta name="keywords" content="Nigerian institutions, universities in Nigeria, polytechnics in Nigeria, colleges in Nigeria, Nigerian education, school list, education portal">
+  <meta name="author" content="Your Name or Website Name">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="List of Nigerian Institutions">
+  <meta property="og:description" content="Browse a categorized list of Nigerian educational institutions. View universities, colleges, and polytechnics in one place.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com/nigerian-institutions">
+  <meta property="og:image" content="https://yourwebsite.com/images/nigerian-schools.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="List of Nigerian Institutions">
+  <meta name="twitter:description" content="Explore Nigerian universities, polytechnics, and colleges with detailed categorization and selection options.">
+  <meta name="twitter:image" content="https://yourwebsite.com/images/nigerian-schools-twitter.jpg">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      margin: 20px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    .institution-list {
+      display: none;
+    }
+  </style>
+  <script>
+    function showList(value) {
+      const lists = document.querySelectorAll('.institution-list');
+      lists.forEach(list => list.style.display = 'none');
+
+      const selected = document.getElementById(value);
+      if (selected) {
+        selected.style.display = 'block';
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Select Institution Type</h2>
+    <select onchange="showList(this.value)">
+      <option value="">-- Select --</option>
+      <option value="federal">Federal Universities</option>
+      <option value="state">State Universities</option>
+      <option value="polytechnic">Polytechnics</option>
+    </select>
+
+    <div id="federal" class="institution-list">
+      <h2>List of Nigerian Federal Universities</h2>
+      <ul>
+        <li>University of Lagos (UNILAG)</li>
+        <li>Ahmadu Bello University (ABU), Zaria</li>
+        <li>University of Nigeria, Nsukka (UNN)</li>
+        <li>University of Ibadan (UI)</li>
+        <li>Obafemi Awolowo University (OAU)</li>
+        <li>University of Port Harcourt (UNIPORT)</li>
+        <li>Bayero University, Kano (BUK)</li>
+        <li>Federal University of Technology, Akure (FUTA)</li>
+        <li>Federal University of Agriculture, Abeokuta (FUNAAB)</li>
+        <li>Nnamdi Azikiwe University (UNIZIK)</li>
+        <li>University of Abuja (UNIABUJA)</li>
+        <li>Federal University of Petroleum Resources, Effurun (FUPRE)</li>
+        <li>Federal University of Technology, Owerri (FUTO)</li>
+        <li>Federal University, Oye-Ekiti (FUOYE)</li>
+        <li>Federal University, Dutse (FUD)</li>
+        <li>Federal University, Dutsin-Ma (FUDMA)</li>
+        <li>Federal University, Lokoja (FUL)</li>
+        <li>Federal University, Kashere (FUK)</li>
+        <li>Federal University, Lafia (FULAFIA)</li>
+        <li>Michael Okpara University of Agriculture, Umudike (MOUAU)</li>
+      </ul>
+    </div>
+
+    <div id="state" class="institution-list">
+      <h2>List of Nigerian State Universities</h2>
+      <ul>
+        <li>Lagos State University (LASU)</li>
+        <li>Delta State University (DELSU)</li>
+        <li>Ambrose Alli University (AAU), Ekpoma</li>
+        <li>Rivers State University (RSU)</li>
+        <li>Ekiti State University (EKSU)</li>
+        <li>Osun State University (UNIOSUN)</li>
+        <li>Abia State University (ABSU)</li>
+        <li>Kogi State University (KSU)</li>
+        <li>Olabisi Onabanjo University (OOU)</li>
+        <li>Benue State University (BSU)</li>
+        <li>Enugu State University of Science and Technology (ESUT)</li>
+        <li>Cross River University of Technology (CRUTECH)</li>
+        <li>Imo State University (IMSU)</li>
+        <li>Taraba State University (TSU)</li>
+        <li>Nasarawa State University, Keffi (NSUK)</li>
+        <li>Umaru Musa Yar'adua University (UMYU)</li>
+        <li>Kwara State University (KWASU)</li>
+        <li>Bauchi State University (BASUG)</li>
+        <li>Sokoto State University (SSU)</li>
+        <li>Gombe State University (GSU)</li>
+      </ul>
+    </div>
+
+    <div id="polytechnic" class="institution-list">
+      <h2>List of Nigerian Polytechnics</h2>
+      <ul>
+        <li>Yaba College of Technology (YABATECH)</li>
+        <li>The Polytechnic, Ibadan</li>
+        <li>Federal Polytechnic, Nekede</li>
+        <li>Auchi Polytechnic</li>
+        <li>Kaduna Polytechnic</li>
+        <li>Federal Polytechnic, Ado-Ekiti</li>
+        <li>Federal Polytechnic, Bida</li>
+        <li>Federal Polytechnic, Oko</li>
+        <li>Rufus Giwa Polytechnic</li>
+        <li>Imo State Polytechnic</li>
+        <li>Delta State Polytechnic, Otefe-Oghara</li>
+        <li>Federal Polytechnic, Ede</li>
+        <li>Federal Polytechnic, Ilaro</li>
+        <li>Kogi State Polytechnic</li>
+        <li>Nasarawa State Polytechnic</li>
+        <li>Federal Polytechnic, Offa</li>
+        <li>Osun State Polytechnic, Iree</li>
+        <li>Federal Polytechnic, Bauchi</li>
+        <li>Federal Polytechnic, Kaura Namoda</li>
+        <li>Federal Polytechnic, Damaturu</li>
+        <li>Federal Polytechnic, Nasarawa</li>
+        <li>Federal Polytechnic, Mubi</li>
+        <li>Federal Polytechnic, Idah</li>
+        <li>Institute of Management and Technology (IMT), Enugu</li>
+        <li>Federal Polytechnic, Ekowe</li>
+        <li>Federal Polytechnic, Kaltungo</li>
+        <li>Akwa Ibom State Polytechnic</li>
+        <li>Abia State Polytechnic</li>
+        <li>Benue State Polytechnic</li>
+        <li>Plateau State Polytechnic</li>
+        <li>Niger State Polytechnic</li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>

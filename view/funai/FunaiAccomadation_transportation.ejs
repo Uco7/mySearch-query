@@ -1,28 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FUNAI Accommodation and Transportation</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Default Title (updated dynamically) -->
+  <title>FUNAI Accommodation & Transportation Guide</title>
+
+  <!-- Dynamic Year-Based Title -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const year = new Date().getFullYear();
+      const nextYear = year + 1;
+      document.title = `AE-FUNAI ${year}/${nextYear} Accommodation & Transportation Guide`;
+    });
+  </script>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Learn about AE-FUNAI accommodation options for students, transportation services from nearby airports, shuttles, and how to navigate around campus for the ${year}/${nextYear} session." />
+  <meta name="keywords" content="FUNAI, AE-FUNAI, FUNAI accommodation, AE-FUNAI transport, campus shuttle, travel to FUNAI, how to reach FUNAI, student accommodation, airport to FUNAI" />
+  <meta name="author" content="AE-FUNAI Admission Portal" />
+  <link rel="canonical" href="https://your-domain.com/funai-accommodation-transport" />
+
+  <!-- Open Graph (for social media sharing) -->
+  <meta property="og:title" content="AE-FUNAI Accommodation & Transportation Guide ${year}/${nextYear}" />
+  <meta property="og:description" content="All you need to know about student housing and transportation services at AE-FUNAI for the ${year}/${nextYear} academic session." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.com/funai-accommodation-transport" />
+  <meta property="og:image" content="https://your-domain.com/images/funai-campus.jpg" />
+
     <!-- include header file -->
     <%- include('../includeFolder/_headers.ejs') %>
     <!--include  header file -->
-    <header>
-        <div class="container section-txt">
-            <h1>FUNAI Accommodation and Transportation</h1>
-            <nav>
-                <ul>
-                    <li><a href="#accommodation">Accommodation</a></li>
-                    <li><a href="#travel">Travel</a></li>
-                    <li><a href="#transport">Transport</a></li>
-                    <li><a href="#shuttles">Shuttles</a></li>
-                </ul>
-            </nav>
-            
-            
-        </div>
-    </header>
+    
+    <!-- General Queries Section -->
+    <%- include('../includeFolder/_admission_queryLink.ejs') %>
 
+    <!-- General Queries Section -->
+    <%- include('../includeFolder/hot_link_1.ejs') %>
+
+    <!-- hot link_1...........................///////////// -->
     <main class="container section-txt">
         <h2 id="accommodation">1. FUNAI Accommodation for International Students</h2>
         <p>International students at FUNAI can apply for on-campus accommodation, although spaces are limited. It is advisable to apply early to secure a spot in the hostel.</p>
@@ -41,7 +59,9 @@
 
     <!-- General Queries Section -->
 
-    
+    <%- include('../includeFolder/hot_link_2.ejs') %>
+
+    <!-- hot link_1...........................///////////// -->
      <script>document.querySelectorAll('nav ul li a').forEach(link => {
         link.addEventListener('click', function (e) {
             e.preventDefault(); // Prevent default jump behavior
@@ -57,8 +77,9 @@
         });
     });
     </script>
-    <footer>
-        <p>&copy; 2024 FUNAI</p>
-    </footer>
+      <!-- foooter................./////////////////// -->
+      <%- include('../includeFolder/_footer.ejs') %>
+
+      <!-- foooter................./////////////////// -->
 </body>
 </html>

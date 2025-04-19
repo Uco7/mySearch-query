@@ -3,21 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how to change your course or department at Nigerian universities. Get step-by-step guidelines and requirements to successfully switch courses.">
+    <meta name="keywords" content="Change course, Nigerian universities, department change, university admissions, course requirements, FUNAI, University of Lagos, UNILAG, UNN, ABU, OAU, university department change process">
+    <meta name="author" content="Your Name or Website Name">
+    <meta property="og:title" content="How to Change Course/Department - Nigerian Universities">
+    <meta property="og:description" content="Discover the process and requirements for changing your course or department at Nigerian universities, including tips and eligibility criteria.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="YourPageURL">
+    <meta property="og:image" content="URLtoYourImage.jpg">
     <title>How to Change Course/Department - Nigerian Universities</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../puplic/css/funaiStyle.css">
-</head>
-<body>
-    <header class="header">
-        <div class="logo">School</div>
-        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
-        <ul class="nav-links">
-            <li class="nav-li"><a href="#">Home</a></li>
-            <li class="nav-li"><a href="#">Programs</a></li>
-            <li class="nav-li"><a href="#">Scholarships</a></li>
-            <li class="contact-link"><a href="#">Contact</a></li>
-        </ul>
-    </header>
+<!-- include header file -->
+<%- include('../includeFolder/_headers.ejs') %>
+<!--include  header file -->
     <div class="image">   </div>
     <div class="heading-top">
 
@@ -90,24 +87,9 @@
         <p><em>Changing your course is possible if you meet the requirements. Make sure you apply early and consult your academic advisor for guidance.</em></p>
     </div>
 
-    <div class="scroll-top" onclick="scrollToTop()">⬆ Scroll to Top</div>
+    
+        <!-- foooter................./////////////////// -->
+        <%- include('../includeFolder/_footer.ejs') %>
 
-    <script>
-        window.onscroll = function() {
-            var scrollTopBtn = document.querySelector(".scroll-top");
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                scrollTopBtn.style.display = "block";
-            } else {
-                scrollTopBtn.style.display = "none";
-            }
-        };
+        <!-- foooter................./////////////////// -->
 
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-    </script>
-    <footer class="footer bg-dark text-white text-center p-3">
-        <p>&copy; 2025 FUNAI Admission Queries. All rights reserved.</p>
-    </footer>
-</body>
-</html>

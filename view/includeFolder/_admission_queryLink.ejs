@@ -1,54 +1,64 @@
-<section class=" container section-txt">
+<div class="container section-txt">
     <h2 class="text-secondary">A-E Funai Federal University/Admission Queries</h2>
     <em>Click on any of the links to navigate to the page</em>
     <ul class="list-group mb-4">
-        <li class="list-group-item"><a href="/funai-admission-guide" class="text-decoration-none">How to apply for admission to FUNAI</a></li>
+        <li class="list-group-item"><a href="/funai-admissionprocedures" class="text-decoration-none">How to apply for admission to FUNAI</a></li>
         <li class="list-group-item"><a href="/funai-admission-guide" class="text-decoration-none">FUNAI admission requirements for undergraduate programs</a></li>
 
         <!-- Clickable Question for Cutoff Mark -->
         <li class="list-group-item">
-            <a href="/funai-faculties-dept" class="text-decoration-none" id="toggleCutoff">What is the cutoff mark for FUNAI 2025?</a>
-        </li>
-
-        <!-- Hidden Drop-down Content -->
-        <div class="container"  id="cutoffDetails" style="display: none; padding-left: 20px;">
-            <p class="headig">
+            <a href="#" class="text-decoration-none" id="toggleCutoff">What is the cutoff mark for FUNAI 2025?</a>
+          
+            <!-- Hidden Drop-down Content -->
+            <div class="container" id="cutoffDetails" style="display: none; padding-left: 20px;">
+              <p class="heading">
                 For the 2024/2025 academic session, Alex Ekwueme Federal University, Ndufu-Alike (AE-FUNAI) has set the following cut-off marks for undergraduate programs:
-            </p>
-
-            <ul class="child-ul">
+              </p>
+          
+              <ul class="child-ul">
                 <li><strong>General Cut-Off Mark:</strong> 150 in the UTME.</li>
                 <li><strong>Medicine and Surgery:</strong> Minimum UTME score of 250.</li>
                 <li><strong>Law:</strong> Minimum UTME score of 240.</li>
                 <li><strong>Engineering:</strong> Minimum UTME score of 200.</li>
                 <li><strong>Other Departments:</strong> Minimum UTME score of 150.</li>
-            </ul>
-
-            <p>These cut-off marks are applicable to candidates who selected AE-FUNAI as their first choice in the UTME.</p>
-
-            <p><strong>Note:</strong> Meeting the minimum cut-off mark does not guarantee admission, as other factors such as O'Level results and departmental requirements are also considered.</p>
-
-            <p>
+              </ul>
+          
+              <p>These cut-off marks are applicable to candidates who selected AE-FUNAI as their first choice in the UTME.</p>
+          
+              <p><strong>Note:</strong> Meeting the minimum cut-off mark does not guarantee admission, as other factors such as O'Level results and departmental requirements are also considered.</p>
+          
+              <p>
                 For detailed information on departmental-specific requirements and the admission process, 
-                please refer to the <a href="https://funai.edu.ng" target="_blank">official AE-FUNAI website</a> 
-                or contact the admissions office.
-            </p>
-        </div>
-
+                please refer to the <a href="https://funai.edu.ng" target="_blank">official AE-FUNAI website</a>.
+              </p>
+            </div>
+          </li>
+          
+    
+        <li class="list-group-item"><a href="/universities/medcine/surgry" class="text-decoration-none">Universities that offers medcine  and surgry</a></li>
         <li class="list-group-item"><a href="/funai-admissionprocedures" class="text-decoration-none">When is the deadline for FUNAI admission?</a></li>
         <li class="list-group-item"><a href="/funai-post-gradute-guide-procedures/guide" class="text-decoration-none">How to apply for postgraduate programs at FUNAI?</a></li>
-        <li class="list-group-item"><a href="/funai-admissionprocedures" class="text-decoration-none">FUNAI undergraduate programs and courses offered</a></li>
+        <li class="list-group-item"><a href="/funai-homePage " class="text-decoration-none">FUNAI undergraduate programs and courses offered</a></li>
         <li class="list-group-item"><a href="/funai-admission-portal" class="text-decoration-none">FUNAI admission portal login</a></li>
         <li class="list-group-item"><a href="/funai-admissionprocedures" class="text-decoration-none">How much is FUNAI acceptance fee?</a></li>
         <li class="list-group-item"><a href="/funai-admissionprocedures" class="text-decoration-none">FUNAI scholarship opportunities for new students</a></li>
         <li class="list-group-item"><a href="/funai-admissionprocedures" class="text-decoration-none">What is the admission process at FUNAI?</a></li>
         <li class="list-group-item"><a href="https://portal.funai.edu.ng/admission-status" class="text-decoration-none">FUNAI admission status check</a></li>
     </ul>
-</section>
+</div>
 <script>
-    document.getElementById("toggleCutoff").addEventListener("click", function(event) {
-        event.preventDefault(); // Prevent default link action
-        let cutoffDetails = document.getElementById("cutoffDetails");
-        cutoffDetails.style.display = (cutoffDetails.style.display === "none" || cutoffDetails.style.display === "") ? "block" : "none";
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggleBtn = document.getElementById("toggleCutoff");
+      const cutoffDetails = document.getElementById("cutoffDetails");
+  
+      toggleBtn.addEventListener("click", function (e) {
+        e.preventDefault(); // prevent link from navigating
+        if (cutoffDetails.style.display === "none") {
+          cutoffDetails.style.display = "block";
+        } else {
+          cutoffDetails.style.display = "none";
+        }
+      });
     });
-</script>
+  </script>
+  

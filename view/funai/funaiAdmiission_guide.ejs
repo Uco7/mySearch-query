@@ -1,20 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>AE-FUNAI  <span class="date">2024</span >  Admission Guide</title>
-   
-     <!-- include header file -->
-   <%- include('../includeFolder/_headers.ejs') %>
-   <!--include  header file -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>AE-FUNAI Admission Guide</title>
+
+  <!-- Dynamic Page Title -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const year = new Date().getFullYear();
+      const nextYear = year + 1;
+      const session = `${year}/${nextYear}`;
+      document.title = `AE-FUNAI ${session} Admission Application Guide | How to Apply Online`;
+      document.querySelector('.date').textContent = session;
+    });
+  </script>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Step-by-step guide on how to apply for AE-FUNAI ${new Date().getFullYear()}/${new Date().getFullYear() + 1} admission. Learn how to register, pay, and complete your screening application online." />
+  <meta name="keywords" content="AE-FUNAI admission, FUNAI application, 2025 admission guide, AE-FUNAI screening registration, how to apply for FUNAI" />
+  <meta name="author" content="AE-FUNAI Admission Portal" />
+  <link rel="canonical" href="https://yourdomain.com/funai-admission-application-guide" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="AE-FUNAI Admission Guide ${new Date().getFullYear()}/${new Date().getFullYear() + 1}" />
+  <meta property="og:description" content="Detailed steps to apply for AE-FUNAI admission. Portal access, invoice generation, and screening details." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com/funai-admission-application-guide" />
+  <meta property="og:image" content="https://yourdomain.com/images/funai-campus.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AE-FUNAI Admission Guide ${new Date().getFullYear()}/${new Date().getFullYear() + 1}" />
+  <meta name="twitter:description" content="Step-by-step instructions for applying to AE-FUNAI. Everything you need to know about admission for this session." />
+  <meta name="twitter:image" content="https://yourdomain.com/images/funai-campus.jpg" />
+
+          
+    <!-- include header file -->
+<%- include('../includeFolder/_headers.ejs') %>
+<!--include  header file -->
+  
 
     <header class="heading-top">
-        <h1>How to Apply for Admission to AE-FUNAI (<span class="date">2024/2025</span>)</h1>
+        <h1>How to Apply for Admission to AE-FUNAI (<span class="date"></span>)</h1>
     </header>
 
-    <section class="section-txt">
+    <section class=" container section-txt">
         <p>Follow these steps to apply for admission to Alex Ekwueme Federal University, Ndufu-Alike (AE-FUNAI) for the 2024/2025 academic session:</p>
 
         <ul  class="child-ul">
@@ -45,7 +78,9 @@
             </li>
         </ul>
         </section>
+        <%- include('../includeFolder/hot_link_1.ejs') %>
 
+        <!-- hot link_1...........................///////////// -->
         <div class="faculty  note" style="margin-left: 2rem;margin-right: 2rem; margin-bottom: 2rem; margin-top: 4rem;">
             <h2 style="color: white; text-align: left;">Important Notes:</h2>
             <ul>
@@ -55,9 +90,9 @@
         </div>
 
           <!-- General Queries Section -->
-          <%- include('../includeFolder/_admission_queryLink.ejs') %>
+        <%- include('../includeFolder/_admission_queryLink.ejs') %>
 
-          <!-- General Queries Section -->
+        <!-- General Queries Section -->
         <header class="heading-top">
             <h1>AE-FUNAI 2024 Undergraduate Admission Requirements</h1>
         </header>
@@ -100,6 +135,9 @@
                 <li>Regularly check the AE-FUNAI official website for updates on your admission status and further instructions.</li>
             </ul>
         </div>
+        <%- include('../includeFolder/hot_link_2.ejs') %>
+
+        <!-- hot link_1...........................///////////// -->
         <header>
             <h1 class="heading">FUNAI Acceptance Fee</h1>
         </header>
@@ -110,13 +148,9 @@
             <p>Make sure to pay the acceptance fee promptly to secure your admission.</p>
         </div>
     
-        <footer>
-            <p>&copy; 2025 FUNAI. All rights reserved.</p>
-        </footer>
-        <script>
-            function toggleMenu() {
-                document.querySelector('.nav-links').classList.toggle('active');
-            }
-        </script>
-</body>
-</html>
+       
+            <!-- foooter................./////////////////// -->
+    <%- include('../includeFolder/_footer.ejs') %>
+
+    <!-- foooter................./////////////////// -->
+

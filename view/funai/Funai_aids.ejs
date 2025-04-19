@@ -4,21 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FUNAI Financial Aid and Fees</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../puplic/css/funaiStyle.css">
-    
-</head>
-<body>
-    <header class="header">
-        <div class="logo">FUNAI Postgraduate</div>
-        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
-        <ul class="nav-links">
-            <li class="nav-li"><a href="#">Home</a></li>
-            <li class="nav-li"><a href="#">Programs</a></li>
-            <li class="nav-li"><a href="#">Scholarships</a></li>
-            <li class="contact-link"><a href="#">Contact</a></li>
-        </ul>
-    </header>
+<!-- include header file -->
+<%- include('../includeFolder/_headers.ejs') %>
+<!--include  header file -->
+    <!-- General Queries Section -->
+    <%- include('../includeFolder/_admission_queryLink.ejs') %>
+
+    <!-- General Queries Section -->
     <div class="image">   </div>
     <header class="heading-top">
         <h1>FUNAI Financial Aid and Fees</h1>
@@ -49,7 +41,14 @@
         <h2 style="color: green;">5. How Much is the Registration Fee at FUNAI?</h2>
         <p>The registration fee for students at FUNAI is approximately ₦10,000, which covers administrative costs like document processing and course registration.</p>
     </main>
+<!-- hot link_1...........................///////////// -->
+<%- include('../includeFolder/hot_link_1.ejs') %>
 
+<!-- hot link_1...........................///////////// -->
+ <!-- hot link_1...........................///////////// -->
+ <%- include('../includeFolder/hot_link_2.ejs') %>
+
+ <!-- hot link_1...........................///////////// -->
     <footer>
         <p>&copy; 2024 FUNAI</p>
     </footer>

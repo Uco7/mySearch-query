@@ -3,10 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-   <!-- include header file -->
-   <%- include('../includeFolder/_headers.ejs') %>
-   <!--include  header file -->
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Apply for postgraduate programs at FUNAI. Explore the application process, scholarship opportunities, and more at the official FUNAI website.">
+    <meta name="keywords" content="FUNAI, postgraduate programs, scholarships, university admissions, postgraduate application, FUNAI scholarships">
+    <meta name="author" content="FUNAI University">
+    <meta property="og:title" content="Apply for Postgraduate Programs at FUNAI">
+    <meta property="og:description" content="Apply for postgraduate programs at FUNAI. Explore the application process, scholarship opportunities, and more at the official FUNAI website.">
+    <meta property="og:image" content="link-to-an-image.jpg"> <!-- You can replace this with the actual image URL -->
+    <meta property="og:url" content="your-page-url-here">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Apply for Postgraduate Programs at FUNAI">
+    <meta name="twitter:description" content="Apply for postgraduate programs at FUNAI. Explore the application process, scholarship opportunities, and more at the official FUNAI website.">
+    <meta name="twitter:image" content="link-to-an-image.jpg"> <!-- You can replace this with the actual image URL -->
+
+    <title>Postgraduate Programs & Scholarships at FUNAI</title>
+
+ <!-- include header file -->
+<%- include('../includeFolder/_headers.ejs') %>
+<!--include  header file -->
+    <!-- General Queries Section -->
+    <%- include('../includeFolder/_admission_queryLink.ejs') %>
+
+    <!-- General Queries Section -->
     <div class="heading-top">
         <h1>Apply for Postgraduate Programs at FUNAI</h1>
     </div>
@@ -42,10 +61,17 @@
         <p>Learn more about available scholarships and how to apply:</p>
         <p><a href="https://funai.edu.ng/scholarships" target="_blank">Click here for scholarship details</a>.</p>
     </div>
+    <%- include('../includeFolder/hot_link_1.ejs') %>
 
-    <footer>
-        <p>&copy; 2025 FUNAI. All rights reserved.</p>
-    </footer>
+    <!-- hot link_1...........................///////////// -->
+    <%- include('../includeFolder/hot_link_2.ejs') %>
+
+    <!-- hot link_1...........................///////////// -->
+
+        <!-- foooter................./////////////////// -->
+        <%- include('../includeFolder/_footer.ejs') %>
+
+        <!-- foooter................./////////////////// -->
     <script>
         function toggleMenu() {
             document.querySelector('.nav-links').classList.toggle('active');

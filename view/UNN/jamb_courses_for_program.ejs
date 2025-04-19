@@ -3,23 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNN Required Subjects</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../puplic/css/funaiStyle.css">
-</head>
-<body>
-    <header class="header">
-        <div class="logo">School</div>
-        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
-        <ul class="nav-links">
-            <li class="nav-li"><a href="#">Home</a></li>
-            <li class="nav-li"><a href="#">Programs</a></li>
-            <li class="nav-li"><a href="#">Scholarships</a></li>
-            <li class="contact-link"><a href="#">Contact</a></li>
-        </ul>
-    </header>
+
+    <title>UNN Required Subjects - Admission Guide for All Courses</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Find the complete list of required O'Level and JAMB subjects for all courses at the University of Nigeria, Nsukka (UNN). Plan your admission process with accurate subject combinations.">
+    <meta name="keywords" content="UNN required subjects, UNN admission requirements, JAMB subject combination, UNN courses and requirements, University of Nigeria Nsukka, O'Level requirements UNN">
+    <meta name="author" content="Your Website or Team Name">
+
+    <!-- Open Graph / Social Media Tags -->
+    <meta property="og:title" content="UNN Required Subjects - Admission Guide for All Courses">
+    <meta property="og:description" content="Discover the correct subject combinations for every course at UNN. Avoid mistakes in your JAMB or WAEC/NECO subject selections.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/unn-required-subjects"> <!-- Replace with actual page URL -->
+    <meta property="og:image" content="https://yourdomain.com/images/unn-subjects-guide.jpg"> <!-- Replace with your image URL -->
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="UNN Required Subjects - Admission Guide">
+    <meta name="twitter:description" content="Accurate JAMB and WAEC subject combinations for all UNN courses. Ensure you meet the requirements.">
+    <meta name="twitter:image" content="https://yourdomain.com/images/unn-subjects-guide.jpg">
+
+   <!-- include header file -->
+<%- include('../includeFolder/_headers.ejs') %>
+<!--include  header file -->
     <div class="image">   </div>
     <div class="container mt-4">
         <h2 class="text-center">Jamb Subjects  Combination for Different Programs</h2>
@@ -99,9 +106,11 @@
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: "smooth" });
         }
-    </script>    <footer class="footer bg-dark text-white text-center p-3">
-        <p>&copy; 2025 FUNAI Admission Queries. All rights reserved.</p>
-    </footer>
+    </script>    
+        <!-- foooter................./////////////////// -->
+        <%- include('../includeFolder/_footer.ejs') %>
+
+        <!-- foooter................./////////////////// -->
 
 
 </body>

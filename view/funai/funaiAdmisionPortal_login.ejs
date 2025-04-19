@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FUNAI Admission Portal Login</title>
-   <!-- include header file -->
-   <%- include('../includeFolder/_headers.ejs') %>
-   <!--include  header file -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>FUNAI Admission Portal Login | Access Your Application</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Login to the official FUNAI Admission Portal to manage your application. Access screening info, admission status, and support contacts easily." />
+  <meta name="keywords" content="FUNAI portal login, FUNAI admission, AE-FUNAI admission portal, FUNAI  application login" />
+  <meta name="author" content="AE-FUNAI Admission Services" />
+
+  <!-- Open Graph (Social Sharing) -->
+  <meta property="og:title" content="FUNAI Admission Portal Login" />
+  <meta property="og:description" content="Access the AE-FUNAI admission portal to continue your application, check your status, or contact support." />
+  <meta property="og:url" content="https://portal.funai.edu.ng" />
+  <meta property="og:type" content="website" />
+
+<!-- include header file -->
+<%- include('../includeFolder/_headers.ejs') %>
+<!--include  header file -->
+    <!-- General Queries Section -->
+    <%- include('../includeFolder/_admission_queryLink.ejs') %>
+
+    <!-- General Queries Section -->
     <header class="heading-top">
         <h1>FUNAI Admission Portal Login</h1>
     </header>
+    <%- include('../includeFolder/hot_link_2.ejs') %>
 
+    <!-- hot link_1...........................///////////// -->
     <div class="container section-txt">
         <p>Access the FUNAI Admission Portal to manage your application process:</p>
         <p><a href="https://portal.funai.edu.ng" target="_blank">Click here to login to the Admission Portal</a></p>
@@ -20,9 +40,12 @@
       <%- include('../includeFolder/_admission_queryLink.ejs') %>
 
       <!-- General Queries Section -->
+      <%- include('../includeFolder/hot_link_1.ejs') %>
 
-    <footer>
-        <p>&copy; 2025 FUNAI. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+      <!-- hot link_1...........................///////////// -->
+
+    <!-- foooter................./////////////////// -->
+    <%- include('../includeFolder/_footer.ejs') %>
+
+    <!-- foooter................./////////////////// -->
+

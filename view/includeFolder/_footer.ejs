@@ -1,0 +1,75 @@
+
+<!-- date update js ............................... -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Get current year
+      const currentYear = new Date().getFullYear();
+  
+      // Calculate academic session
+      const nextYear = currentYear + 1;
+      const session = `${currentYear}/${nextYear}`;
+  
+      // Set the session text
+      document.querySelector(".date").textContent = session;
+    });
+  </script>
+  
+<!-- date update js ............................... -->
+
+
+<div class="scroll-top" onclick="scrollToTop()">⬆ Scroll to Top</div>
+
+    <script>
+        window.onscroll = function() {
+            var scrollTopBtn = document.querySelector(".scroll-top");
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                scrollTopBtn.style.display = "block";
+            } else {
+                scrollTopBtn.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    </script>
+
+    
+<footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>School  Search</h3>
+          <p>Stay informed with trusted updates on Nigeria's education system.</p>
+        </div>
+  
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/about-us/page">About Us</a></li>
+            <li><a href="/privacy/policy/page">Privacy & Policy</a></li>
+            <li><a href="/contact-us/page">Contact</a></li>
+            <li><a href="/disclaimer/page">Disclaimer</a></li>
+          </ul>
+        </div>
+  
+        <div class="footer-social">
+          <h4>Share Our Site</h4>
+          <div class="social-icons">
+            <a href="https://twitter.com/MySchoolGist" target="_blank" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://facebook.com/MySchoolGist" target="_blank" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="mailto:?subject=Check%20this%20out&body=https://www.myschoolgist.com" title="Share via Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://wa.me/?text=https://www.myschoolgist.com" target="_blank" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+  
+      <div class="footer-bottom">
+        <p>© 2025 MySchoolGist. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+    
+</body>
+</html>

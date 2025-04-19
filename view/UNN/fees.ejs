@@ -3,23 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNN Fees & Scholarships</title>
-    <link rel="stylesheet" href="styles.css">
+    
+    <title>UNN Fees & Scholarships - University of Nigeria Nsukka</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore the full breakdown of tuition fees, hostel accommodation, and scholarship opportunities available at the University of Nigeria, Nsukka (UNN).">
+    <meta name="keywords" content="UNN fees, UNN scholarships, University of Nigeria Nsukka tuition, UNN hostel accommodation, UNN school fees 2025, UNN financial aid, student loans, payment deadlines, UNN freshers fees">
+    <meta name="author" content="Your Website or Team Name">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="UNN Fees & Scholarships - University of Nigeria Nsukka">
+    <meta property="og:description" content="Get detailed information on UNN tuition fees, hostel accommodation costs, available scholarships, and student loan options.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/unn-fees-scholarships"> <!-- Replace with actual URL -->
+    <meta property="og:image" content="https://yourdomain.com/images/unn-campus.jpg"> <!-- Replace with actual image URL -->
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="UNN Fees & Scholarships - University of Nigeria Nsukka">
+    <meta name="twitter:description" content="Detailed breakdown of tuition fees, scholarships, hostel accommodation, and more at UNN.">
+    <meta name="twitter:image" content="https://yourdomain.com/images/unn-campus.jpg"> <!-- Replace with actual image -->
+
     <script src="script.js" defer></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../puplic/css/funaiStyle.css">
-</head>
-<body>
-    <header class="header">
-        <div class="logo">School</div>
-        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
-        <ul class="nav-links">
-            <li class="nav-li"><a href="#">Home</a></li>
-            <li class="nav-li"><a href="#">Programs</a></li>
-            <li class="nav-li"><a href="#">Scholarships</a></li>
-            <li class="contact-link"><a href="#">Contact</a></li>
-        </ul>
-    </header>
+   <!-- include header file -->
+<%- include('../includeFolder/_headers.ejs') %>
+<!--include  header file -->
+ 
     <div class="image">   </div>
     <header class="heading-top">
         <h1>UNN Fees & Scholarships</h1>
@@ -86,9 +95,10 @@
     </section>
 
     <button  class="scroll-top">Scroll to Top</button>
-    <footer>
-        <p>&copy; 2024 FUNAI</p>
-    </footer>
+        <!-- foooter................./////////////////// -->
+        <%- include('../includeFolder/_footer.ejs') %>
+
+        <!-- foooter................./////////////////// -->
 
     <script>
         document.querySelector("scroll-top").addEventListener("click", function() {

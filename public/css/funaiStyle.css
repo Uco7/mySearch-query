@@ -65,6 +65,7 @@ background-size: 100% 900px ;
 
 
 } */
+
 .slide h2{
     text-align: center;
     color: white;
@@ -169,6 +170,11 @@ ul .contact-link{
     font-size: 20px;
     font-weight: bold;
 }
+.logo img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
 
 .nav-links {
     display: flex;
@@ -204,25 +210,94 @@ ul .contact-link{
 }
 .container {
     padding: 20px;
-    max-width: 80%;
+    /* width: 80%; */
     margin: 0 auto;
 }
 
-footer {
-    background-color: #333;
-    color: white;
+/* footer styling.......................................... */
+.site-footer {
+    background-color: #1f1f1f;
+    color: #fff;
+    padding: 40px 20px 20px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  
+  .footer-brand {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .footer-links,
+  .footer-social {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .footer-links h4,
+  .footer-social h4 {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin: 8px 0;
+  }
+  
+  .footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #4da6ff;
+  }
+  
+  .social-icons a {
+    color: #ccc;
+    margin-right: 15px;
+    font-size: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #4da6ff;
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid #444;
+    margin-top: 30px;
+    padding-top: 15px;
     text-align: center;
-    padding: 10px 0;
-    width: 100%;
-}
+    font-size: 14px;
+    color: #aaa;
+  }
+/* footer styling.......................................... */
 /* funai exammination and accomadation queries  ////////////// start */
 .section-txt{
     padding: 20px;
-    align-items: center;
+    /* align-items: center; */
     background:var(--section-bg);
     border: 1px solid #ddd;
-    margin: 20px auto;
+    /* margin: 20px auto; */
     /* max-width: 900px; */
+    margin-top: 1.5rem;
 }
 
 .section-txt  li{
@@ -230,6 +305,15 @@ footer {
  
  padding: 20px;
  margin: 10px;
+}
+.section-txt  h2{
+ text-align: left;
+ margin-left: 2rem;
+ 
+ 
+}
+.funai-h2 h2{
+    text-align: left;
 }
 /* .section-txt>ul{
  
@@ -378,6 +462,9 @@ thead{
     .note {
         padding: 15px;
         font-size: 1em;
+    }
+    .logo img{
+        width: 60px; height: 40px; background-color: #4CAF50; border-radius: 50%;
     }
 }
 

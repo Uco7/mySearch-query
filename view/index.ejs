@@ -1,11 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore various universities in Nigeria and discover educational resources.">
+  <meta name="keywords" content="Nigerian universities, scholarships, admissions">
+  <meta name="author" content="Your Site Name">
+  <title>UC Tech Hub - Educational Search</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css">
+  
+  
 </head>
 <body>
-    <h2>Welcome</h2>
-</body>
-</html>
+
+    <header class="nav-header" id="scrollHeader">
+        <div class="logo"><img src="/images/ChatGPT Image Apr 15, 2025, 11_52_31 AM.png" alt=""></div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul class="header-nav-links" id="navLinks">
+            <li class="header-nav-li"><a href="/">Home</a></li>
+            <li class="header-nav-li"><a href="/privacy/policy/page">Privacy&Policy</a></li>
+            <li class="header-nav-li"><a href="/about-us/page">About Us</a></li>
+            <li class="header-nav-li"><a href="/disclaimer/page">Disclaimer</a></li>
+            <li class="contact-link"><a href="/contact-us/page">Contact Us</a></li>
+        </ul>
+      </header>
+      
+  
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to UC Tech Hub</h1>
+    <p>Your go-to place for educational information</p>
+  </section>
+  <div class="slider">
+    <div class="slides">
+      <div class="slide active">
+        <h2></h2>
+        <p></p>
+      </div>
+      <div class="slide">
+        <h2></h2>
+        <p></p>
+      </div>
+      <div class="slide">
+        <h2></h2>
+        <p></p>
+      </div>
+    </div>
+  </div>
+ 
+  <script>
+    const slides = document.querySelectorAll(".slide");
+    const slideData = [
+      {
+        title: "Welcome to UC Tech Hub",
+        text: "Your one-stop platform for exploring universities, programs, scholarships, and more."
+      },
+      {
+        title: "Find the Right School for You",
+        text: "Discover institutions across Nigeria and beyond that match your dreams and goals."
+      },
+      {
+        title: "Stay Informed, Stay Ahead",
+        text: "Get updates on scholarships, entrance exams, and education tips tailored for students."
+      }
+    ];
+  
+    let currentSlide = 0;
+  
+    function typeText(element, text, speed = 10, callback) {
+      let index = 0;
+      element.innerHTML = "";
+      const interval = setInterval(() => {
+        element.innerHTML += text.charAt(index);
+        index++;
+        if (index === text.length) {
+          clearInterval(interval);
+          if (callback) callback();
+        }
+      }, speed);
+    }
+  
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+      });
+  
+      const slide = slides[index];
+      slide.classList.add("active");
+  
+      const h2 = slide.querySelector("h2");
+      const p = slide.querySelector("p");
+  
+      typeText(h2, slideData[index].title, 50, () => {
+        typeText(p, slideData[index].text, 30);
+      });
+    }
+  
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+  
+    showSlide(currentSlide);
+    setInterval(nextSlide, 8000); // 8 seconds between slides
+  </script>
+  
+  <!-- Main Content -->
+  <div class="container">
+    <div class="intro-section">
+      <h2>What We Offer</h2>
+      <p>We provide students with easy access to information about various universities in Nigeria, including admission requirements, available courses, scholarship opportunities, and more. Our platform helps students make informed decisions about their academic journey.</p>
+    </div>
+
+    
+      
+      
+      <!-- HTML structure for the search bar and button -->
+      <div class="search-container">
+        <div class="search-bar-container">
+          <input type="text" id="searchInput" class="search-bar" placeholder="Search for universities, courses, or scholarships..." />
+          <button class="search-button" id="searchBtn">Search</button>
+        </div>
+      </div>
+      
+    
+      <script>
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+    
+        // Event listener for the search button
+        searchBtn.addEventListener('click', function() {
+          const query = searchInput.value.trim();
+          if (query) {
+            // Construct the Google search URL
+            const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+            // Open the Google search in a new tab
+            window.open(googleSearchUrl, '_blank');
+          }
+        });
+    
+        // Optional: Event listener for pressing 'Enter' to trigger Google search
+        searchInput.addEventListener('keydown', function(event) {
+          if (event.key === 'Enter') {
+            const query = searchInput.value.trim();
+            if (query) {
+              // Construct the Google search URL
+              const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+              // Open the Google search in a new tab
+              window.open(googleSearchUrl, '_blank');
+            }
+          }
+        });
+      </script>
+      
+
+    <!-- Information Cards -->
+    <div class="info-section" style="margin-top: 1rem; margin-bottom: 1rem;" >
+      <div class="info-card">
+        <h3>University Search</h3>
+        <p>Find detailed information on universities across Nigeria. Learn about their programs, admissions, and campuses.</p>
+        <a href="/universities" class="cta-button">Explore Universities</a>
+      </div>
+      <div class="info-card">
+        <h3>Scholarships</h3>
+        <p>Discover various scholarship opportunities available for students in Nigeria, including merit-based and need-based scholarships.</p>
+        <a href="/scholarships" class="cta-button">Find Scholarships</a>
+      </div>
+      <div class="info-card">
+        <h3>Courses & Programs</h3>
+        <p>Explore different academic programs offered by universities. Get information about available courses and degrees.</p>
+        <a href="/courses" class="cta-button">View Courses</a>
+      </div>
+    </div>
+
+ 
+  </div>
+   <!-- hot link_1...........................///////////// -->
+   <%- include('./includeFolder/hot_link_1.ejs') %>
+
+   <!-- hot link_1...........................///////////// -->
+    <!-- waec, neco and jamb section /////////////////////////////////////////// -->
+    
+
+    <div class="info-section" style="margin-top: 1rem; margin-bottom: 1rem;"  >
+      <div class="info-card">
+        <h3>jamb Info</h3>
+        <p>JAMB provides up-to-date information every year regarding registration guidelines, ePIN purchases, accredited CBT centers, exam dates, mock exams, result checking, and admission processes through the Central Admission Processing System (CAPS)..</p>
+        <a href="/universities" class="cta-button">Explore more</a>
+      </div>
+      <div class="info-card">
+        <h3>WAEC And NECO Info</h3>
+        <p>Stay updated with the latest news and updates about WAEC (West African Examinations Council) and NECO (National Examinations Council), two of Nigeria’s most important exam bodies for secondary school students.</p>
+        <a href="/scholarships" class="cta-button">Explore more</a>
+      </div>
+      <div class="info-card">
+        <h3>Career Paths</h3>
+        <p>Choosing the right career path is a major step toward achieving personal and professional fulfillment. Whether you're a secondary school student, university graduate, or someone considering a change, understanding different career options can help you make informed decisions.</p>
+        <a href="/courses" class="cta-button">Explore more</a>
+      </div>
+    </div>
+    <!-- waec, neco and jamb section /////////////////////////////////////////// -->
+
+  <script>
+ 
+
+    // Show nav header after scrolling down a bit
+    window.addEventListener("scroll", function () {
+      const header = document.getElementById("scrollHeader");
+      if (window.scrollY > 150) {
+        header.classList.add("show");
+      } else {
+        header.classList.remove("show");
+      }
+    });
+
+    // Initially hide the header if not scrolled
+    window.addEventListener("load", function () {
+      const header = document.getElementById("scrollHeader");
+      if (window.scrollY > 150) {
+        header.classList.add("show");
+      }
+    });
+  </script>
+  
+  
+
+<!-- foooter................./////////////////// -->
+<%- include('./includeFolder/_footer.ejs') %>
+
+<!-- foooter................./////////////////// -->

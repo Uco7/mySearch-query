@@ -1,0 +1,481 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  /* logo styling......................... */
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+.logo img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+  /* logo styling......................... */
+/* scroll-top styling///// */
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* scroll-top styling  end ///// */
+  /* HEADER */
+  .nav-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.4s ease;
+    animation: fadeInDown 5s ease-in-out;
+  }
+
+  .nav-header.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .logo {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  .menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .header-nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+  }
+
+  .header-nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .header-nav-links li a:hover {
+    text-decoration: underline;
+  }
+
+ /* HERO SECTION */
+ .hero {
+    background: linear-gradient(to right, #4caf50, #81c784);
+    color: white;
+    text-align: center;
+    padding: 80px 20px 50px;
+    animation: fadeInDown 1s ease-in-out;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* MAIN SECTION */
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .intro-section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .intro-section p {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+  }
+
+  /* .search-bar {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  } */
+
+  .info-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .info-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .cta-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background-color: #45a049;
+  }
+
+  /* Animations */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+/* Base styles */
+ .search-container {
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .search-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Space between input and button */
+  }
+
+  .search-bar {
+    width: 70%;
+    max-width: 600px;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .search-button {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .search-button:hover {
+    background-color: #45a049;
+  }
+
+  .results-container {
+    padding: 1rem 2rem;
+  }
+
+  .result-item {
+    background-color: white;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .no-results {
+    color: #f44336;
+  }
+  
+.slide h2{
+    text-align: center;
+    color: white;
+    margin-top: 10%;
+    z-index:1;
+    color: yellow;
+    font-size: xx-large;
+    font-weight: 400;
+ 
+}
+.slide p{
+    text-align: center;
+    color: white;
+   
+    z-index:1;
+    color: yellow;
+    font-size: large;
+    font-weight: 600;
+
+ 
+}
+    .slider {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        /* max-width: 800px;
+        height: 400px; */
+        overflow: hidden;
+        margin: auto;
+    }
+    
+    .slides {
+        display: flex;
+        width: 100%;
+        animation: slide 18s infinite ease-in-out;
+        position: relative;
+    }
+    
+    .slide {
+        width: 100%;
+        flex: 0 0 100%;
+        height: 400px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        font-size: x-large;
+        font-weight: 600;
+    }
+    
+    .slide::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2); /* Dark transparent background */
+        z-index: 1;
+        font-size: x-large;
+        font-weight: 600;
+    }
+    
+    .slide:nth-child(1) { background-image: url('../images/ucProfilr.jpg'); 
+        width: 100%; 
+height: 400px; 
+background-repeat:no-repeat;
+
+background-size: 100% 480px ;
+    }
+    .slide:nth-child(2) { background-image: url('../images/ucProfilr.jpg'); 
+        width: 100%; 
+height: 400px; 
+background-repeat:no-repeat;
+
+background-size: 100% 480px ;
+    }
+    .slide:nth-child(3) { background-image: url('../images/ucProfilr.jpg'); 
+        width: 100%; 
+height: 400px; 
+background-repeat:no-repeat;
+
+background-size: 100% 480px ;
+    }
+    
+    @keyframes slide {
+        0%, 25% { transform: translateX(0); }
+        33%, 58% { transform: translateX(-100%); }
+        66%, 91% { transform: translateX(-200%); }
+        100% { transform: translateX(0); }
+    }
+
+ .text-color{
+    color: var(--text-color);
+}
+.container {
+    padding: 20px;
+    /* width: 80%; */
+    margin: 0 auto;
+}
+.section-txt{
+    padding: 20px;
+    /* align-items: center; */
+    background:var(--section-bg);
+    border: 1px solid #ddd;
+    /* margin: 20px auto; */
+    /* max-width: 900px; */
+    margin-top: 1.5rem;
+}
+
+.section-txt  li{
+ 
+ 
+    padding: 20px;
+    margin: 10px;
+   }
+   .section-txt  h2{
+    text-align: left;
+    margin-left: 2rem;
+    
+    
+   }
+   .section-txt .child-ul{
+    padding: 20px;
+    margin: 10px;
+    list-style: number;
+ 
+}
+.section-txt .child-ul li{
+    padding: 20px;
+    margin: 10px;
+   
+ 
+}
+.child-ul li{
+    padding: 20px;
+    margin: 10px;
+    list-style: number;
+}
+
+/* footer styling.......................................... */
+.site-footer {
+  background-color: #1f1f1f;
+  color: #fff;
+  padding: 40px 20px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-brand {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-links,
+.footer-social {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-links h4,
+.footer-social h4 {
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 8px 0;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #4da6ff;
+}
+   /* Mobile Menu */
+   @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+
+    .header-nav-links {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      flex-direction: column;
+      background-color: #4CAF50;
+      display: none;
+      padding: 1rem 2rem;
+    }
+
+    .header-nav-links.show {
+      display: flex;
+    }
+    .search-container {
+        padding: 1rem;
+      }
+  
+      .search-bar {
+        width: 80%;
+        font-size: 0.9rem;
+      }
+  
+      .results-container {
+        padding: 1rem;
+      }
+  
+      .result-item {
+        padding: 0.8rem;
+      }
+      .logo img{
+        width: 60px; height: 40px; background-color: #4CAF50; border-radius: 50%;
+    }
+  }
+  @media (max-width: 480px) {
+    .search-bar {
+      width: 100%;
+      font-size: 0.8rem;
+    }
+
+    .result-item {
+      padding: 0.6rem;
+    }
+  }

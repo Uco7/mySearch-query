@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FUNAI Queries - Examinations and Accommodation</title>
-    <!-- include header file -->
-    <%- include('../includeFolder/_headers.ejs') %>
+    <meta name="description" content="Get all the information you need about FUNAI examinations, how to pass the Post UTME, and apply for accommodation. Learn about requirements, deadlines, and useful tips for new students at FUNAI.">
+    <meta name="keywords" content="FUNAI, FUNAI Post UTME, FUNAI Admission, FUNAI Accommodation, FUNAI Entrance Exam, Post UTME Past Questions, Apply for FUNAI Hostel, FUNAI International Students">
+    <meta name="author" content="FUNAI Admission Team">
+    <meta property="og:title" content="How to Pass FUNAI Examinations and Apply for Accommodation">
+    <meta property="og:description" content="All you need to know about FUNAI examinations, entrance tests, and applying for accommodation at FUNAI. Stay updated with requirements, dates, and tips for new students.">
+    <meta property="og:url" content="https://yourwebsite.com/how-to-pass-funai-examinations-and-apply-for-accommodation">
+    <meta property="og:image" content="URL_of_your_image.jpg">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <title>How to Pass FUNAI Examinations and Apply for Accommodation</title>
+   <!-- include header file -->
+<%- include('../includeFolder/_headers.ejs') %>
+<!--include  header file -->
+    <!-- General Queries Section -->
+    <%- include('../includeFolder/_admission_queryLink.ejs') %>
 
-    <!--include  header file -->
+    <!-- General Queries Section -->
 
     <div class="heading-top">
-        <h1>FUNAI - Examination and Accommodation Queries</h1>
+        <h1>How to pass FUNAI Examinations and apply for Accommodation</h1>
         <p>All you need to know about exams, entrance tests, and campus accommodation.</p>
     </div>
 
     <!-- Examination and Entrance Test Queries -->
     <section id="exam-queries" class="container" >
-        <h2 class="heading">Examination and Entrance Test Queries</h2>
+        <h2 class="heading">A-E funai Examination and Entrance Test </h2>
         <ul class="section-txt">
             <ul class="child-ul">
                 <li ><strong> FUNAI Post UTME Form Release Date:</strong> The FUNAI Post UTME form is typically released shortly after the announcement of the JAMB UTME results. For the 2024/2025 academic session, the release date will be communicated on the university’s <a href="https://funai.edu.ng">official website</a>. Keep checking the website regularly for updates.</li>
@@ -57,10 +70,12 @@
             <li><strong>6. Is There Any Entrance Exam for FUNAI Admission?</strong> Yes, FUNAI conducts a Post UTME screening exercise for all eligible candidates. This serves as an entrance exam to determine admission eligibility. Direct entry candidates may also undergo a separate screening process.</li>
         </ul>
     </section>
+    <%- include('../includeFolder/hot_link_1.ejs') %>
 
+    <!-- hot link_1...........................///////////// -->
     <!-- Accommodation and Campus Queries -->
     <section id="accommodation-queries"  class="container">
-        <h2 class="heading">Accommodation and Campus Queries</h2>
+        <h2 class="heading">Applyt for Accommodation at funai </h2>
         <ul class="section-txt">
             <li><strong>1. Does FUNAI Offer Hostel Accommodation for Freshmen?</strong> Yes, FUNAI provides hostel accommodation for freshmen. Spaces are allocated on a first-come, first-served basis, so early booking is essential.</li>
             
@@ -136,9 +151,13 @@
           <%- include('../includeFolder/_admission_queryLink.ejs') %>
 
           <!-- General Queries Section -->
-    <footer>
-        <p>&copy; 2025 FUNAI. All rights reserved.</p>
-    </footer>
+          <%- include('../includeFolder/hot_link_2.ejs') %>
+
+          <!-- hot link_1...........................///////////// -->
+       <!-- foooter................./////////////////// -->
+       <%- include('../includeFolder/_footer.ejs') %>
+
+       <!-- foooter................./////////////////// -->
     <script>
         function toggleMenu() {
             document.querySelector('.nav-links').classList.toggle('active');

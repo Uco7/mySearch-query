@@ -1,18 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FUNAI Admission Process</title>
-    <!-- include header file -->
-    <%- include('../includeFolder/_headers.ejs') %>
-    <!--include  header file -->
-</head>
-<body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Default Title -->
+  <title>FUNAI Admission Process</title>
+
+  <!-- Dynamic Year-Based Title -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const year = new Date().getFullYear();
+      const nextYear = year + 1;
+      document.title = `AE-FUNAI ${year}/${nextYear} Admission Process, Deadlines & Screening Info`;
+    });
+  </script>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Full guide to AE-FUNAI admission process including deadlines, Post-UTME screening, supplementary admissions and important dates for ${new Date().getFullYear()}/${new Date().getFullYear() + 1} academic session." />
+  <meta name="keywords" content="AE-FUNAI, FUNAI admission process, FUNAI deadlines, AE-FUNAI screening, FUNAI post-UTME, FUNAI supplementary admission 2025" />
+  <meta name="author" content="AE-FUNAI Admission Portal" />
+  <link rel="canonical" href="https://your-domain.com/funai-admission-process" />
+
+  <!-- Open Graph Tags for Social Media -->
+  <meta property="og:title" content="AE-FUNAI Admission Process ${new Date().getFullYear()}/${new Date().getFullYear() + 1}" />
+  <meta property="og:description" content="Find all you need to know about AE-FUNAI admission process, deadlines, Post-UTME screening and more." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.com/funai-admission-process" />
+  <meta property="og:image" content="https://your-domain.com/images/funai-campus-banner.jpg" /> <!-- optional -->
+  
+ <!-- include header file -->
+<%- include('../includeFolder/_headers.ejs') %>
+<!--include  header file -->
+    <!-- General Queries Section -->
+    <%- include('../includeFolder/_admission_queryLink.ejs') %>
+
+    <!-- General Queries Section -->
     <header class="heading-top">
         <h1>FUNAI Admission Deadline</h1>
     </header>
-    <section class="section-txt">
+    <section class=" container section-txt" >
         <p>
             As of January 9, 2025, the application deadlines for Alex Ekwueme Federal University, Ndufu-Alike (AE-FUNAI) for the 2024/2025 academic session have passed.
         </p>
@@ -26,6 +54,9 @@
             Currently, there are no active admission application periods. For the most accurate and up-to-date information on upcoming admission deadlines and application procedures, it is advisable to regularly check the official <a href="https://funai.edu.ng" target="_blank">AE-FUNAI website</a> or contact the university's admissions office directly.
         </p>
     </section>
+    <%- include('../includeFolder/hot_link_1.ejs') %>
+
+    <!-- hot link_1...........................///////////// -->
     
         <header>
             <h1 class="heading">FUNAI Admissions Information</h1>
@@ -74,7 +105,7 @@
     </header>
 
     <main class="container">
-        <div class="section-txt">
+        <div class="section-txt funai-h2">
         <h2>1. FUNAI Admission Form Closing Date</h2>
         <p>The deadline for submitting the FUNAI admission form for the 2024/2025 academic session is August 31, 2024. Ensure your application is submitted before the deadline.</p>
 
@@ -95,8 +126,11 @@
   <%- include('../includeFolder/_admission_queryLink.ejs') %>
 
   <!-- General Queries Section -->
-    <footer>
-        <p>&copy; 2025 FUNAI. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+  <%- include('../includeFolder/hot_link_2.ejs') %>
+
+  <!-- hot link_1...........................///////////// -->
+      <!-- foooter................./////////////////// -->
+      <%- include('../includeFolder/_footer.ejs') %>
+
+      <!-- foooter................./////////////////// -->
+

@@ -4,22 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore a wide range of scholarships available for Nigerian university students, including government-funded, private, and corporate scholarships. Find detailed information and application links.">
+    <meta name="keywords" content="scholarships for Nigerian students, Nigerian university scholarships, federal government scholarships, PTDF scholarship, MTN Foundation scholarship, Agbami scholarship, Shell SPDC scholarship">
+    <meta name="author" content="Your Website Name">
+    <meta property="og:title" content="Scholarships for Nigerian University Students">
+    <meta property="og:description" content="Discover the best scholarships for Nigerian university students with direct application links. Apply for government, corporate, and private scholarships to fund your education.">
+    <meta property="og:image" content="URL_to_image_for_social_media">
+    <meta property="og:url" content="URL_of_your_page">
+    <meta name="twitter:title" content="Scholarships for Nigerian University Students">
+    <meta name="twitter:description" content="Find the top scholarships available for Nigerian students in universities. Access application links for federal, private, and corporate scholarships.">
+    <meta name="twitter:image" content="URL_to_image_for_twitter">
+    <meta name="twitter:card" content="summary_large_image">
     <title>Scholarships for Nigerian University Students</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../puplic/css/funaiStyle.css">
-</head>
-<body>
-    <header class="header">
-        <div class="logo">School</div>
-        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
-        <ul class="nav-links">
-            <li class="nav-li"><a href="#">Home</a></li>
-            <li class="nav-li"><a href="#">Programs</a></li>
-            <li class="nav-li"><a href="#">Scholarships</a></li>
-            <li class="contact-link"><a href="#">Contact</a></li>
-        </ul>
-    </header>
-    <div class="image">   </div>
+
+
+    <!-- include header file -->
+    <%- include('../includeFolder/_headers.ejs') %>
+    <!--include  header file -->
+   <!-- hot link_1...........................///////////// -->
+   <%- include('../includeFolder/hot_link_1.ejs') %>
+
+   <!-- hot link_1...........................///////////// -->
     <div class="heading-top">
     <h1>Scholarships for Nigerian University Students</h1>
     <p>Here are some scholarships available for Nigerian university students with application links:</p>
@@ -95,5 +100,11 @@
             </li>
         </ul>
     </div>
-</body>
-</html>
+      <!-- General Queries Section -->
+      <%- include('../includeFolder/_admission_queryLink.ejs') %>
+
+      <!-- General Queries Section -->
+ <!-- foooter................./////////////////// -->
+ <%- include('../includeFolder/_footer.ejs') %>
+
+ <!-- foooter................./////////////////// -->
