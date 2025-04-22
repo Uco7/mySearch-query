@@ -13,10 +13,10 @@ App.use("/bootstrap",express.static(path.join(__dirname,"node_modules/bootstrap/
 App.use("/jquery", express.static(path.join(__dirname, "node_modules/jquery/dist")));
 // App.use(express.static(path.join(__dirname,"public")));
 App.use(express.static(path.join(__dirname, "public")))
-App.get('/sitemap.xml', (req, res) => {
-    res.header('Content-Type', 'application/xml');
-    res.sendFile(path.join(__dirname, 'sitemap.xml'));
-});
+// App.get('/sitemap.xml', (req, res) => {
+//     res.header('Content-Type', 'application/xml');
+//     res.sendFile(path.join(__dirname, 'sitemap.xml'));
+// });
 
 App.use(getPage_Route)
 const PORT=process.env.PORT||3000
