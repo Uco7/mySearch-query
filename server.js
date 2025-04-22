@@ -13,6 +13,7 @@ App.use("/bootstrap",express.static(path.join(__dirname,"node_modules/bootstrap/
 App.use("/jquery", express.static(path.join(__dirname, "node_modules/jquery/dist")));
 // App.use(express.static(path.join(__dirname,"public")));
 App.use(express.static(path.join(__dirname, "public")))
+app.use('/sitemap.xml', express.static(path.join(__dirname, 'sitemap.xml')));
 
 App.use(getPage_Route)
 const PORT=process.env.PORT||3000
