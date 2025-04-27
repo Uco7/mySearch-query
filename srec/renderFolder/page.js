@@ -125,7 +125,7 @@ jamb_reg_date:(req,res)=>{
     res.render("./resourceFolder/jamb_reg_date")
 },
 jamb_freq_qea:(req,res)=>{
-    res.render("view/resourceFolder/jambFrequentQEA")
+    res.render("./resourceFolder/jambFrequentQEA")
 },
 jamb_dead_line:(req,res)=>{
     res.render("./resourceFolder/jambReg_dead_line")

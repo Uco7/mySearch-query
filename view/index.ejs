@@ -27,8 +27,8 @@
             <li class="contact-link"><a href="/contact-us/page">Contact Us</a></li>
         </ul>
       </header>
-      
-  <script>
+
+      <script>
         function toggleMenu() {
           const nav = document.querySelector('.header-nav-links');
           nav.classList.toggle('active');
@@ -57,62 +57,7 @@
     </div>
   </div>
  
-  <script>
-    const slides = document.querySelectorAll(".slide");
-    const slideData = [
-      {
-        title: "Welcome to UC Tech Hub",
-        text: "Your one-stop platform for exploring universities, programs, scholarships, and more."
-      },
-      {
-        title: "Find the Right School for You",
-        text: "Discover institutions across Nigeria and beyond that match your dreams and goals."
-      },
-      {
-        title: "Stay Informed, Stay Ahead",
-        text: "Get updates on scholarships, entrance exams, and education tips tailored for students."
-      }
-    ];
   
-    let currentSlide = 0;
-  
-    function typeText(element, text, speed = 10, callback) {
-      let index = 0;
-      element.innerHTML = "";
-      const interval = setInterval(() => {
-        element.innerHTML += text.charAt(index);
-        index++;
-        if (index === text.length) {
-          clearInterval(interval);
-          if (callback) callback();
-        }
-      }, speed);
-    }
-  
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.remove("active");
-      });
-  
-      const slide = slides[index];
-      slide.classList.add("active");
-  
-      const h2 = slide.querySelector("h2");
-      const p = slide.querySelector("p");
-  
-      typeText(h2, slideData[index].title, 50, () => {
-        typeText(p, slideData[index].text, 30);
-      });
-    }
-  
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
-  
-    showSlide(currentSlide);
-    setInterval(nextSlide, 8000); // 8 seconds between slides
-  </script>
   
   <!-- Main Content -->
   <div class="container">
@@ -133,34 +78,7 @@
       </div>
       
     
-      <script>
-        const searchInput = document.getElementById('searchInput');
-        const searchBtn = document.getElementById('searchBtn');
-    
-        // Event listener for the search button
-        searchBtn.addEventListener('click', function() {
-          const query = searchInput.value.trim();
-          if (query) {
-            // Construct the Google search URL
-            const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-            // Open the Google search in a new tab
-            window.open(googleSearchUrl, '_blank');
-          }
-        });
-    
-        // Optional: Event listener for pressing 'Enter' to trigger Google search
-        searchInput.addEventListener('keydown', function(event) {
-          if (event.key === 'Enter') {
-            const query = searchInput.value.trim();
-            if (query) {
-              // Construct the Google search URL
-              const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-              // Open the Google search in a new tab
-              window.open(googleSearchUrl, '_blank');
-            }
-          }
-        });
-      </script>
+      
       
 
     <!-- Information Cards -->
@@ -168,17 +86,17 @@
       <div class="info-card">
         <h3>University Search</h3>
         <p>Find detailed information on universities across Nigeria. Learn about their programs, admissions, and campuses.</p>
-        <a href="/universities" class="cta-button">Explore Universities</a>
+        <a href="/nigeria/list-of-institution/page" class="cta-button">Explore Universities</a>
       </div>
       <div class="info-card">
         <h3>Scholarships</h3>
         <p>Discover various scholarship opportunities available for students in Nigeria, including merit-based and need-based scholarships.</p>
-        <a href="/scholarships" class="cta-button">Find Scholarships</a>
+        <a href="/scholarship/guid" class="cta-button">Find Scholarships</a>
       </div>
       <div class="info-card">
         <h3>Courses & Programs</h3>
         <p>Explore different academic programs offered by universities. Get information about available courses and degrees.</p>
-        <a href="/courses" class="cta-button">View Courses</a>
+        <a href="/courses/page" class="cta-button">Lists of courses</a>
       </div>
     </div>
 
@@ -195,44 +113,26 @@
       <div class="info-card">
         <h3>jamb Info</h3>
         <p>JAMB provides up-to-date information every year regarding registration guidelines, ePIN purchases, accredited CBT centers, exam dates, mock exams, result checking, and admission processes through the Central Admission Processing System (CAPS)..</p>
-        <a href="/universities" class="cta-button">Explore more</a>
+        <a href="/jamb-data/corrections/guide/page" class="cta-button">Explore more</a>
       </div>
       <div class="info-card">
         <h3>WAEC And NECO Info</h3>
         <p>Stay updated with the latest news and updates about WAEC (West African Examinations Council) and NECO (National Examinations Council), two of Nigeria’s most important exam bodies for secondary school students.</p>
-        <a href="/scholarships" class="cta-button">Explore more</a>
+        <a href="/waec-neco/freq/questions" class="cta-button">Explore more</a>
       </div>
       <div class="info-card">
         <h3>Career Paths</h3>
         <p>Choosing the right career path is a major step toward achieving personal and professional fulfillment. Whether you're a secondary school student, university graduate, or someone considering a change, understanding different career options can help you make informed decisions.</p>
-        <a href="/courses" class="cta-button">Explore more</a>
+        <a href="/career/page" class="cta-button">Explore more</a>
       </div>
     </div>
     <!-- waec, neco and jamb section /////////////////////////////////////////// -->
+<!-- foooter................./////////////////// -->
+<%- include('./includeFolder/jambHot_link6.ejs') %>
 
-  <script>
- 
-
-    // Show nav header after scrolling down a bit
-    window.addEventListener("scroll", function () {
-      const header = document.getElementById("scrollHeader");
-      if (window.scrollY > 150) {
-        header.classList.add("show");
-      } else {
-        header.classList.remove("show");
-      }
-    });
-
-    // Initially hide the header if not scrolled
-    window.addEventListener("load", function () {
-      const header = document.getElementById("scrollHeader");
-      if (window.scrollY > 150) {
-        header.classList.add("show");
-      }
-    });
-  </script>
+<!-- foooter................./////////////////// -->
   
-  
+  <script src="js/index.js"></script>
 
 <!-- foooter................./////////////////// -->
 <%- include('./includeFolder/_footer.ejs') %>

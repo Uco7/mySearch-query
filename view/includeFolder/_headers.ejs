@@ -73,6 +73,11 @@
         display: flex;
       }
     }
+    .header-nav-links  li a:hover{
+      border-bottom: 4px solid;
+      border-bottom-color:yellow ;
+      transition: 1s ease-in-out;
+    }
   </style>
 </head>
 <body>
@@ -130,7 +135,7 @@
 
   let currentSlide = 0;
 
-  function typeText(element, text, speed = 2000, callback) {
+  function typeText(element, text, speed = 3000, callback) {
     let index = 0;
     element.innerHTML = "";
     const interval = setInterval(() => {
@@ -152,7 +157,12 @@
     slide.classList.add("active");
 
     const h2 = slide.querySelector("h2");
+    h2.style.color="yellow"
     const p = slide.querySelector("p");
+    p.style.color="yellow"
+    p.style.textAlign="center"
+
+
 
     typeText(h2, slideData[index].title, 50, () => {
       typeText(p, slideData[index].text, 30);
