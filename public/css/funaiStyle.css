@@ -13,6 +13,16 @@ body {
     background-color: rgb(247, 252, 250);
     position: relative;
 }
+/* .img-block {
+    margin: 1.5rem 0;
+    text-align: center;
+  }
+  .img-block img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  } */
 /* scroll-top styling///// */
 .scroll-top {
     position: fixed;
@@ -465,6 +475,11 @@ thead{
     }
     .logo img{
         width: 60px; height: 40px; background-color: #4CAF50; border-radius: 50%;
+    }
+    .slide-text{
+        position: relative;
+        top: 8rem;
+
     }
 }
 

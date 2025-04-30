@@ -17,6 +17,13 @@ App.use(express.static(path.join(__dirname, "public")))
 //     res.header('Content-Type', 'application/xml');
 //     res.sendFile(path.join(__dirname, 'sitemap.xml'));
 // });
+App.use((req, res, next) => {
+    if (req.hostname === 'serach-querry.onrender.com') {
+      return res.redirect(301, 'https://mysearch-query.onrender.com' + req.originalUrl);
+    }
+    next();
+  });
+  
 
 App.use(getPage_Route)
 const PORT=process.env.PORT||3000

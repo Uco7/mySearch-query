@@ -9,7 +9,7 @@
   <!-- SEO Meta Tags -->
   <meta name="description" content="Learn how to register for your UNN courses online with this simple step-by-step guide. Includes instructions for logging into the portal, selecting courses, submitting, and printing your registration slip.">
   <meta name="keywords" content="UNN course registration, UNN student portal, UNN registration guide, how to register courses at UNN, UNN online registration, University of Nigeria Nsukka, course form submission, UNN academic guide">
-  <meta name="author" content="YourSiteName">
+  <meta name="author" content="mysearch-query">
 
   <!-- Open Graph (Facebook & LinkedIn) -->
   <meta property="og:title" content="UNN Course Registration Guide – Step-by-Step for Students">
@@ -27,9 +27,9 @@
    <!-- include header file -->
 <%- include('../includeFolder/_headers.ejs') %>
 <!--include  header file -->
-    <div class="image">   </div>
+    
 
-    <div class="container mt-4">
+    <div class="container section-txt">
         <h2 class="text-center text-primary">How to Register for Courses Online at UNN</h2>
         <p class="text-center">Follow these steps to successfully register for your courses.</p>
 
@@ -136,24 +136,7 @@
         </div>
     </div>
 
-    <!-- Scroll to Top Button -->
-    <button class="scroll-top" onclick="scrollToTop()">↑ Top</button>
-
-    <script>
-        // Scroll to Top Function
-        window.onscroll = function() {
-            let scrollTopBtn = document.querySelector(".scroll-top");
-            if (document.documentElement.scrollTop > 100) {
-                scrollTopBtn.style.display = "block";
-            } else {
-                scrollTopBtn.style.display = "none";
-            }
-        };
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-    </script>
+    
     <!-- foooter................./////////////////// -->
     <%- include('../includeFolder/_footer.ejs') %>
 

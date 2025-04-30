@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://mysearch-query.onrender.com/funai-homePage</loc>
+    <loc>https://mysearch-query.onrender.com/funai-homePage/admission</loc>
     <lastmod>2025-04-20</lastmod>
     <priority>0.6</priority>
   </url>
@@ -16,7 +16,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://mysearch-query.onrender.com/funai-aids</loc>
+    <loc>https://mysearch-query.onrender.com/funai-aids/scholarship/page</loc>
     <lastmod>2025-04-20</lastmod>
     <priority>0.6</priority>
   </url>
@@ -42,6 +42,11 @@
   </url>
   <url>
     <loc>https://mysearch-query.onrender.com/funai-post-gradute-guide-procedures/guide</loc>
+    <lastmod>2025-04-20</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mysearch-query.onrender.com/funai-acceptance/fee/page</loc>
     <lastmod>2025-04-20</lastmod>
     <priority>0.6</priority>
   </url>
@@ -176,7 +181,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://mysearch-query.onrender.com/jamb-frequent/asked/question</loc>
+    <loc>https://mysearch-query.onrender.com/jamb-data/corrections/guide/page</loc>
     <lastmod>2025-04-20</lastmod>
     <priority>0.6</priority>
   </url>
@@ -196,7 +201,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://mysearch-query.onrender.com/list-of-institution/ngn/page</loc>
+    <loc>https://mysearch-query.onrender.com/nigeria/list-of-institution/pag</loc>
     <lastmod>2025-04-20</lastmod>
     <priority>0.6</priority>
   </url>
