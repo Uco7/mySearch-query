@@ -21,13 +21,15 @@
   <meta property="og:type" content="website" />
 
   <!-- Optional: Favicon -->
-  <link rel="icon" href="/images/logo.jpg" type="image/jpeg" />
+  <!-- <link rel="icon" href="/images/logo.jpg" type="image/jpeg" /> -->
   
   <!-- Optional: Font and CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
  
 
      <%- include('../includeFolder/_headers.ejs') %>
+     <style>h1,h2{text-align: left;
+     }</style>
      <!--include  header file -->
 
     <div class="container mt-4">
@@ -45,7 +47,66 @@
                 <option value="gpaCalculator">GPA Calculator</option>
             </select>
         </div>
-
+        <section>
+            <h2>How to Use the GPA & CGPA Calculator</h2>
+            <ol>
+              <li>Enter your course titles, credit units, and grades.</li>
+              <li>Click “Calculate” to see your current GPA.</li>
+              <li>Use the CGPA tab to input results from multiple semesters.</li>
+            </ol>
+            <p>Our calculator follows the Nigerian university grading system, ensuring accurate results every time.</p>
+          </section>
+        
+          <section>
+            <h2>Why Use This Calculator?</h2>
+            <ul>
+              <li>✅ Tailored for Nigerian grading systems (UNN, UI, OAU, etc.)</li>
+              <li>✅ Mobile-friendly and fast</li>
+              <li>✅ Step-by-step guide with examples</li>
+              <li>✅ Free and no login required</li>
+            </ul>
+          </section>
+        
+          <section>
+            <h2>What is GPA & CGPA?</h2>
+            <p><strong>GPA (Grade Point Average)</strong> is the average score of your courses in a single semester, while <strong>CGPA (Cumulative Grade Point Average)</strong> represents your overall performance across multiple semesters.</p>
+          </section>
+        
+          <section>
+            <h2>Example (UNN Grading System)</h2>
+            <table border="1" cellpadding="10">
+              <tr>
+                <th>Grade</th><th>Score Range</th><th>Grade Point</th>
+              </tr>
+              <tr><td>A</td><td>70–100</td><td>5.0</td></tr>
+              <tr><td>B</td><td>60–69</td><td>4.0</td></tr>
+              <tr><td>C</td><td>50–59</td><td>3.0</td></tr>
+              <tr><td>D</td><td>45–49</td><td>2.0</td></tr>
+              <tr><td>E</td><td>40–44</td><td>1.0</td></tr>
+              <tr><td>F</td><td>0–39</td><td>0.0</td></tr>
+            </table>
+          </section>
+        
+          <section>
+            <h2>Supported Universities</h2>
+            <p>This GPA calculator is perfect for students in:</p>
+            <ul>
+              <li>University of Nigeria Nsukka (UNN)</li>
+              <li>University of Ibadan (UI)</li>
+              <li>Obafemi Awolowo University (OAU)</li>
+              <li>University of Lagos (UNILAG)</li>
+              <li>Lagos State University (LASU)</li>
+              <li>And other Nigerian universities using the 5.0 grading scale</li>
+            </ul>
+          </section>
+        
+          <section>
+            <h2>Start Calculating Now</h2>
+            <p>Use the tool below to calculate your GPA and CGPA:</p>
+            <!-- Insert GPA calculator form or embed here -->
+          </section>
+        
+          
         <!-- How to Calculate GPA -->
         <div id="gpaCalculation" class="mt-4">
             <h4 class="text-success">📌 How to Calculate GPA</h4>
@@ -170,6 +231,24 @@
             <h5 class="mt-3">Your GPA: <span id="gpaResult"></span></h5>
         </div>
     </div>
+   <section class=" container section-txt">
+        <h2 style="">FAQs About GPA/CGPA in Nigeria</h2>
+      
+        <div >
+          <h3 >What is a good GPA in Nigeria?</h3>
+          <p>A GPA of 4.0 and above is considered very good. 3.5 is above average. Anything below 2.0 may require academic improvement.</p>
+        </div>
+      
+        <div >
+          <h3 >How many GPA make first class?</h3>
+          <p>Usually, a CGPA of 4.50 to 5.00 qualifies for First Class honours, depending on the school.</p>
+        </div>
+      
+        <div>
+          <h3 >Can I improve my CGPA in final year?</h3>
+          <p>Yes, scoring high grades in final year can significantly boost your CGPA.</p>
+        </div>
+      </section>
 
     <!-- Scroll to Top Button -->
     <button class="scroll-top" onclick="scrollToTop()">↑ Top</button>
