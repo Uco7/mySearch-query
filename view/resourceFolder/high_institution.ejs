@@ -24,50 +24,9 @@
   <meta name="twitter:description" content="Explore Nigerian universities, polytechnics, and colleges with detailed categorization and selection options.">
   <meta name="twitter:image" content="https://mysearch-query.onrender.com/images/nigerian-schools-twitter.jpg">
 
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f4f4;
-      padding: 20px;
-      margin: 0;
-    }
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-      color: #2c3e50;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 10px;
-    }
-
-    select {
-      width: 100%;
-      padding: 10px;
-      margin: 20px 0;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 5px;
-    }
-
-    .institution-list {
-      display: none;
-    }
-  </style>
+<link rel="stylesheet" href="/css/style.css">
+  
   <script>
     function showList(value) {
       const lists = document.querySelectorAll('.institution-list');
@@ -82,7 +41,33 @@
 </head>
 
 <body>
+    <%- include('../includeFolder/_headers.ejs') %>
+     
+    <br>
+    <div class="container" style="max-width:800px; width:100%; margin:0 auto; padding:clamp(12px, 4vw, 24px); box-sizing:border-box;">
+
+  <h2 style="font-size:clamp(1.1rem, 4vw, 1.5rem); margin:0 0 0.6rem 0; color:#2c3e50; line-height:1.3;">
+    Select Institution Type
+  </h2>
+
+  <p style="font-size:clamp(0.9rem, 2.5vw, 1rem); line-height:1.6; margin:0 0 1rem 0; color:#333;">
+    Choose whether you want to browse Federal Universities, State Universities, or Polytechnics.
+    Picking a category filters the list below to just that type — so instead of scrolling through
+    every Nigerian institution at once, you can jump straight to the group you're interested in,
+    then use the search box to narrow it down further by name or abbreviation (e.g. "UNILAG" or "LASU").
+  </p>
+
+  <ul style="font-size:clamp(0.85rem, 2.3vw, 0.95rem); line-height:1.6; padding-left:1.2rem; margin:0; color:#444;">
+    <li style="margin-bottom:0.4rem;"><strong>Plainer/functional:</strong> "Pick a category to filter the list below — Federal, State, or Polytechnic."</li>
+    <li><strong>More promotional:</strong> "Not sure where to start? Filter by institution type first, then search by name to find exactly the school you're looking for."</li>
+  </ul>
+
+</div>
+
+<br>
+
   <div class="container">
+
     <h2>Select Institution Type</h2>
     <select onchange="showList(this.value)">
       <option value="">-- Select --</option>
@@ -180,6 +165,52 @@
       </ul>
     </div>
   </div>
-</body>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      /* padding: 20px; */
+      margin: 0;
+    }
 
-</html>
+    .container {
+      max-width: 100%;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      margin: 20px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    .institution-list {
+      display: none;
+    }
+  </style>
+ <!-- foooter ......................................... -->
+  <%- include('../includeFolder/jambHot_link6.ejs') %>
+  <script src="js/index.js"></script>
+  <%- include('../includeFolder/_footer.ejs') %>
+  <!-- foooter ......................................... -->

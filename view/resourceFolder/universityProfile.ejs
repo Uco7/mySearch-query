@@ -1,0 +1,314 @@
+<%
+// currentYear / session is computed here so every page auto-updates itself
+// every January without anyone touching this file or the data file.
+const currentYear = new Date().getFullYear();
+const nextYear = currentYear + 1;
+const session = `${currentYear}/${nextYear}`;
+const category = uni.category || "Federal University";
+const ownership = uni.ownership || "Federal Government";
+
+// ---- SEO fields, all derived from the uni object so every one of the
+// 65 profile pages gets its own unique, keyword-rich title/description
+// instead of 65 pages competing with each other for the same tag.
+const pageTitle = `${uni.name} (${uni.abbreviation}) Admission Requirements, Cut-Off Mark & Fees ${session}`;
+const pageDescription = `${uni.abbreviation} (${uni.name}) admission requirements, JAMB cut-off mark, school fees, faculties, and portal login for the ${session} session. Everything prospective ${uni.abbreviation} students need in one page.`;
+const pageKeywords = `${uni.abbreviation}, ${uni.name}, ${uni.abbreviation} admission requirements, ${uni.abbreviation} cut off mark, ${uni.abbreviation} school fees, ${uni.abbreviation} portal, ${uni.abbreviation} post utme, JAMB ${uni.abbreviation}`;
+const pageUrl = `https://mysearch-query.onrender.com/university/${uni.slug}`;
+%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ===================== PRIMARY SEO (unique per university) ===================== -->
+  <title><%= pageTitle %></title>
+  <meta name="description" content="<%= pageDescription %>" />
+  <meta name="keywords" content="<%= pageKeywords %>" />
+  <meta name="author" content="UC Tech Hub">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="<%= pageUrl %>" />
+
+  <!-- ===================== OPEN GRAPH ===================== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="UC Tech Hub" />
+  <meta property="og:title" content="<%= uni.abbreviation %> Admission Requirements & Cut-Off Mark <%= session %>" />
+  <meta property="og:description" content="<%= pageDescription %>" />
+  <meta property="og:url" content="<%= pageUrl %>" />
+  <meta property="og:image" content="https://mysearch-query.onrender.com/images/logo.jpg" />
+
+  <!-- ===================== TWITTER CARD ===================== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="<%= uni.abbreviation %> Admission Requirements <%= session %>" />
+  <meta name="twitter:description" content="<%= pageDescription %>" />
+  <meta name="twitter:image" content="https://mysearch-query.onrender.com/images/logo.jpg" />
+
+  <link rel="icon" href="/images/logo.jpg" type="image/jpeg">
+
+  <!-- ===================== STRUCTURED DATA ===================== -->
+  <!-- CollegeOrUniversity schema: eligible for Google's education knowledge-panel signals -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollegeOrUniversity",
+    "name": "<%= uni.name.replace(/"/g, '\\"') %>",
+    "alternateName": "<%= uni.abbreviation %>",
+    "url": "<%= uni.website %>",
+    "foundingDate": "<%= uni.founded %>",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "<%= uni.location.replace(/"/g, '\\"') %>",
+      "addressRegion": "<%= uni.state.replace(/"/g, '\\"') %>",
+      "addressCountry": "NG"
+    }
+  }
+  </script>
+
+  <!-- FAQPage schema: mirrors the visible FAQ section below -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is <%= uni.abbreviation %> a <%= category %>?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, <%= uni.abbreviation %> is owned and funded by the <%= ownership %>." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the JAMB cut-off mark for <%= uni.abbreviation %>?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Cut-off marks vary yearly by department. Always confirm the current figure on the official <%= uni.abbreviation %> admission portal for the <%= session %> session." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does <%= uni.abbreviation %> accept Direct Entry?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, subject to the specific departmental requirements at <%= uni.abbreviation %>." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I check my <%= uni.abbreviation %> admission status?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Visit the official admission portal and log in with your JAMB registration number." }
+      }
+    ]
+  }
+  </script>
+
+  <!-- BreadcrumbList schema: matches the visible breadcrumb nav below, extra rich-result eligibility -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mysearch-query.onrender.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Universities", "item": "https://mysearch-query.onrender.com/nigeria/list-of-institution/page" },
+      { "@type": "ListItem", "position": 3, "name": "<%= uni.abbreviation %>", "item": "<%= pageUrl %>" }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect: shaves connection time off the Google Fonts request — page speed is a
+       direct Google ranking factor, so this isn't just cosmetic. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="nav-header" id="scrollHeader">
+    <div class="logo"><img src="/images/logo.jpg" alt="UC Tech Hub logo"></div>
+    <div class="menu-toggle" onclick="toggleMenu()" role="button" aria-label="Toggle navigation" tabindex="0">☰</div>
+    <ul class="header-nav-links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/nigeria/list-of-institution/page">Universities</a></li>
+      <li><a href="/calculate/cgpa/app">CGPA Calculator</a></li>
+      <li><a href="/calculate/jamb-aggregate/app">Aggregate Calculator</a></li>
+      <li><a href="/check/course-eligibility/app">Eligibility Checker</a></li>
+      <li class="contact-link"><a href="/contact-us/page">Contact Us</a></li>
+    </ul>
+  </header>
+  <script>
+    function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+  </script>
+
+  <main id="main-content">
+
+    <!-- Breadcrumb: helps both users and Google understand page hierarchy -->
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <a href="/">Home</a> &rsaquo;
+      <a href="/nigeria/list-of-institution/page">Universities</a> &rsaquo;
+      <span><%= uni.abbreviation %></span>
+    </nav>
+
+    <section class="hero">
+      <h1><%= uni.name %> (<%= uni.abbreviation %>)</h1>
+      <p><%= uni.location %> &middot; <%= category %> &middot; Est. <%= uni.founded %></p>
+    </section>
+
+    <div class="container">
+
+      <!-- Quick facts -->
+      <div class="info-section">
+        <div class="info-card">
+          <h3>Ownership</h3>
+          <p><%= ownership %></p>
+        </div>
+        <div class="info-card">
+          <h3>State</h3>
+          <p><%= uni.state %></p>
+        </div>
+        <div class="info-card">
+          <h3>Year Founded</h3>
+          <p><%= uni.founded %></p>
+        </div>
+        <div class="info-card">
+          <h3>Current Session</h3>
+          <p><%= session %></p>
+        </div>
+      </div>
+
+      <!-- Overview -->
+      <div class="section-txt">
+        <h2>About <%= uni.abbreviation %></h2>
+        <p>
+          <%= uni.name %> is a <%= ownership %>-owned <%= category.toLowerCase() %> located in <%= uni.location %>.
+          Founded in <%= uni.founded %><% if (uni.motto) { %>, its motto is "<%= uni.motto %>"<% } %>. The school year
+          referenced on this page is the <%= session %> academic session — this page updates
+          automatically every year, but always cross-check time-sensitive figures (cut-off marks,
+          fees, and dates) on the official portal linked below before making decisions.
+        </p>
+        <% if (uni.note) { %>
+          <p><strong>Note:</strong> <%= uni.note %></p>
+        <% } %>
+      </div>
+
+      <!-- Admission requirements -->
+      <div class="section-txt">
+        <h2><%= uni.abbreviation %> Admission Requirements</h2>
+        <ul class="child-ul">
+          <li><strong>JAMB (UTME):</strong> Candidates must choose <%= uni.abbreviation %> as their
+            first choice institution on JAMB and meet the departmental subject combination for their
+            intended course. Confirm the current JAMB national and departmental cut-off marks for the
+            <%= session %> session on the JAMB CAPS portal before applying.</li>
+          <li><strong>Post-UTME Screening:</strong> Shortlisted candidates who meet the university's
+            departmental cut-off are invited for the Post-UTME/DE screening exercise, usually
+            published on the <a href="<%= uni.portalUrl %>" target="_blank" rel="noopener">official admission portal</a>.</li>
+          <li><strong>Direct Entry (DE):</strong> Holders of ND, HND, NCE, A-Level or equivalent
+            qualifications may apply for admission into 200 level, subject to the department's
+            specific DE requirements.</li>
+          <li><strong>IJMB / JUPEB:</strong> Where accepted by the department, IJMB or JUPEB
+            candidates with the minimum required points may also apply through the Direct Entry
+            window — confirm departmental acceptance directly with the faculty.</li>
+          <li><strong>O'Level Requirement:</strong> Five (5) O'Level credits including English
+            Language and Mathematics, obtainable in not more than two sittings (WAEC/NECO/NABTEB).</li>
+        </ul>
+      </div>
+
+      <!-- Cut-off marks -->
+      <div class="section-txt">
+        <h2><%= uni.abbreviation %> JAMB & Departmental Cut-Off Marks (<%= session %>)</h2>
+        <p>
+          Cut-off marks vary by department and change every admission cycle. As of publishing,
+          exact departmental cut-offs for <%= uni.abbreviation %> had not been finalized for the
+          <%= session %> session.
+          <strong>Please confirm the current cut-off mark directly on the
+          <a href="<%= uni.portalUrl %>" target="_blank" rel="noopener">school's admission portal</a>
+          or the JAMB CAPS portal</strong> before checking your admission status.
+        </p>
+      </div>
+
+      <!-- Faculties & popular courses -->
+      <div class="section-txt">
+        <h2><%= uni.abbreviation %> Faculties & Departments</h2>
+        <ul class="child-ul">
+          <% uni.faculties.forEach(function(faculty) { %>
+            <li><%= faculty %></li>
+          <% }); %>
+        </ul>
+        <h3 class="text-color">Most Searched Courses at <%= uni.abbreviation %></h3>
+        <p><%= uni.popularCourses.join(", ") %></p>
+      </div>
+
+      <!-- Fees -->
+      <div class="section-txt">
+        <h2><%= uni.abbreviation %> School Fees & Acceptance Fee</h2>
+        <p>
+          School fees differ by faculty (e.g. Medicine/Law/Engineering typically cost more than
+          Arts/Social Sciences) and by student category (fresh vs. returning, indigene vs.
+          non-indigene where applicable). Because fees are reviewed periodically,
+          <strong>always verify the exact current amount on the <%= uni.abbreviation %> student
+          portal</strong> before making any payment. Never pay into a personal account —
+          only pay through the official portal's generated invoice/RRR.
+        </p>
+      </div>
+
+      <!-- Admission list, clearance, resumption -->
+      <div class="section-txt">
+        <h2>Admission List, Clearance & Resumption</h2>
+        <ul class="child-ul">
+          <li><strong>Checking Admission Status:</strong> Log in to the
+            <a href="<%= uni.portalUrl %>" target="_blank" rel="noopener">admission portal</a>
+            with your JAMB registration number to check your admission status once JAMB releases
+            the institution's admission list for <%= session %>.</li>
+          <li><strong>Acceptance Fee:</strong> Pay the acceptance fee online immediately after your
+            admission is confirmed to secure your slot.</li>
+          <li><strong>Clearance:</strong> Bring original copies of your O'Level result(s), JAMB
+            result slip, Post-UTME slip, birth certificate/age declaration, and local government
+            identification for physical/document verification.</li>
+          <li><strong>Resumption Date:</strong> New-student resumption dates for <%= session %> are
+            announced on the school's official website/portal — check there for the exact date
+            rather than relying on unofficial sources.</li>
+        </ul>
+      </div>
+
+      <!-- Accommodation -->
+      <div class="section-txt">
+        <h2><%= uni.abbreviation %> Accommodation & Hostel</h2>
+        <p>
+          <%= uni.abbreviation %> operates both on-campus hostels (allocated via a balloting system,
+          usually prioritizing fresh students and students with disabilities) and recognizes
+          off-campus private hostels around <%= uni.location %>. Hostel applications typically open
+          shortly after resumption — watch the student affairs portal for the balloting timetable.
+        </p>
+      </div>
+
+      <!-- Portal & useful links -->
+      <div class="section-txt">
+        <h2>Useful Links</h2>
+        <div class="cta-row">
+          <a class="cta-button" href="<%= uni.portalUrl %>" target="_blank" rel="noopener">Admission Portal</a>
+          <a class="cta-button" href="<%= uni.website %>" target="_blank" rel="noopener">Official Website</a>
+          <a class="cta-button" href="/calculate/cgpa/app">CGPA Calculator</a>
+          <a class="cta-button" href="/calculate/jamb-aggregate/app">JAMB Aggregate Calculator</a>
+          <a class="cta-button" href="/check/course-eligibility/app">Course Eligibility Checker</a>
+        </div>
+      </div>
+
+      <!-- FAQs (mirrors the FAQPage schema above) -->
+      <div class="section-txt">
+        <h2>Frequently Asked Questions</h2>
+        <ul class="child-ul">
+          <li><strong>Is <%= uni.abbreviation %> a <%= category %>?</strong> Yes, it is owned and
+            funded by the <%= ownership %>.</li>
+          <li><strong>What is the JAMB cut-off mark for <%= uni.abbreviation %>?</strong> This varies
+            yearly by department — always confirm on the official portal for <%= session %>.</li>
+          <li><strong>Does <%= uni.abbreviation %> accept Direct Entry?</strong> Yes, subject to
+            departmental requirements.</li>
+          <li><strong>How do I check my admission status?</strong> Visit the admission portal linked
+            above with your JAMB registration number.</li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+  <%- include('../includeFolder/jambHot_link6.ejs') %>
+  <script src="/js/index.js"></script>
+  <%- include('../includeFolder/_footer.ejs') %>
+
+</body>
+</html>

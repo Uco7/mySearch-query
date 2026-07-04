@@ -1,286 +1,259 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Free GPA & CGPA Calculator for Nigerian Universities (UNN, UI, OAU)</title>
-  
-  <meta name="description" content="Calculate your GPA and CGPA easily using our free calculator made for Nigerian universities like UNN, UI, OAU, UNILAG, LASU and more. Includes step-by-step guides and examples." />
-  
-  <meta name="keywords" content="GPA calculator, CGPA calculator, Nigerian university GPA, UNN CGPA, OAU GPA calculator, UI CGPA tool, how to calculate GPA in Nigeria, UNILAG CGPA, LASU grading system" />
-  
-  <meta name="author" content="MySearch-query" />
-  <link rel="canonical" href="https://mysearch-query.onrender.com/gpa-cgpa-guide" />
+<section class="hero">
+  <h1>GPA & CGPA Calculator</h1>
+  <p>Calculate your semester GPA, cumulative CGPA, and expected degree classification — instantly, right in your browser.</p>
+</section>
 
-  <!-- Open Graph Meta Tags (for social media previews) -->
-  <meta property="og:title" content="Free GPA & CGPA Calculator for Nigerian Universities" />
-  <meta property="og:description" content="Use our fast and mobile-friendly GPA & CGPA calculator to track your grades in UNN, UI, OAU, and more. Step-by-step examples included!" />
-  <meta property="og:image" content="https://mysearch-query.onrender.com/images/gpa-preview.jpg" /> <!-- Replace with actual image -->
-  <meta property="og:url" content="https://mysearch-query.onrender.com/gpa-cgpa-guide" />
-  <meta property="og:type" content="website" />
-  <link rel="icon" href="/images/logo.png" type="image/png">
+<div class="container">
 
-
-  <!-- Optional: Favicon -->
-  <!-- <link rel="icon" href="/images/logo.jpg" type="image/jpeg" /> -->
-  
-  <!-- Optional: Font and CSS -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
- 
-
-     <%- include('../includeFolder/_headers.ejs') %>
-     <style>h1,h2{text-align: left;
-     }</style>
-     <!--include  header file -->
-
-    <div class="container mt-4">
-        <h2 class="text-center text-primary">How to Calculate GPA & CGPA</h2>
-        <p class="text-center">A simple guide for UNN students to calculate their Grade Point Average (GPA) and Cumulative Grade Point Average (CGPA).</p>
-
-        <!-- Dropdown for Quick Navigation -->
-        <div class="mb-3">
-            <label for="calcSection" class="form-label"><b>Jump to Section:</b></label>
-            <select id="calcSection" class="form-select" onchange="navigateToSection()">
-                <option value="">-- Choose a section --</option>
-                <option value="gpaCalculation">How to Calculate GPA</option>
-                <option value="cgpaCalculation">How to Calculate CGPA</option>
-                <option value="gradingSystem">UNN Grading System</option>
-                <option value="gpaCalculator">GPA Calculator</option>
-            </select>
-        </div>
-        <section>
-            <h2>How to Use the GPA & CGPA Calculator</h2>
-            <ol>
-              <li>Enter your course titles, credit units, and grades.</li>
-              <li>Click “Calculate” to see your current GPA.</li>
-              <li>Use the CGPA tab to input results from multiple semesters.</li>
-            </ol>
-            <p>Our calculator follows the Nigerian university grading system, ensuring accurate results every time.</p>
-          </section>
-        
-          <section>
-            <h2>Why Use This Calculator?</h2>
-            <ul>
-              <li>✅ Tailored for Nigerian grading systems (UNN, UI, OAU, etc.)</li>
-              <li>✅ Mobile-friendly and fast</li>
-              <li>✅ Step-by-step guide with examples</li>
-              <li>✅ Free and no login required</li>
-            </ul>
-          </section>
-        
-          <section>
-            <h2>What is GPA & CGPA?</h2>
-            <p><strong>GPA (Grade Point Average)</strong> is the average score of your courses in a single semester, while <strong>CGPA (Cumulative Grade Point Average)</strong> represents your overall performance across multiple semesters.</p>
-          </section>
-        
-          <section>
-            <h2>Example (UNN Grading System)</h2>
-            <table border="1" cellpadding="10">
-              <tr>
-                <th>Grade</th><th>Score Range</th><th>Grade Point</th>
-              </tr>
-              <tr><td>A</td><td>70–100</td><td>5.0</td></tr>
-              <tr><td>B</td><td>60–69</td><td>4.0</td></tr>
-              <tr><td>C</td><td>50–59</td><td>3.0</td></tr>
-              <tr><td>D</td><td>45–49</td><td>2.0</td></tr>
-              <tr><td>E</td><td>40–44</td><td>1.0</td></tr>
-              <tr><td>F</td><td>0–39</td><td>0.0</td></tr>
-            </table>
-          </section>
-        
-          <section>
-            <h2>Supported Universities</h2>
-            <p>This GPA calculator is perfect for students in:</p>
-            <ul>
-              <li>University of Nigeria Nsukka (UNN)</li>
-              <li>University of Ibadan (UI)</li>
-              <li>Obafemi Awolowo University (OAU)</li>
-              <li>University of Lagos (UNILAG)</li>
-              <li>Lagos State University (LASU)</li>
-              <li>And other Nigerian universities using the 5.0 grading scale</li>
-            </ul>
-          </section>
-        
-          <section>
-            <h2>Start Calculating Now</h2>
-            <p>Use the tool below to calculate your GPA and CGPA:</p>
-            <!-- Insert GPA calculator form or embed here -->
-          </section>
-        
-          
-        <!-- How to Calculate GPA -->
-        <div id="gpaCalculation" class="mt-4">
-            <h4 class="text-success">📌 How to Calculate GPA</h4>
-            <p>GPA (Grade Point Average) is calculated by dividing the total grade points earned by the total credit units taken in a semester.</p>
-            <h5 class="text-primary">Formula:</h5>
-            <p><b>GPA = Total Grade Points / Total Credit Units</b></p>
-            <h5 class="text-primary">Example Calculation:</h5>
-            <table class="table table-bordered">
-                <thead class="">
-                    <tr>
-                        <th>Course</th>
-                        <th>Credit Unit</th>
-                        <th>Grade</th>
-                        <th>Grade Point</th>
-                        <th>Total Points</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>MAT101</td>
-                        <td>3</td>
-                        <td>A</td>
-                        <td>5</td>
-                        <td>15</td>
-                    </tr>
-                    <tr>
-                        <td>PHY102</td>
-                        <td>2</td>
-                        <td>B</td>
-                        <td>4</td>
-                        <td>8</td>
-                    </tr>
-                    <tr>
-                        <td>CHM103</td>
-                        <td>3</td>
-                        <td>C</td>
-                        <td>3</td>
-                        <td>9</td>
-                    </tr>
-                    <tr class="table-info">
-                        <td><b>Total</b></td>
-                        <td><b>8</b></td>
-                        <td></td>
-                        <td></td>
-                        <td><b>32</b></td>
-                    </tr>
-                </tbody>
-            </table>
-            <p><b>GPA = 32 ÷ 8 = 4.0</b></p>
-        </div>
-
-        <!-- How to Calculate CGPA -->
-        <div id="cgpaCalculation" class="mt-4">
-            <h4 class="text-success">📌 How to Calculate CGPA</h4>
-            <p>CGPA (Cumulative Grade Point Average) is the overall GPA from all semesters.</p>
-            <h5 class="text-primary">Formula:</h5>
-            <p><b>CGPA = Total Grade Points Earned in All Semesters / Total Credit Units Taken</b></p>
-            <h5 class="text-primary">Example Calculation:</h5>
-            <table class="table table-bordered" border="2">
-                <thead class="table-dark">
-                    <tr>
-                        <th>Semester</th>
-                        <th>Total Credit Units</th>
-                        <th>Total Grade Points</th>
-                        <th>GPA</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>First Semester</td>
-                        <td>18</td>
-                        <td>72</td>
-                        <td>4.0</td>
-                    </tr>
-                    <tr>
-                        <td>Second Semester</td>
-                        <td>20</td>
-                        <td>76</td>
-                        <td>3.8</td>
-                    </tr>
-                    <tr class="table-info">
-                        <td><b>Total</b></td>
-                        <td><b>38</b></td>
-                        <td><b>148</b></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-            <p><b>CGPA = 148 ÷ 38 = 3.89</b></p>
-        </div>
-
-        <!-- UNN Grading System -->
-        <div id="gradingSystem" class="mt-4">
-            <h4 class="text-success">📌 Nigeria Universities Grading System</h4>
-            <table class="table table-bordered">
-                <thead class="table-dark">
-                    <tr>
-                        <th>Grade</th>
-                        <th>Grade Point</th>
-                        <th>Score Range</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>A</td><td>5.0</td><td>70 - 100</td></tr>
-                    <tr><td>B</td><td>4.0</td><td>60 - 69</td></tr>
-                    <tr><td>C</td><td>3.0</td><td>50 - 59</td></tr>
-                    <tr><td>D</td><td>2.0</td><td>45 - 49</td></tr>
-                    <tr><td>F</td><td>0.0</td><td>0 - 44</td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Simple GPA Calculator -->
-        <div id="gpaCalculator" class="mt-4">
-            <h4 class="text-success">📌 Simple GPA Calculator</h4>
-            <p>Enter your total grade points and credit units to calculate your GPA.</p>
-            <label>Total Grade Points:</label>
-            <input type="number" id="totalPoints" class="form-control" placeholder="Enter total grade points">
-            <label class="mt-2">Total Credit Units:</label>
-            <input type="number" id="totalUnits" class="form-control" placeholder="Enter total credit units">
-            <button class="btn btn-primary mt-3" onclick="calculateGPA()">Calculate GPA</button>
-            <h5 class="mt-3">Your GPA: <span id="gpaResult"></span></h5>
-        </div>
+  <!-- Grading scale selector -->
+  <div class="section-txt">
+    <h2>1. Choose Your Grading Scale</h2>
+    <p>Most Nigerian universities use the 5-point scale. Some polytechnics and a few private
+      universities use the 4-point scale. <strong>Confirm which one your school uses</strong> in
+      your student handbook if you're not sure — this changes the grade points below.</p>
+    <div class="gpa-scale-toggle">
+      <label><input type="radio" name="gpaScale" value="5" id="scale5" checked> 5-Point Scale (A=5, most common)</label>
+      <label><input type="radio" name="gpaScale" value="4" id="scale4"> 4-Point Scale (A=4)</label>
     </div>
-   <section class=" container section-txt">
-        <h2 style="">FAQs About GPA/CGPA in Nigeria</h2>
-      
-        <div >
-          <h3 >What is a good GPA in Nigeria?</h3>
-          <p>A GPA of 4.0 and above is considered very good. 3.5 is above average. Anything below 2.0 may require academic improvement.</p>
-        </div>
-      
-        <div >
-          <h3 >How many GPA make first class?</h3>
-          <p>Usually, a CGPA of 4.50 to 5.00 qualifies for First Class honours, depending on the school.</p>
-        </div>
-      
-        <div>
-          <h3 >Can I improve my CGPA in final year?</h3>
-          <p>Yes, scoring high grades in final year can significantly boost your CGPA.</p>
-        </div>
-      </section>
+  </div>
 
-    <!-- Scroll to Top Button -->
-    <button class="scroll-top" onclick="scrollToTop()">↑ Top</button>
+  <!-- Course table -->
+  <div class="section-txt">
+    <h2>2. Enter This Semester's Courses</h2>
+    <div class="gpa-table-wrapper">
+      <table class="gpa-table" id="gpaTable">
+        <thead>
+          <tr>
+            <th>Course Title (optional)</th>
+            <th>Credit Unit</th>
+            <th>Grade</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="gpaTableBody">
+          <!-- rows injected by JS -->
+        </tbody>
+      </table>
+    </div>
+    <button type="button" class="cta-button" id="addRowBtn">+ Add Course</button>
+    <button type="button" class="cta-button gpa-btn-secondary" id="resetBtn">Reset All</button>
+  </div>
 
-    <script>
-        function navigateToSection() {
-            let section = document.getElementById("calcSection").value;
-            if (section) {
-                document.getElementById(section).scrollIntoView({ behavior: "smooth" });
-            }
-        }
+  <!-- Semester GPA result -->
+  <div class="section-txt">
+    <h2>3. Semester GPA</h2>
+    <div class="info-section">
+      <div class="info-card">
+        <h3>Total Units</h3>
+        <p id="totalUnits">0</p>
+      </div>
+      <div class="info-card">
+        <h3>Total Grade Points</h3>
+        <p id="totalPoints">0.00</p>
+      </div>
+      <div class="info-card">
+        <h3>Semester GPA</h3>
+        <p id="semesterGPA">0.00</p>
+      </div>
+    </div>
+    <button type="button" class="cta-button" id="calcGpaBtn">Calculate Semester GPA</button>
+  </div>
 
-        function calculateGPA() {
-            let points = parseFloat(document.getElementById("totalPoints").value);
-            let units = parseFloat(document.getElementById("totalUnits").value);
-            if (units > 0) {
-                document.getElementById("gpaResult").innerText = (points / units).toFixed(2);
-            }
-        }
+  <!-- Cumulative CGPA -->
+  <div class="section-txt">
+    <h2>4. Cumulative CGPA (Optional)</h2>
+    <p>Already have a CGPA from previous semesters? Add it below to calculate your new cumulative CGPA after this semester.</p>
+    <div class="gpa-cumulative-inputs">
+      <label>Previous CGPA:
+        <input type="number" id="prevCGPA" step="0.01" min="0" max="5" placeholder="e.g. 3.45">
+      </label>
+      <label>Previous Total Units:
+        <input type="number" id="prevUnits" min="0" placeholder="e.g. 90">
+      </label>
+    </div>
+    <button type="button" class="cta-button" id="calcCgpaBtn">Calculate Cumulative CGPA</button>
+    <div class="info-section">
+      <div class="info-card">
+        <h3>New Cumulative CGPA</h3>
+        <p id="cumulativeCGPA">—</p>
+      </div>
+    </div>
+  </div>
 
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-    </script>
-    <!-- jambHot-link............../////////////////// -->
- <%- include('../includeFolder/jambHot_link6.ejs') %>
+  <!-- Degree classification -->
+  <div class="section-txt">
+    <h2>5. Expected Degree Classification</h2>
+    <p>Based on the CGPA calculated above (uses cumulative CGPA if you entered previous results,
+      otherwise uses this semester's GPA). <strong>Classification bands vary slightly by
+      institution</strong> — this reflects the most common Nigerian university bands. Always
+      confirm the exact bands in your school's academic regulations / student handbook.</p>
+    <div class="info-section">
+      <div class="info-card" id="classificationCard">
+        <h3>Classification</h3>
+        <p id="classificationResult">Enter your courses above to see your result</p>
+      </div>
+    </div>
+    <table class="gpa-table gpa-reference-table">
+      <thead>
+        <tr><th>CGPA Range (5-Point)</th><th>Classification</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>4.50 – 5.00</td><td>First Class Honours</td></tr>
+        <tr><td>3.50 – 4.49</td><td>Second Class Honours (Upper Division)</td></tr>
+        <tr><td>2.40 – 3.49</td><td>Second Class Honours (Lower Division)</td></tr>
+        <tr><td>1.50 – 2.39</td><td>Third Class Honours</td></tr>
+        <tr><td>1.00 – 1.49</td><td>Pass</td></tr>
+      </tbody>
+    </table>
+  </div>
 
- <!-- end................./////////////////// -->
+</div>
 
- <!-- foooter................./////////////////// -->
- <%- include('../includeFolder/_footer.ejs') %>
+<style>
+  .gpa-scale-toggle{display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:0.8rem;}
+  .gpa-scale-toggle label{cursor:pointer;font-weight:500;}
+  .gpa-table-wrapper{overflow-x:auto;margin:1rem 0;}
+  .gpa-table{width:100%;border-collapse:collapse;background:#fff;}
+  .gpa-table th, .gpa-table td{border:1px solid #ddd;padding:10px;text-align:left;font-size:0.95rem;}
+  .gpa-table th{background:#4CAF50;color:#fff;}
+  .gpa-table input, .gpa-table select{width:100%;padding:6px;border:1px solid #ccc;border-radius:4px;font-size:0.95rem;}
+  .gpa-remove-btn{background:#f44336;color:#fff;border:none;border-radius:4px;padding:6px 10px;cursor:pointer;}
+  .gpa-remove-btn:hover{background:#d32f2f;}
+  .gpa-btn-secondary{background:#777;}
+  .gpa-btn-secondary:hover{background:#555;}
+  .gpa-cumulative-inputs{display:flex;flex-wrap:wrap;gap:1.5rem;margin:1rem 0;}
+  .gpa-cumulative-inputs label{display:flex;flex-direction:column;font-weight:500;gap:4px;}
+  .gpa-cumulative-inputs input{padding:8px;border:1px solid #ccc;border-radius:5px;width:180px;}
+  .gpa-reference-table{margin-top:1rem;max-width:600px;}
+  #classificationResult{font-weight:700;font-size:1.1rem;}
 
- <!-- foooter................./////////////////// -->
+  @media (max-width: 480px) {
+    .gpa-cumulative-inputs input{width:100%;}
+    .gpa-table th, .gpa-table td{padding:6px;font-size:0.85rem;}
+  }
+</style>
+
+<script>
+(function () {
+  const gradePoints5 = { A: 5, B: 4, C: 3, D: 2, E: 1, F: 0 };
+  const gradePoints4 = { A: 4, B: 3, C: 2, D: 1, F: 0 };
+
+  const tableBody = document.getElementById("gpaTableBody");
+  const addRowBtn = document.getElementById("addRowBtn");
+  const resetBtn = document.getElementById("resetBtn");
+  const calcGpaBtn = document.getElementById("calcGpaBtn");
+  const calcCgpaBtn = document.getElementById("calcCgpaBtn");
+
+  function currentScale() {
+    return document.getElementById("scale5").checked ? gradePoints5 : gradePoints4;
+  }
+
+  function buildGradeOptions() {
+    const scale = currentScale();
+    return Object.keys(scale).map(g => `<option value="${g}">${g}</option>`).join("");
+  }
+
+  function addRow() {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td><input type="text" class="courseTitle" placeholder="e.g. MTH 101"></td>
+      <td><input type="number" class="courseUnit" min="0" max="12" placeholder="e.g. 3"></td>
+      <td><select class="courseGrade">${buildGradeOptions()}</select></td>
+      <td><button type="button" class="gpa-remove-btn">Remove</button></td>
+    `;
+    row.querySelector(".gpa-remove-btn").addEventListener("click", () => row.remove());
+    tableBody.appendChild(row);
+  }
+
+  function refreshAllGradeDropdowns() {
+    document.querySelectorAll(".courseGrade").forEach(select => {
+      const prevValue = select.value;
+      select.innerHTML = buildGradeOptions();
+      if ([...select.options].some(o => o.value === prevValue)) {
+        select.value = prevValue;
+      }
+    });
+  }
+
+  document.getElementById("scale5").addEventListener("change", refreshAllGradeDropdowns);
+  document.getElementById("scale4").addEventListener("change", refreshAllGradeDropdowns);
+
+  addRowBtn.addEventListener("click", addRow);
+
+  resetBtn.addEventListener("click", () => {
+    tableBody.innerHTML = "";
+    document.getElementById("totalUnits").textContent = "0";
+    document.getElementById("totalPoints").textContent = "0.00";
+    document.getElementById("semesterGPA").textContent = "0.00";
+    document.getElementById("cumulativeCGPA").textContent = "—";
+    document.getElementById("classificationResult").textContent = "Enter your courses above to see your result";
+    document.getElementById("prevCGPA").value = "";
+    document.getElementById("prevUnits").value = "";
+    addRow(); addRow(); addRow();
+  });
+
+  function computeSemester() {
+    const scale = currentScale();
+    let totalUnits = 0;
+    let totalPoints = 0;
+
+    document.querySelectorAll("#gpaTableBody tr").forEach(row => {
+      const unit = parseFloat(row.querySelector(".courseUnit").value) || 0;
+      const grade = row.querySelector(".courseGrade").value;
+      const point = scale[grade] !== undefined ? scale[grade] : 0;
+      totalUnits += unit;
+      totalPoints += unit * point;
+    });
+
+    const gpa = totalUnits > 0 ? (totalPoints / totalUnits) : 0;
+
+    document.getElementById("totalUnits").textContent = totalUnits;
+    document.getElementById("totalPoints").textContent = totalPoints.toFixed(2);
+    document.getElementById("semesterGPA").textContent = gpa.toFixed(2);
+
+    return { totalUnits, totalPoints, gpa };
+  }
+
+  function classify(cgpa) {
+    const scale = currentScale();
+    const isFivePoint = scale === gradePoints5;
+
+    if (isFivePoint) {
+      if (cgpa >= 4.50) return "First Class Honours";
+      if (cgpa >= 3.50) return "Second Class Honours (Upper Division)";
+      if (cgpa >= 2.40) return "Second Class Honours (Lower Division)";
+      if (cgpa >= 1.50) return "Third Class Honours";
+      if (cgpa >= 1.00) return "Pass";
+      return "Below Pass Mark — check your school's regulations";
+    } else {
+      if (cgpa >= 3.50) return "First Class Honours";
+      if (cgpa >= 3.00) return "Second Class Honours (Upper Division)";
+      if (cgpa >= 2.00) return "Second Class Honours (Lower Division)";
+      if (cgpa >= 1.00) return "Third Class Honours";
+      return "Below Pass Mark — check your school's regulations";
+    }
+  }
+
+  calcGpaBtn.addEventListener("click", () => {
+    const { gpa } = computeSemester();
+    document.getElementById("classificationResult").textContent = classify(gpa) + " (based on this semester's GPA)";
+  });
+
+  calcCgpaBtn.addEventListener("click", () => {
+    const { totalUnits, totalPoints } = computeSemester();
+    const prevCGPA = parseFloat(document.getElementById("prevCGPA").value) || 0;
+    const prevUnits = parseFloat(document.getElementById("prevUnits").value) || 0;
+
+    const prevPoints = prevCGPA * prevUnits;
+    const combinedUnits = totalUnits + prevUnits;
+    const combinedPoints = totalPoints + prevPoints;
+    const newCGPA = combinedUnits > 0 ? (combinedPoints / combinedUnits) : 0;
+
+    document.getElementById("cumulativeCGPA").textContent = newCGPA.toFixed(2);
+    document.getElementById("classificationResult").textContent = classify(newCGPA) + " (based on cumulative CGPA)";
+  });
+
+  // seed with 3 empty rows on load
+  addRow(); addRow(); addRow();
+})();
+</script>

@@ -1,0 +1,132 @@
+
+
+<%- include('../includeFolder/_headers.ejs') %>
+<!--include  header file -->
+    <!-- General Queries Section -->
+    <%- include('../includeFolder/_admission_queryLink.ejs') %>
+
+<section class="heading-top">
+  <h1>JAMB Aggregate Score Calculator</h1>
+  <p>Estimate your admission aggregate from your JAMB (UTME) score and Post-UTME/O'Level score — adjust the weighting to match your school's formula.</p>
+</section>
+
+<div class="container">
+
+  <div class="section-txt">
+    <h2>1. Enter Your Scores</h2>
+    <p><strong>Aggregate formulas differ by university</strong> — some use JAMB/Post-UTME 50/50,
+      others 60/40, and some (like UNILAG) use JAMB score ÷ 8 + Post-UTME score ÷ 8. Set the
+      weights below to match what your target school publishes on its admission portal.</p>
+
+    <div class="jamb-agg-inputs">
+      <label>JAMB (UTME) Score (0–400)
+        <input type="number" id="jambScore" min="0" max="400" placeholder="e.g. 280">
+      </label>
+      <label>Post-UTME / Screening Score (0–100)
+        <input type="number" id="postUtmeScore" min="0" max="100" placeholder="e.g. 65">
+      </label>
+    </div>
+  </div>
+
+  <div class="section-txt">
+    <h2>2. Set the Weighting</h2>
+    <div class="jamb-agg-inputs">
+      <label>JAMB Weight (%)
+        <input type="number" id="jambWeight" min="0" max="100" value="50">
+      </label>
+      <label>Post-UTME Weight (%)
+        <input type="number" id="postUtmeWeight" min="0" max="100" value="50">
+      </label>
+    </div>
+    <p class="jamb-agg-hint" id="weightHint"></p>
+    <div class="jamb-agg-btn-row">
+      <button type="button" class="cta-button" id="calcAggBtn">Calculate Aggregate</button>
+      <button type="button" class="cta-button gpa-btn-secondary" id="resetAggBtn">Reset</button>
+    </div>
+  </div>
+
+  <div class="section-txt">
+    <h2>3. Your Aggregate Score</h2>
+    <div class="info-section">
+      <div class="info-card">
+        <h3>JAMB Contribution</h3>
+        <p id="jambContribution">0.00</p>
+      </div>
+      <div class="info-card">
+        <h3>Post-UTME Contribution</h3>
+        <p id="postUtmeContribution">0.00</p>
+      </div>
+      <div class="info-card">
+        <h3>Aggregate (out of 100)</h3>
+        <p id="aggregateResult">0.00</p>
+      </div>
+    </div>
+    <p><strong>This is an estimate only.</strong> Always compare your result against the actual
+      published cut-off aggregate on your target school's admission portal — schools change
+      formulas and cut-offs every session.</p>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  const jambScoreEl = document.getElementById("jambScore");
+  const postUtmeScoreEl = document.getElementById("postUtmeScore");
+  const jambWeightEl = document.getElementById("jambWeight");
+  const postUtmeWeightEl = document.getElementById("postUtmeWeight");
+  const weightHint = document.getElementById("weightHint");
+  const calcBtn = document.getElementById("calcAggBtn");
+  const resetBtn = document.getElementById("resetAggBtn");
+
+  function updateHint() {
+    const jw = parseFloat(jambWeightEl.value) || 0;
+    const pw = parseFloat(postUtmeWeightEl.value) || 0;
+    const total = jw + pw;
+    weightHint.textContent = total === 100
+      ? "Weights add up to 100% ✓"
+      : `Weights currently add up to ${total}% — most schools expect them to total 100%.`;
+  }
+  jambWeightEl.addEventListener("input", updateHint);
+  postUtmeWeightEl.addEventListener("input", updateHint);
+  updateHint();
+
+  calcBtn.addEventListener("click", () => {
+    const jamb = Math.min(parseFloat(jambScoreEl.value) || 0, 400);
+    const postUtme = Math.min(parseFloat(postUtmeScoreEl.value) || 0, 100);
+    const jw = (parseFloat(jambWeightEl.value) || 0) / 100;
+    const pw = (parseFloat(postUtmeWeightEl.value) || 0) / 100;
+
+    // Normalize both scores to a 0–100 scale before applying weights.
+    const jambNormalized = (jamb / 400) * 100;
+    const postUtmeNormalized = postUtme; // already 0–100
+
+    const jambContribution = jambNormalized * jw;
+    const postUtmeContribution = postUtmeNormalized * pw;
+    const aggregate = jambContribution + postUtmeContribution;
+
+    document.getElementById("jambContribution").textContent = jambContribution.toFixed(2);
+    document.getElementById("postUtmeContribution").textContent = postUtmeContribution.toFixed(2);
+    document.getElementById("aggregateResult").textContent = aggregate.toFixed(2);
+  });
+
+  resetBtn.addEventListener("click", () => {
+    jambScoreEl.value = "";
+    postUtmeScoreEl.value = "";
+    jambWeightEl.value = 50;
+    postUtmeWeightEl.value = 50;
+    updateHint();
+    document.getElementById("jambContribution").textContent = "0.00";
+    document.getElementById("postUtmeContribution").textContent = "0.00";
+    document.getElementById("aggregateResult").textContent = "0.00";
+  });
+})();
+</script>
+
+
+  <!-- foooter ......................................... -->
+  <%- include('../includeFolder/jambHot_link6.ejs') %>
+  <script src="js/index.js"></script>
+  <%- include('../includeFolder/_footer.ejs') %>
+  <!-- foooter ......................................... -->
+
+

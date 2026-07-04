@@ -1,3 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+
+<title><%= typeof pageTitle !== 'undefined' ? pageTitle : 'UC Tech Hub - Educational Search' %></title>
+<meta name="description" content="<%= typeof pageDescription !== 'undefined' ? pageDescription : 'Explore various universities in Nigeria and discover educational resources.' %>">
+<meta name="keywords" content="<%= typeof pageKeywords !== 'undefined' ? pageKeywords : 'Nigerian universities, scholarships, admissions' %>">
+<link rel="canonical" href="<%= typeof canonicalUrl !== 'undefined' ? canonicalUrl : 'https://mysearch-query.onrender.com/' %>">
+
+<!-- Open Graph (how the page looks when shared on WhatsApp/Facebook/Twitter) -->
+<meta property="og:title" content="<%= typeof pageTitle !== 'undefined' ? pageTitle : 'UC Tech Hub - Educational Search' %>">
+<meta property="og:description" content="<%= typeof pageDescription !== 'undefined' ? pageDescription : 'Explore various universities in Nigeria and discover educational resources.' %>">
+<meta property="og:type" content="website">
+<meta property="og:url" content="<%= typeof canonicalUrl !== 'undefined' ? canonicalUrl : 'https://mysearch-query.onrender.com/' %>">
+<meta property="og:image" content="https://mysearch-query.onrender.com/images/logo.jpg">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="<%= typeof pageTitle !== 'undefined' ? pageTitle : 'UC Tech Hub - Educational Search' %>">
+<meta name="twitter:description" content="<%= typeof pageDescription !== 'undefined' ? pageDescription : 'Explore various universities in Nigeria and discover educational resources.' %>">
+
+  </head>
+<body>
+  <!-- include header file -->
+        <%- include('../includeFolder/_headers.ejs') %>
+        <!--include  header file -->
 <section id="courses-requirements" style="padding: 2rem; background-color: #fff; max-width: 900px; margin: auto; font-family: Arial, sans-serif; line-height: 1.7;">
     <h2 style="color: #2c3e50;">Courses Offered in Nigerian Universities and Their Requirements</h2>
     <p>
@@ -23,3 +52,10 @@
 
     <p style="font-style: italic;">Tip: Always double-check your course requirements before selecting them during your JAMB registration process.</p>
 </section>
+
+
+<!-- foooter ......................................... -->
+  <%- include('../includeFolder/jambHot_link6.ejs') %>
+  <script src="js/index.js"></script>
+  <%- include('../includeFolder/_footer.ejs') %>
+  <!-- foooter ......................................... -->

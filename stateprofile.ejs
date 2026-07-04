@@ -1,0 +1,169 @@
+<%
+// currentYear / session is computed here so every page auto-updates itself
+// every January without anyone touching this file or the data file.
+const currentYear = new Date().getFullYear();
+const nextYear = currentYear + 1;
+const session = `${currentYear}/${nextYear}`;
+// Backward-compatible defaults: existing federal entries don't set these
+// two fields, so they keep working exactly as before with no edits needed.
+const category = uni.category || "Federal University";
+const ownership = uni.ownership || "Federal Government";
+%>
+
+<section class="hero">
+  <h1><%= uni.name %> (<%= uni.abbreviation %>)</h1>
+  <p><%= uni.location %> &middot; <%= category %> &middot; Est. <%= uni.founded %></p>
+</section>
+
+<div class="container">
+
+  <!-- Quick facts -->
+  <div class="info-section">
+    <div class="info-card">
+      <h3>Ownership</h3>
+      <p><%= ownership %></p>
+    </div>
+    <div class="info-card">
+      <h3>State</h3>
+      <p><%= uni.state %></p>
+    </div>
+    <div class="info-card">
+      <h3>Year Founded</h3>
+      <p><%= uni.founded %></p>
+    </div>
+    <div class="info-card">
+      <h3>Current Session</h3>
+      <p><%= session %></p>
+    </div>
+  </div>
+
+  <!-- Overview -->
+  <div class="section-txt">
+    <h2>About <%= uni.abbreviation %></h2>
+    <p>
+      <%= uni.name %> is a <%= ownership %>-owned <%= category.toLowerCase() %> located in <%= uni.location %>.
+      Founded in <%= uni.founded %><% if (uni.motto) { %>, its motto is "<%= uni.motto %>"<% } %>. The school year
+      referenced on this page is the <%= session %> academic session — this page updates
+      automatically every year, but always cross-check time-sensitive figures (cut-off marks,
+      fees, and dates) on the official portal linked below before making decisions.
+    </p>
+    <% if (uni.note) { %>
+
+      <p><strong>Note:</strong> <%= uni.note %></p>
+    <% } %>
+  </div>
+
+  <!-- Admission requirements -->
+  <div class="section-txt">
+    <h2>Admission Requirements</h2>
+    <ul class="child-ul">
+      <li><strong>JAMB (UTME):</strong> Candidates must choose <%= uni.abbreviation %> as their
+        first choice institution on JAMB and meet the departmental subject combination for their
+        intended course. Confirm the current JAMB national and departmental cut-off marks for the
+        <%= session %> session on the JAMB CAPS portal before applying.</li>
+      <li><strong>Post-UTME Screening:</strong> Shortlisted candidates who meet the university's
+        departmental cut-off are invited for the Post-UTME/DE screening exercise, usually
+        published on the <a href="<%= uni.portalUrl %>" target="_blank" rel="noopener">official admission portal</a>.</li>
+      <li><strong>Direct Entry (DE):</strong> Holders of ND, HND, NCE, A-Level or equivalent
+        qualifications may apply for admission into 200 level, subject to the department's
+        specific DE requirements.</li>
+      <li><strong>IJMB / JUPEB:</strong> Where accepted by the department, IJMB or JUPEB
+        candidates with the minimum required points may also apply through the Direct Entry
+        window — confirm departmental acceptance directly with the faculty.</li>
+      <li><strong>O'Level Requirement:</strong> Five (5) O'Level credits including English
+        Language and Mathematics, obtainable in not more than two sittings (WAEC/NECO/NABTEB).</li>
+    </ul>
+  </div>
+
+  <!-- Cut-off marks -->
+  <div class="section-txt">
+    <h2>JAMB & Departmental Cut-Off Marks (<%= session %>)</h2>
+    <p>
+      Cut-off marks vary by department and change every admission cycle. As of publishing,
+      exact departmental cut-offs for <%= uni.abbreviation %> had not been finalized for the
+      <%= session %> session.
+      <strong>Please confirm the current cut-off mark directly on the
+      <a href="<%= uni.portalUrl %>" target="_blank" rel="noopener">school's admission portal</a>
+      or the JAMB CAPS portal</strong> before checking your admission status.
+    </p>
+  </div>
+
+  <!-- Faculties & popular courses -->
+  <div class="section-txt">
+    <h2>Faculties & Departments</h2>
+    <ul class="child-ul">
+      <% uni.faculties.forEach(function(faculty) { %>
+        <li><%= faculty %></li>
+      <% }); %>
+    </ul>
+    <h3 class="text-color">Most Searched Courses at <%= uni.abbreviation %></h3>
+    <p><%= uni.popularCourses.join(", ") %></p>
+  </div>
+
+  <!-- Fees -->
+  <div class="section-txt">
+    <h2>School Fees & Acceptance Fee</h2>
+    <p>
+      School fees differ by faculty (e.g. Medicine/Law/Engineering typically cost more than
+      Arts/Social Sciences) and by student category (fresh vs. returning, indigene vs.
+      non-indigene where applicable). Because fees are reviewed periodically,
+      <strong>always verify the exact current amount on the <%= uni.abbreviation %> student
+      portal</strong> before making any payment. Never pay into a personal account —
+      only pay through the official portal's generated invoice/RRR.
+    </p>
+  </div>
+
+  <!-- Admission list, clearance, resumption -->
+  <div class="section-txt">
+    <h2>Admission List, Clearance & Resumption</h2>
+    <ul class="child-ul">
+      <li><strong>Checking Admission Status:</strong> Log in to the
+        <a href="<%= uni.portalUrl %>" target="_blank" rel="noopener">admission portal</a>
+        with your JAMB registration number to check your admission status once JAMB releases
+        the institution's admission list for <%= session %>.</li>
+      <li><strong>Acceptance Fee:</strong> Pay the acceptance fee online immediately after your
+        admission is confirmed to secure your slot.</li>
+      <li><strong>Clearance:</strong> Bring original copies of your O'Level result(s), JAMB
+        result slip, Post-UTME slip, birth certificate/age declaration, and local government
+        identification for physical/document verification.</li>
+      <li><strong>Resumption Date:</strong> New-student resumption dates for <%= session %> are
+        announced on the school's official website/portal — check there for the exact date
+        rather than relying on unofficial sources.</li>
+    </ul>
+  </div>
+
+  <!-- Accommodation -->
+  <div class="section-txt">
+    <h2>Accommodation & Hostel</h2>
+    <p>
+      <%= uni.abbreviation %> operates both on-campus hostels (allocated via a balloting system,
+      usually prioritizing fresh students and students with disabilities) and recognizes
+      off-campus private hostels around <%= uni.location %>. Hostel applications typically open
+      shortly after resumption — watch the student affairs portal for the balloting timetable.
+    </p>
+  </div>
+
+  <!-- Portal & useful links -->
+  <div class="section-txt">
+    <h2>Useful Links</h2>
+    <a class="cta-button" href="<%= uni.portalUrl %>" target="_blank" rel="noopener">Admission Portal</a>
+    <a class="cta-button" href="<%= uni.website %>" target="_blank" rel="noopener">Official Website</a>
+    <a class="cta-button" href="/calculate/cgpa/app">CGPA Calculator</a>
+  </div>
+
+  <!-- FAQs -->
+  <div class="section-txt">
+    <h2>Frequently Asked Questions</h2>
+    <ul class="child-ul">
+      <li><strong>Is <%= uni.abbreviation %> a <%= category %>?</strong> Yes, it is owned and
+        funded by the <%= ownership %>.</li>
+      <li><strong>What is the JAMB cut-off mark for <%= uni.abbreviation %>?</strong> This varies
+        yearly by department — always confirm on the official portal for <%= session %>.</li>
+      <li><strong>Does <%= uni.abbreviation %> accept Direct Entry?</strong> Yes, subject to
+        departmental requirements.</li>
+      <li><strong>How do I check my admission status?</strong> Visit the admission portal linked
+        above with your JAMB registration number.</li>
+    </ul>
+  </div>
+
+</div>
