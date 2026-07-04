@@ -101,6 +101,7 @@ ul .contact-link {
   color: white;
   text-align: center;
   padding: clamp(60px, 12vw, 80px) 20px 50px;
+  margin-top: 100px; /* Adjust for fixed header height */
 }
 
 .hero h1 {
