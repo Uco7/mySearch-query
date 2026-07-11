@@ -1,0 +1,121 @@
+<%
+const label = entityType === "polytechnic" ? "Polytechnic" : "University";
+const pageTitle = `${uni.name} (${uni.abbreviation || uni.name}) — Admission Guide, Cut-Off Mark, Fees & Requirements ${session} | MySchoolGist`;
+const pageDesc = `${uni.name} ${session} guide: cut-off mark, school fees, acceptance fee, Post-UTME form, admission requirements, hostel fee, ranking and academic calendar — all in one place.`;
+const basePath = entityType === "polytechnic" ? "polytechnic" : "university";
+%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= pageTitle %></title>
+  <meta name="description" content="<%= pageDesc %>">
+  <meta name="keywords" content="<%= uni.name %> admission, <%= uni.abbreviation %> cut off mark, <%= uni.abbreviation %> school fees, <%= uni.name %> post utme <%= session %>">
+  <link rel="canonical" href="https://www.yourdomain.com/<%= basePath %>/<%= uni.slug %>">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="<%= pageTitle %>">
+  <meta property="og:description" content="<%= pageDesc %>">
+  <meta property="og:site_name" content="MySchoolGist">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollegeOrUniversity",
+    "name": "<%= uni.name %>",
+    "alternateName": "<%= uni.abbreviation || '' %>",
+    "address": "<%= uni.location %>",
+    "foundingDate": "<%= uni.founded %>",
+    "url": "<%= uni.website || uni.portalUrl || '' %>"
+  }
+  </script>
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <header class="nav-header">
+    <div class="logo">MySchoolGist</div>
+    <span class="menu-toggle">&#9776;</span>
+    <ul class="header-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/nigeria/list-of-institution/page">Institutions</a></li>
+      <li><a href="/scholarship/guid">Scholarships</a></li>
+      <li class="contact-link"><a href="/contact-us/page">Contact</a></li>
+    </ul>
+  </header>
+
+  <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <a href="/">Home</a> &raquo;
+    <a href="/nigeria/list-of-institution/page"><%= label %> Directory</a> &raquo;
+    <span><%= uni.name %></span>
+  </nav>
+
+  <div class="container">
+
+    <section class="section-txt">
+      <h1><%= uni.name %> (<%= uni.abbreviation || uni.name %>) — <%= session %> Admission Guide</h1>
+      <p><%= uni.name %> is a <%= (uni.ownership || "").toLowerCase() %> <%= label.toLowerCase() %>
+        located in <%= uni.location %><% if (uni.founded) { %>, founded in <%= uni.founded %><% } %>.
+        <% if (uni.motto) { %>Its motto is "<%= uni.motto %>".<% } %>
+        Below is everything prospective students need for the <%= session %> admission cycle.</p>
+
+      <div class="info-section">
+        <div class="info-card"><strong>State</strong><br><%= uni.state %></div>
+        <div class="info-card"><strong>Vice Chancellor / Rector</strong><br><%= (!info.viceChancellor || info.viceChancellor === "TODO_VERIFY") ? "Check official site" : info.viceChancellor %></div>
+        <div class="info-card"><strong>Student Population</strong><br><%= (!info.studentPopulation || info.studentPopulation === "TODO_VERIFY") ? "Check official site" : info.studentPopulation %></div>
+        <div class="info-card"><strong>Session</strong><br><%= session %></div>
+      </div>
+    </section>
+
+    <!-- ===================== The 8 admission-info hub links (main SEO play) ===================== -->
+    <section class="section-txt">
+      <h2><%= uni.name %> <%= session %> Admission Information</h2>
+      <div class="info-section">
+        <% Object.keys(sections).forEach(key => { %>
+          <div class="info-card">
+            <h3><%= sections[key].label %></h3>
+            <p style="font-size:0.9rem;color:#666;">
+              <%= sections[key].label %> for <%= session %>
+            </p>
+            <a class="cta-button" href="/<%= basePath %>/<%= uni.slug %>/<%= key %>">View &rarr;</a>
+          </div>
+        <% }) %>
+      </div>
+    </section>
+
+    <% if (uni.faculties || uni.schools) { %>
+    <section class="section-txt">
+      <h2>Faculties / Schools</h2>
+      <ul class="child-ul">
+        <% (uni.faculties || uni.schools).forEach(f => { %><li><%= f %></li><% }) %>
+      </ul>
+    </section>
+    <% } %>
+
+    <% if (uni.popularCourses) { %>
+    <section class="section-txt">
+      <h2>Popular Courses at <%= uni.name %></h2>
+      <ul class="child-ul">
+        <% uni.popularCourses.forEach(c => { %><li><%= c %></li><% }) %>
+      </ul>
+    </section>
+    <% } %>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>MySchoolGist</h3>
+          <p>Nigeria's education, admissions and scholarship information hub.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; <%= new Date().getFullYear() %> MySchoolGist. All rights reserved.</div>
+    </div>
+  </footer>
+  <button class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr;</button>
+</body>
+</html>

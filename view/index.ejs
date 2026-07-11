@@ -26,7 +26,7 @@
   <meta name="twitter:title" content="Nigerian Universities, Admission Requirements & JAMB Tools" />
   <meta name="twitter:description" content="Free JAMB Aggregate Calculator, CGPA Calculator, and Course Eligibility Checker — plus admission info for 65+ Nigerian universities." />
   <meta name="twitter:image" content="https://mysearch-query.onrender.com/images/logo.jpg" />
-<meta name="google-adsense-account" content="ca-pub-8923799920726415">
+
   <script src="https://kit.fontawesome.com/56adb67a5b.js" crossorigin="anonymous"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8923799920726415"
     crossorigin="anonymous"></script>
@@ -95,9 +95,9 @@
   </script>
 
   <main id="main-content">
-
+<br>
     <!-- ===================== HERO ===================== -->
-    <section class="hero">
+    <section class="hero" style="margin-top: 2rem;" >
       <h1>Welcome to UC Tech Hub</h1>
       <p>Your go-to place for Nigerian university, polytechnic, and admission information.</p>
     </section>
@@ -120,20 +120,21 @@
       </div>
     </section>
 
-    <!-- ===================== INTRO + SEARCH ===================== -->
-    <section class="container">
-      <div class="intro-section">
-        <h2>What We Offer</h2>
-        <p>We provide students with easy access to information about various universities in Nigeria, including admission requirements, available courses, scholarship opportunities, and more. Our platform helps students make informed decisions about their academic journey.</p>
-      </div>
+   <!-- ===================== INTRO + SEARCH ===================== -->
+<section class="container">
+  <div class="intro-section">
+    <h2>What We Offer</h2>
+    <p>We provide students with easy access to information about various universities in Nigeria, including admission requirements, available courses, scholarship opportunities, and more. Our platform helps students make informed decisions about their academic journey.</p>
+  </div>
 
-      <div class="search-container">
-        <div class="search-bar-container">
-          <input type="text" id="searchInput" class="search-bar" placeholder="Search for universities, courses, or scholarships..." />
-          <button class="search-button" id="searchBtn">Search</button>
-        </div>
-      </div>
-    </section>
+  <div class="search-container">
+    <div class="search-bar-container" style="position:relative;">
+      <input type="text" id="searchInputTop" class="search-bar js-search-input" placeholder="Search for universities, courses, or scholarships..." autocomplete="off" />
+      <button class="search-button js-search-btn" type="button">Search</button>
+      <div class="search-dropdown js-search-dropdown" style="display:none; position:absolute; top:100%; left:0; right:0; background:#fff; box-shadow:0 4px 12px rgba(0,0,0,0.12); border-radius:6px; z-index:50; max-height:340px; overflow-y:auto;"></div>
+    </div>
+  </div>
+</section>
 
     <!-- ===================== QUICK ACCESS ===================== -->
     <section class="container">
@@ -169,6 +170,46 @@
           </li>
         <% }); %>
       </ul>
+    </section>
+
+     <!-- second search bar, further down the page -->
+<div class="search-container">
+  <div class="search-bar-container" style="position:relative; margin-top:2rem; text-align:center; width:50%; justify-content:center; margin-left:auto; margin-right:auto;">
+    <input type="text" id="searchInputBottom" style="width:30%;" class="search-bar js-search-input" placeholder="Search for universities, courses, or scholarships..." autocomplete="off" />
+    <button class="search-button js-search-btn" type="button">Search</button>
+    <div class="search-dropdown js-search-dropdown" style="display:none; position:absolute; top:100%; left:35%; right:35%; background:#fff; box-shadow:0 4px 12px rgba(0,0,0,0.12); border-radius:6px; z-index:50; max-height:340px; overflow-y:auto;"></div>
+  </div>
+</div>
+    </section>
+     <!-- ===================== TRENDING SEARCHES (direct links to the new pages) ===================== -->
+    <section class="container">
+      <h2 class="text-color" style="text-align:center;margin-bottom:1rem;">Trending Searches</h2>
+      <div class="info-section">
+        <div class="info-card">
+          <h3>UNN Cut-Off Mark</h3>
+          <a class="cta-button" href="/university/unn/cut-off-mark">View</a>
+        </div>
+        <div class="info-card">
+          <h3>UNILAG School Fees</h3>
+          <a class="cta-button" href="/university/unilag/school-fees">View</a>
+        </div>
+        <div class="info-card">
+          <h3>UI Post-UTME Form</h3>
+          <a class="cta-button" href="/university/ui/post-utme">View</a>
+        </div>
+        <div class="info-card">
+          <h3>OAU Admission Requirements</h3>
+          <a class="cta-button" href="/university/oau/admission-requirements">View</a>
+        </div>
+        <div class="info-card">
+          <h3>YABATECH Cut-Off Mark</h3>
+          <a class="cta-button" href="/polytechnic/yabatech/cut-off-mark">View</a>
+        </div>
+        <div class="info-card">
+          <h3>LASPOTECH School Fees</h3>
+          <a class="cta-button" href="/polytechnic/laspotech/school-fees">View</a>
+        </div>
+      </div>
     </section>
 
     <!-- hot link_1 ......................................... -->
@@ -220,7 +261,7 @@
     </section>
 
   </main>
-
+<script src="js/search.js"></script>
   <!-- foooter ......................................... -->
   <%- include('./includeFolder/jambHot_link6.ejs') %>
   <script src="js/index.js"></script>

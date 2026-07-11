@@ -1,0 +1,25 @@
+<%- include('../includeFolder/_header') %>
+<meta name="robots" content="noindex, follow">
+
+<main class="container" style="padding-top:2rem;">
+  <h1 style="text-align:center;">Search Results</h1>
+  <p style="text-align:center;color:#666;">
+    <% if (results.length) { %>
+      Showing <%= results.length %> result<%= results.length === 1 ? '' : 's' %> for "<%= query %>"
+    <% } else { %>
+      No results for "<%= query %>" — try a school name, abbreviation, or a term like "cut off mark"
+    <% } %>
+  </p>
+
+  <ul class="university-list">
+    <% results.forEach(function(r) { %>
+      <li>
+        <a href="<%= r.url %>">
+          <%= r.title %> <span style="color:#888;font-size:0.85em;">— <%= r.type %></span>
+        </a>
+      </li>
+    <% }); %>
+  </ul>
+</main>
+
+<%- include('../includeFolder/_footer') %>

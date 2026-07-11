@@ -29,7 +29,6 @@
   <link rel="icon" href="/images/logo.jpg" type="image/jpeg">
 
   <!-- ===================== STRUCTURED DATA ===================== -->
-  <!-- WebApplication schema: tells Google this is a free interactive tool, eligible for rich results -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -43,7 +42,6 @@
   }
   </script>
 
-  <!-- FAQPage schema: mirrors the on-page FAQ below, so Google can show it as an expandable rich result -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -53,6 +51,11 @@
         "@type": "Question",
         "name": "What subjects do I need for Medicine and Surgery in JAMB?",
         "acceptedAnswer": { "@type": "Answer", "text": "English Language, Physics, Chemistry, and Biology are compulsory JAMB subjects for Medicine and Surgery at almost every Nigerian university, with no flexible alternatives." }
+      },
+      {
+        "@type": "Question",
+        "name": "What subjects do I need for Nursing Science?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Nursing Science requires the same core science combination as Medicine — English Language, Physics, Chemistry, and Biology — at almost every Nigerian university offering the course." }
       },
       {
         "@type": "Question",
@@ -75,6 +78,44 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/style.css">
+
+  <style>
+    /* Brief highlight flash for the requirement box when landing via a deep link */
+    .highlight-flash {
+      animation: highlightFlash 1.8s ease-out;
+    }
+    @keyframes highlightFlash {
+      0%   { background-color: #fff6cc; box-shadow: 0 0 0 3px #ffd54f; }
+      100% { background-color: transparent; box-shadow: 0 0 0 0 transparent; }
+    }
+    /* Native <details> accordion styling — keeps FAQ collapsed until clicked */
+    .faq-accordion {
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      margin-bottom: 0.6rem;
+      padding: 0.3rem 1rem;
+      background: #fafafa;
+    }
+    .faq-accordion summary {
+      cursor: pointer;
+      font-weight: 600;
+      padding: 0.6rem 0;
+      list-style: none;
+    }
+    .faq-accordion summary::-webkit-details-marker { display: none; }
+    .faq-accordion summary::before {
+      content: "+ ";
+      color: #2e7d32;
+      font-weight: 700;
+    }
+    .faq-accordion[open] summary::before {
+      content: "− ";
+    }
+    .faq-accordion p {
+      margin: 0 0 0.8rem 0;
+      color: #444;
+    }
+  </style>
 </head>
 <body>
 
@@ -120,7 +161,7 @@
       <div class="section-txt">
         <h2>1. Choose Your Intended Course</h2>
         <select id="courseSelect" class="jamb-input-grid-select" aria-label="Select your intended course"></select>
-        <div id="courseRequirement" class="course-requirement-box" aria-live="polite"></div>
+        <div id="courseRequirement" class="course-requirement-box" aria-live="polite" tabindex="-1"></div>
       </div>
 
       <!-- Subject checker -->
@@ -138,15 +179,34 @@
         </div>
       </div>
 
-      <!-- FAQ (matches the FAQPage schema above — real content Google can rank on long-tail searches) -->
+      <!-- FAQ — collapsed accordion, not a wall of text -->
       <div class="section-txt">
         <h2>Frequently Asked Questions</h2>
-        <ul class="child-ul">
-          <li><strong>What subjects do I need for Medicine and Surgery in JAMB?</strong> English Language, Physics, Chemistry, and Biology are compulsory at almost every Nigerian university, with no flexible alternatives.</li>
-          <li><strong>Can I study Law without Literature in English?</strong> Most schools expect Literature-in-English, Government, or CRK/IRK as part of your combination — confirm with your target university since requirements vary slightly.</li>
-          <li><strong>Do I need Physics for Computer Science?</strong> Yes — English, Mathematics, and Physics are compulsory at most schools, plus one additional science or related subject.</li>
-          <li><strong>Where can I confirm the official subject combination for my course?</strong> The current JAMB UTME brochure, cross-checked against your specific university's admission page.</li>
-        </ul>
+
+        <details class="faq-accordion">
+          <summary>What subjects do I need for Medicine and Surgery in JAMB?</summary>
+          <p>English Language, Physics, Chemistry, and Biology are compulsory at almost every Nigerian university, with no flexible alternatives.</p>
+        </details>
+
+        <details class="faq-accordion">
+          <summary>What subjects do I need for Nursing Science?</summary>
+          <p>Nursing Science requires the same core science combination as Medicine — English Language, Physics, Chemistry, and Biology — at almost every school offering the course.</p>
+        </details>
+
+        <details class="faq-accordion">
+          <summary>Can I study Law without Literature in English?</summary>
+          <p>Most schools expect Literature-in-English, Government, or CRK/IRK as part of your combination — confirm with your target university since requirements vary slightly.</p>
+        </details>
+
+        <details class="faq-accordion">
+          <summary>Do I need Physics for Computer Science?</summary>
+          <p>Yes — English, Mathematics, and Physics are compulsory at most schools, plus one additional science or related subject.</p>
+        </details>
+
+        <details class="faq-accordion">
+          <summary>Where can I confirm the official subject combination for my course?</summary>
+          <p>The current JAMB UTME brochure, cross-checked against your specific university's admission page.</p>
+        </details>
       </div>
 
     </div>
@@ -158,8 +218,8 @@
 
   <script>
   (function () {
-    // Course requirement data comes from the server (renderFolder/courseEligibilityData.js),
-    // passed in via res.render(..., { courseRequirements, masterSubjects }) in page.js.
+    // Course requirement data comes from the server (data/courseEligibilityData.js),
+    // passed in via res.render(..., { courseRequirements, masterSubjects }) in the controller.
     // To add/edit a course, edit that data file only — this script never changes.
     const courses = <%- courseRequirements %>;
     const masterSubjects = <%- masterSubjects %>;
@@ -168,11 +228,12 @@
     courses.forEach((c, i) => {
       const opt = document.createElement("option");
       opt.value = i;
+      opt.dataset.slug = c.slug || "";
       opt.textContent = c.name;
       courseSelect.appendChild(opt);
     });
 
-    function showRequirement() {
+    function showRequirement(shouldScroll) {
       const course = courses[courseSelect.value];
       const box = document.getElementById("courseRequirement");
       box.innerHTML = `
@@ -181,8 +242,24 @@
         <p><strong>JAMB Subjects:</strong> English Language${course.jambCore.filter(s => s !== "English Language").length ? ", " + course.jambCore.filter(s => s !== "English Language").join(", ") : ""}${course.jambFlexible.length ? " + " + course.flexibleCount + " of (" + course.jambFlexible.join(", ") + ")" : ""}</p>
         <p><em>${course.note}</em></p>
       `;
+
+      // Update the URL (without reloading) so the current course is shareable/bookmarkable
+      const url = new URL(window.location);
+      if (course.slug) {
+        url.searchParams.set("course", course.slug);
+      }
+      window.history.replaceState({}, "", url);
+
+      if (shouldScroll) {
+        box.scrollIntoView({ behavior: "smooth", block: "center" });
+        box.classList.remove("highlight-flash");
+        // Force reflow so the animation can restart if triggered again
+        void box.offsetWidth;
+        box.classList.add("highlight-flash");
+        box.focus({ preventScroll: true });
+      }
     }
-    courseSelect.addEventListener("change", showRequirement);
+    courseSelect.addEventListener("change", () => showRequirement(true));
 
     const subjectGrid = document.getElementById("subjectGrid");
     subjectGrid.innerHTML = `<label class="locked"><input type="checkbox" checked disabled> English Language (compulsory)</label>`;
@@ -214,7 +291,26 @@
       }
     });
 
-    showRequirement();
+    // ===================== DEEP-LINK HANDLING =====================
+    // Someone landing here from a search result like
+    // /check/course-eligibility/app?course=nursing-science#courseRequirement
+    // should see Nursing pre-selected AND have the page scroll straight
+    // to that answer, instead of silently defaulting to the first course.
+    const params = new URLSearchParams(window.location.search);
+    const requestedSlug = params.get("course");
+    let matchedIndex = -1;
+
+    if (requestedSlug) {
+      matchedIndex = courses.findIndex(c => c.slug === requestedSlug);
+    }
+
+    if (matchedIndex !== -1) {
+      courseSelect.value = matchedIndex;
+      // Delay slightly so the browser finishes initial layout before we scroll
+      setTimeout(() => showRequirement(true), 150);
+    } else {
+      showRequirement(false); // normal first load — no scroll, no highlight
+    }
   })();
   </script>
 </body>

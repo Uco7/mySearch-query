@@ -1,0 +1,178 @@
+<%
+// ---- small local helpers (EJS has no partials info here, so inline) ----
+const pageTitle = meta.titleTemplate(entity.name, session) + " | MySchoolGist";
+const pageDesc  = meta.descTemplate(entity.name, session);
+const canonicalPath = `/${entityBasePath}/${entity.slug}/${sectionKey}`;
+const otherSections = Object.keys(allSections).filter(k => k !== sectionKey);
+%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===================== SEO: primary meta ===================== -->
+  <title><%= pageTitle %></title>
+  <meta name="description" content="<%= pageDesc %>">
+  <meta name="keywords" content="<%= entity.name %> <%= meta.label.toLowerCase() %>, <%= entity.abbreviation || entity.name %> <%= session %>, <%= entity.name %> admission, <%= entity.state %> <%= entityBasePath %>">
+  <link rel="canonical" href="https://www.yourdomain.com<%= canonicalPath %>">
+
+  <!-- ===================== Open Graph / Twitter ===================== -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="<%= pageTitle %>">
+  <meta property="og:description" content="<%= pageDesc %>">
+  <meta property="og:url" content="https://www.yourdomain.com<%= canonicalPath %>">
+  <meta property="og:site_name" content="MySchoolGist">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="<%= pageTitle %>">
+  <meta name="twitter:description" content="<%= pageDesc %>">
+
+  <!-- ===================== Structured data (JSON-LD) ===================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.yourdomain.com/" },
+      { "@type": "ListItem", "position": 2, "name": "<%= entity.name %>", "item": "https://www.yourdomain.com/<%= entityBasePath %>/<%= entity.slug %>" },
+      { "@type": "ListItem", "position": 3, "name": "<%= meta.label %>", "item": "https://www.yourdomain.com<%= canonicalPath %>" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "<%= pageTitle %>",
+    "description": "<%= pageDesc %>",
+    "about": { "@type": "CollegeOrUniversity", "name": "<%= entity.name %>" },
+    "datePublished": "<%= session %>",
+    "publisher": { "@type": "Organization", "name": "MySchoolGist" }
+  }
+  </script>
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+
+  <!-- ===================== Header / Nav (match existing site chrome) ===================== -->
+  <header class="nav-header">
+    <div class="logo">MySchoolGist</div>
+    <span class="menu-toggle">&#9776;</span>
+    <ul class="header-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/nigeria/list-of-institution/page">Universities</a></li>
+      <li><a href="/nigeria/list-of-institution/page">Polytechnics</a></li>
+      <li><a href="/scholarship/guid">Scholarships</a></li>
+      <li class="contact-link"><a href="/contact-us/page">Contact</a></li>
+    </ul>
+  </header>
+
+  <!-- ===================== Breadcrumb (SEO + UX) ===================== -->
+  <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <a href="/">Home</a> &raquo;
+    <a href="/<%= entityBasePath %>/<%= entity.slug %>"><%= entity.name %></a> &raquo;
+    <span><%= meta.label %></span>
+  </nav>
+
+  <div class="container">
+
+    <!-- ===================== Main content ===================== -->
+    <section class="section-txt">
+      <h1><%= meta.h1Template(entity.name, session) %></h1>
+      <p class="text-color">
+        <strong><%= entity.name %></strong> (<%= entity.abbreviation || entity.name %>) —
+        <%= entity.location %>. This page covers the <%= meta.label.toLowerCase() %>
+        for the <strong><%= session %></strong> academic session and is updated automatically
+        every session — bookmark this exact page rather than the year-specific one.
+      </p>
+
+      <div class="table-container">
+        <% if (Array.isArray(value)) { %>
+          <ol class="child-ul">
+            <% value.forEach(item => { %>
+              <li><%= item %></li>
+            <% }) %>
+          </ol>
+        <% } else if (value && typeof value === "object") { %>
+          <table>
+            <thead><tr><th>Detail</th><th>Value</th></tr></thead>
+            <tbody>
+              <% Object.entries(value).forEach(([k, v]) => { %>
+                <tr>
+                  <td style="text-transform:capitalize;"><%= k.replace(/([A-Z])/g, ' $1') %></td>
+                  <td><%= (v === undefined || v === "TODO_VERIFY") ? `Check the official ${entity.name} website for the confirmed ${session} figure` : v %></td>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        <% } else { %>
+          <p><%= (!value || value === "TODO_VERIFY") ? `Check the official ${entity.name} website for the confirmed ${session} figure.` : value %></p>
+        <% } %>
+      </div>
+
+      <div class="note">
+        Note: <%= meta.label %> figures can change per session. Always cross-check with
+        <%= entity.name %>'s official <a href="<%= entity.website || entity.portalUrl %>" target="_blank" rel="noopener noreferrer"><%= entity.abbreviation || entity.name %> website</a>
+        or admissions office before making any payment.
+      </div>
+
+      <div class="cta-row">
+        <a class="cta-button" href="/<%= entityBasePath %>/<%= entity.slug %>">View Full <%= entity.name %> Profile</a>
+        <% if (entity.portalUrl) { %>
+          <a class="cta-button" href="<%= entity.portalUrl %>" target="_blank" rel="noopener noreferrer">Official Portal &rarr;</a>
+        <% } %>
+      </div>
+    </section>
+
+    <!-- ===================== Internal linking: other sections for this school ===================== -->
+    <section class="section-txt">
+      <h2>More <%= entity.name %> <%= session %> Information</h2>
+      <div class="info-section">
+        <% otherSections.forEach(key => { %>
+          <div class="info-card">
+            <a href="/<%= entityBasePath %>/<%= entity.slug %>/<%= key %>"><%= allSections[key].label %></a>
+          </div>
+        <% }) %>
+      </div>
+    </section>
+
+    <!-- ===================== Internal linking: sibling schools, same state ===================== -->
+    <% if (siblingEntities && siblingEntities.length) { %>
+    <section class="section-txt">
+      <h2>Other <%= entityBasePath === 'polytechnic' ? 'Polytechnics' : 'Universities' %> in <%= entity.state %></h2>
+      <ul class="child-ul">
+        <% siblingEntities.forEach(s => { %>
+          <li><a href="/<%= entityBasePath %>/<%= s.slug %>/<%= sectionKey %>"><%= s.name %> — <%= meta.label %></a></li>
+        <% }) %>
+      </ul>
+    </section>
+    <% } %>
+
+  </div>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>MySchoolGist</h3>
+          <p>Nigeria's education, admissions and scholarship information hub.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/nigeria/list-of-institution/page">All Institutions</a></li>
+            <li><a href="/scholarship/guid">Scholarships</a></li>
+            <li><a href="/privacy/policy/page">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; <%= new Date().getFullYear() %> MySchoolGist. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr;</button>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<%# ============================================================
+    Drop this into index.ejs (or your institution-directory page)
+    wherever the old `.university-list` markup lives. It now links
+    BOTH universities and polytechnics, and each entry deep-links
+    straight to the most-searched page (Cut-Off Mark) as well as
+    the full profile — two internal links per school instead of one,
+    which is good for both SEO crawl depth and user intent matching.
+   ============================================================ %>
+
+<section class="section-txt">
+  <h2>Nigerian Universities</h2>
+  <ul class="university-list">
+    <% universities.forEach(u => { %>
+      <li>
+        <a href="/university/<%= u.slug %>"><%= u.name %> (<%= u.abbreviation %>)</a>
+        &nbsp;·&nbsp;
+        <a href="/university/<%= u.slug %>/cut-off-mark" style="font-size:0.85em;">Cut-Off Mark</a>
+      </li>
+    <% }) %>
+  </ul>
+</section>
+
+<section class="section-txt">
+  <h2>Nigerian Polytechnics</h2>
+  <ul class="university-list">
+    <% polytechnics.forEach(p => { %>
+      <li>
+        <a href="/polytechnic/<%= p.slug %>"><%= p.name %> (<%= p.abbreviation %>)</a>
+        &nbsp;·&nbsp;
+        <a href="/polytechnic/<%= p.slug %>/cut-off-mark" style="font-size:0.85em;">Cut-Off Mark</a>
+      </li>
+    <% }) %>
+  </ul>
+</section>
