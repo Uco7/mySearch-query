@@ -13,6 +13,10 @@ App.use(bodyParser.json());
 App.use("/bootstrap", express.static(path.join(__dirname, "node_modules/bootstrap/dist")));
 App.use("/jquery", express.static(path.join(__dirname, "node_modules/jquery/dist")));
 App.use(express.static(path.join(__dirname, "public")));
+App.use((req, res, next) => {
+  res.locals.canonical = `https://mysearch-query.onrender.com${req.originalUrl}`;
+  next();
+});
 
 // ✅ FIX 1: Changed 'app.get' to 'App.get' to match your Express variable 
 // ✅ FIX 2: Removed the duplicate 'const path = require("path")' line
