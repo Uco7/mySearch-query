@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -6,40 +6,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- ===================== PRIMARY SEO ===================== -->
-  <title>Nigerian Universities, Admission Requirements & JAMB Tools | UC Tech Hub</title>
-  <meta name="description" content="Find admission requirements, JAMB cut-off marks, and school fees for 65+ Nigerian federal and state universities. Free JAMB Aggregate Calculator, CGPA Calculator, and Course Eligibility Checker." />
-  <meta name="keywords" content="Nigerian universities, list of universities in Nigeria, JAMB cut off mark, JAMB aggregate calculator, university admission requirements Nigeria, CGPA calculator Nigeria, WAEC NECO updates, scholarships in Nigeria" />
-  <meta name="author" content="UC Tech Hub">
-  <meta name="robots" content="index, follow, max-image-preview:large">
+  <title>UC Tech Hub | Nigerian Universities, Admission Requirements & JAMB Tools</title>
+  <meta name="description" content="Find admission requirements, JAMB cut-off marks, and school fees for 65+ Nigerian federal and state universities. Access free JAMB Aggregate Calculator, CGPA Calculator, and Course Eligibility Checker." />
+  <meta name="keywords" content="UC Tech Hub, Nigerian universities, list of universities in Nigeria, JAMB cut off mark, JAMB aggregate calculator, university admission requirements Nigeria, CGPA calculator Nigeria, WAEC NECO updates, scholarships in Nigeria, JAMB CAPS" />
+  <meta name="author" content="UC Tech Hub" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="https://mysearch-query.onrender.com/" />
+  
+  <!-- Third Party Scripts -->
   <script>(function(s){s.dataset.zone='11270783',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 
   <!-- ===================== OPEN GRAPH ===================== -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="UC Tech Hub" />
-  <meta property="og:title" content="Nigerian Universities, Admission Requirements & JAMB Tools | UC Tech Hub" />
+  <meta property="og:title" content="UC Tech Hub | Nigerian Universities, Admission Requirements & JAMB Tools" />
   <meta property="og:description" content="Admission requirements, cut-off marks, and fees for 65+ Nigerian universities, plus free JAMB Aggregate, CGPA, and Course Eligibility calculators." />
   <meta property="og:url" content="https://mysearch-query.onrender.com/" />
   <meta property="og:image" content="https://mysearch-query.onrender.com/images/logo.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_NG" />
 
   <!-- ===================== TWITTER CARD ===================== -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Nigerian Universities, Admission Requirements & JAMB Tools" />
+  <meta name="twitter:title" content="UC Tech Hub | Nigerian Universities & JAMB Tools" />
   <meta name="twitter:description" content="Free JAMB Aggregate Calculator, CGPA Calculator, and Course Eligibility Checker — plus admission info for 65+ Nigerian universities." />
   <meta name="twitter:image" content="https://mysearch-query.onrender.com/images/logo.jpg" />
 
-  <script src="https://kit.fontawesome.com/56adb67a5b.js" crossorigin="anonymous"></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8923799920726415"
-    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/56adb67a5b.js" crossorigin="anonymous" async></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8923799920726415" crossorigin="anonymous"></script>
 
-  <link rel="icon" href="/images/logo.jpg" type="image/jpeg">
+  <link rel="icon" href="/images/logo.jpg" type="image/jpeg" />
 
-  <!-- ===================== STRUCTURED DATA ===================== -->
+  <!-- ===================== STRUCTURED DATA (SCHEMAS) ===================== -->
+  <!-- 1. Organization Schema -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "MySearch Query",
+      "name": "UC Tech Hub",
+      "altName": "MySearch Query",
       "url": "https://mysearch-query.onrender.com",
       "logo": "https://mysearch-query.onrender.com/images/logo.jpg",
       "sameAs": [
@@ -49,9 +55,7 @@
     }
   </script>
 
-  <!-- WebSite + SearchAction: the schema Google uses to decide whether to show a
-       sitelinks search box directly under your homepage result. Only pays off once
-       the site has real ranking authority, but it costs nothing to have in place. -->
+  <!-- 2. WebSite + SearchAction Schema -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -63,6 +67,20 @@
         "target": "https://mysearch-query.onrender.com/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
+    }
+  </script>
+
+  <!-- 3. BreadcrumbList Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://mysearch-query.onrender.com/"
+      }]
     }
   </script>
 
@@ -78,15 +96,21 @@
 
   <!-- ===================== HEADER ===================== -->
   <header class="nav-header" id="scrollHeader">
-    <div class="logo"><img src="/images/logo.jpg" alt="UC Tech Hub logo"></div>
-    <div class="menu-toggle" onclick="toggleMenu()" role="button" aria-label="Toggle navigation" tabindex="0">☰</div>
-    <ul class="header-nav-links" id="navLinks">
-      <li><a href="/">Home</a></li>
-      <li><a href="/privacy/policy/page">Privacy & Policy</a></li>
-      <li><a href="/about-us/page">About Us</a></li>
-      <li><a href="/disclaimer/page">Disclaimer</a></li>
-      <li class="contact-link"><a href="/contact-us/page">Contact Us</a></li>
-    </ul>
+    <div class="logo">
+      <a href="/">
+        <img src="/images/logo.jpg" alt="UC Tech Hub Logo" width="150" height="50" style="object-fit: contain;">
+      </a>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()" role="button" aria-label="Toggle navigation menu" tabindex="0">☰</div>
+    <nav>
+      <ul class="header-nav-links" id="navLinks">
+        <li><a href="/">Home</a></li>
+        <li><a href="/privacy/policy/page">Privacy & Policy</a></li>
+        <li><a href="/about-us/page">About Us</a></li>
+        <li><a href="/disclaimer/page">Disclaimer</a></li>
+        <li class="contact-link"><a href="/contact-us/page">Contact Us</a></li>
+      </ul>
+    </nav>
   </header>
 
   <script>
@@ -96,178 +120,198 @@
   </script>
 
   <main id="main-content">
-<br>
+
     <!-- ===================== HERO ===================== -->
-    <section class="hero" style="margin-top: 2rem;" >
+    <section class="hero" style="margin-top: 2rem;">
       <h1>Welcome to UC Tech Hub</h1>
-      <p>Your go-to place for Nigerian university, polytechnic, and admission information.</p>
+      <p>Your ultimate portal for Nigerian university admissions, polytechnics, cut-off marks, and student tools.</p>
     </section>
 
     <!-- ===================== IMAGE SLIDER ===================== -->
     <section class="slider" aria-label="Featured highlights">
       <div class="slides">
         <div class="slide">
-          <h2>Find Your University</h2>
-          <p>Search Federal, State, and Private universities across Nigeria.</p>
+          <h2>Find Your Ideal University</h2>
+          <p>Explore accredited Federal, State, and Private universities across Nigeria.</p>
         </div>
         <div class="slide">
-          <h2>Check Your Admission Chances</h2>
-          <p>Use our free JAMB Aggregate and CGPA calculators.</p>
+          <h2>Calculate Admission Eligibility</h2>
+          <p>Use our free JAMB Aggregate and CGPA calculators for precise estimations.</p>
         </div>
         <div class="slide">
-          <h2>Stay Ahead of Deadlines</h2>
-          <p>Get JAMB, WAEC, and NECO updates in one place.</p>
+          <h2>Stay Updated on Portal Deadlines</h2>
+          <p>Get verified JAMB, WAEC, NECO, and Post-UTME notifications.</p>
         </div>
       </div>
     </section>
 
-   <!-- ===================== INTRO + SEARCH ===================== -->
-<section class="container">
-  <div class="intro-section">
-    <h2>What We Offer</h2>
-    <p>We provide students with easy access to information about various universities in Nigeria, including admission requirements, available courses, scholarship opportunities, and more. Our platform helps students make informed decisions about their academic journey.</p>
-  </div>
+    <%- include('./includeFolder/monetagNative.ejs') %>
 
-  <div class="search-container">
-    <div class="search-bar-container" style="position:relative;">
-      <input type="text" id="searchInputTop" class="search-bar js-search-input" placeholder="Search for universities, courses, or scholarships..." autocomplete="off" />
-      <button class="search-button js-search-btn" type="button">Search</button>
-      <div class="search-dropdown js-search-dropdown" style="display:none; position:absolute; top:100%; left:0; right:0; background:#fff; box-shadow:0 4px 12px rgba(0,0,0,0.12); border-radius:6px; z-index:50; max-height:340px; overflow-y:auto;"></div>
-    </div>
-  </div>
-</section>
+    <!-- ===================== INTRO + SEARCH ===================== -->
+    <section class="container">
+      <div class="intro-section">
+        <h2>Comprehensive Nigerian Tertiary Education Guide</h2>
+        <p>UC Tech Hub simplifies the admission journey for Nigerian students. Access up-to-date details on JAMB subject combinations, departmental cut-off marks, school fee schedules, and active scholarship opportunities across Nigerian higher institutions.</p>
+      </div>
+
+      <div class="search-container">
+        <div class="search-bar-container" style="position:relative;">
+          <input type="text" id="searchInputTop" class="search-bar js-search-input" placeholder="Search for universities, courses, or scholarships..." autocomplete="off" aria-label="Search institutions and courses" />
+          <button class="search-button js-search-btn" type="button" aria-label="Submit Search">Search</button>
+          <div class="search-dropdown js-search-dropdown" style="display:none; position:absolute; top:100%; left:0; right:0; background:#fff; box-shadow:0 4px 12px rgba(0,0,0,0.12); border-radius:6px; z-index:50; max-height:340px; overflow-y:auto;"></div>
+        </div>
+      </div>
+    </section>
+
+    <%- include('./includeFolder/monetagNative.ejs') %>
 
     <!-- ===================== QUICK ACCESS ===================== -->
-    <section class="container">
-      <h2 class="text-color" style="text-align:center;margin-bottom:1rem;">Quick Access</h2>
+    <section class="container my-4">
+      <h2 class="text-color" style="text-align:center;margin-bottom:1.5rem;">Quick Access Hub</h2>
       <div class="info-section">
-        <div class="info-card">
-          <h3>University Search</h3>
+        <article class="info-card">
+          <h3>University Directory</h3>
           <p>Find detailed information on universities across Nigeria. Learn about their programs, admissions, and campuses.</p>
           <a href="/nigeria/list-of-institution/page" class="cta-button">Explore Universities</a>
-        </div>
-        <div class="info-card">
-          <h3>Scholarships</h3>
+        </article>
+        <article class="info-card">
+          <h3>Scholarships & Grants</h3>
           <p>Discover various scholarship opportunities available for students in Nigeria, including merit-based and need-based scholarships.</p>
           <a href="/scholarship/guid" class="cta-button">Find Scholarships</a>
-        </div>
-        <div class="info-card">
+        </article>
+        <article class="info-card">
           <h3>Courses & Programs</h3>
-          <p>Explore different academic programs offered by universities. Get information about available courses and degrees.</p>
-          <a href="/courses/page" class="cta-button">Lists of Courses</a>
-        </div>
+          <p>Explore academic programs offered by Nigerian universities. Check departmental O'level and UTME subject requirements.</p>
+          <a href="/courses/page" class="cta-button">List of Courses</a>
+        </article>
       </div>
     </section>
 
     <!-- ===================== UNIVERSITIES LIST ===================== -->
-    <section class="container">
-      <h2 class="text-color" style="text-align:center;margin-bottom:1rem;">Explore Universities</h2>
+    <section class="container my-4">
+      <h2 class="text-color" style="text-align:center;margin-bottom:1rem;">Explore Accredited Universities</h2>
       <ul class="university-list">
         <% universities.forEach(function(uni) { %>
           <li>
             <a href="/university/<%= uni.slug %>">
-              <%= uni.name %> (<%= uni.abbreviation %>) — <%= uni.state %>
+              <%= uni.name %> (<%= uni.abbreviation %>) — <%= uni.state %> State
             </a>
           </li>
         <% }); %>
       </ul>
     </section>
 
-     <!-- second search bar, further down the page -->
-<div class="search-container">
-  <div class="search-bar-container" style="position:relative; margin-top:2rem; text-align:center; width:50%; justify-content:center; margin-left:auto; margin-right:auto;">
-    <input type="text" id="searchInputBottom" style="width:30%;" class="search-bar js-search-input" placeholder="Search for universities, courses, or scholarships..." autocomplete="off" />
-    <button class="search-button js-search-btn" type="button">Search</button>
-    <div class="search-dropdown js-search-dropdown" style="display:none; position:absolute; top:100%; left:35%; right:35%; background:#fff; box-shadow:0 4px 12px rgba(0,0,0,0.12); border-radius:6px; z-index:50; max-height:340px; overflow-y:auto;"></div>
-  </div>
-</div>
-    </section>
-     <!-- ===================== TRENDING SEARCHES (direct links to the new pages) ===================== -->
-    <section class="container">
-      <h2 class="text-color" style="text-align:center;margin-bottom:1rem;">Trending Searches</h2>
-      <div class="info-section">
-        <div class="info-card">
-          <h3>UNN Cut-Off Mark</h3>
-          <a class="cta-button" href="/university/unn/cut-off-mark">View</a>
-        </div>
-        <div class="info-card">
-          <h3>UNILAG School Fees</h3>
-          <a class="cta-button" href="/university/unilag/school-fees">View</a>
-        </div>
-        <div class="info-card">
-          <h3>UI Post-UTME Form</h3>
-          <a class="cta-button" href="/university/ui/post-utme">View</a>
-        </div>
-        <div class="info-card">
-          <h3>OAU Admission Requirements</h3>
-          <a class="cta-button" href="/university/oau/admission-requirements">View</a>
-        </div>
-        <div class="info-card">
-          <h3>YABATECH Cut-Off Mark</h3>
-          <a class="cta-button" href="/polytechnic/yabatech/cut-off-mark">View</a>
-        </div>
-        <div class="info-card">
-          <h3>LASPOTECH School Fees</h3>
-          <a class="cta-button" href="/polytechnic/laspotech/school-fees">View</a>
+    <!-- Bottom Search Bar -->
+    <section class="container my-4">
+      <div class="search-container">
+        <div class="search-bar-container" style="position:relative; max-width: 600px; margin:0 auto; text-align:center;">
+          <input type="text" id="searchInputBottom" class="search-bar js-search-input" placeholder="Search for universities, courses, or scholarships..." autocomplete="off" aria-label="Search institutions and courses lower" />
+          <button class="search-button js-search-btn" type="button" aria-label="Submit Search">Search</button>
+          <div class="search-dropdown js-search-dropdown" style="display:none; position:absolute; top:100%; left:0; right:0; background:#fff; box-shadow:0 4px 12px rgba(0,0,0,0.12); border-radius:6px; z-index:50; max-height:340px; overflow-y:auto;"></div>
         </div>
       </div>
     </section>
 
-    <!-- hot link_1 ......................................... -->
+    <%- include('./includeFolder/monetagNative.ejs') %>
+
+    <!-- ===================== TRENDING SEARCHES ===================== -->
+    <section class="container my-4">
+      <h2 class="text-color" style="text-align:center;margin-bottom:1.5rem;">Trending Student Searches</h2>
+      <div class="info-section">
+        <article class="info-card">
+          <h3>UNN Cut-Off Mark</h3>
+          <p>Check University of Nigeria Nsukka official departmental cut-off scores.</p>
+          <a class="cta-button" href="/university/unn/cut-off-mark">View Details</a>
+        </article>
+        <article class="info-card">
+          <h3>UNILAG School Fees</h3>
+          <p>Current schedule of fees for freshers and returning UNILAG students.</p>
+          <a class="cta-button" href="/university/unilag/school-fees">View Details</a>
+        </article>
+        <article class="info-card">
+          <h3>UI Post-UTME Form</h3>
+          <p>Application guidelines, requirements, and dates for University of Ibadan.</p>
+          <a class="cta-button" href="/university/ui/post-utme">View Details</a>
+        </article>
+        <article class="info-card">
+          <h3>OAU Admission Requirements</h3>
+          <p>O’level requirements and subject combinations for Obafemi Awolowo University.</p>
+          <a class="cta-button" href="/university/oau/admission-requirements">View Details</a>
+        </article>
+        <article class="info-card">
+          <h3>YABATECH Cut-Off Mark</h3>
+          <p>Yaba College of Technology ND & HND admission benchmarks.</p>
+          <a class="cta-button" href="/polytechnic/yabatech/cut-off-mark">View Details</a>
+        </article>
+        <article class="info-card">
+          <h3>LASPOTECH School Fees</h3>
+          <p>Lagos State Polytechnic current session fee structures.</p>
+          <a class="cta-button" href="/polytechnic/laspotech/school-fees">View Details</a>
+        </article>
+      </div>
+    </section>
+
+    <%- include('./includeFolder/monetagNative.ejs') %>
+
+    <!-- Hot Links Partial -->
     <%- include('./includeFolder/hot_link_1.ejs') %>
-    <!-- hot link_1 ......................................... -->
 
     <!-- ===================== STUDENT TOOLS ===================== -->
-    <section class="container">
-      <h2 class="text-color" style="text-align:center;margin-bottom:1rem;">Student Tools</h2>
+    <section class="container my-4">
+      <h2 class="text-color" style="text-align:center;margin-bottom:1.5rem;">Free Academic Calculators & Tools</h2>
       <div class="info-section">
-        <div class="info-card">
+        <article class="info-card">
           <h3>GPA / CGPA Calculator</h3>
-          <p>Calculate your semester GPA, cumulative CGPA, and expected degree classification instantly.</p>
-          <a href="/calculate/cgpa/app" class="cta-button">Calculate Now</a>
-        </div>
-        <div class="info-card">
+          <p>Calculate your semester GPA, cumulative CGPA, and degree classification for Nigerian polytechnics and universities.</p>
+          <a href="/calculate/cgpa/app" class="cta-button">Calculate CGPA</a>
+        </article>
+        <article class="info-card">
           <h3>JAMB Aggregate Calculator</h3>
-          <p>Estimate your admission aggregate score using your JAMB, Post-UTME, and O'Level results.</p>
-          <a href="/calculate/jamb-aggregate/app" class="cta-button">Calculate Now</a>
-        </div>
-        <div class="info-card">
+          <p>Instantly estimate your post-UTME screening score by combining your JAMB score and O’Level grades.</p>
+          <a href="/calculate/jamb-aggregate/app" class="cta-button">Calculate Aggregate</a>
+        </article>
+        <article class="info-card">
           <h3>Course Eligibility Checker</h3>
-          <p>Check the subject combination required for your dream course, and see if you qualify.</p>
-          <a href="/check/course-eligibility/app" class="cta-button">Check Now</a>
-        </div>
+          <p>Verify if your WAEC, NECO, or NABTEB subject combination meets the mandatory entry criteria for your course.</p>
+          <a href="/check/course-eligibility/app" class="cta-button">Check Eligibility</a>
+        </article>
       </div>
     </section>
 
-    <!-- ===================== JAMB / WAEC / CAREER ===================== -->
-    <section class="container">
-      <h2 class="text-color" style="text-align:center;margin-bottom:1rem;">Exam & Admission Info</h2>
+    <%- include('./includeFolder/monetagNative.ejs') %>
+    <%- include('./includeFolder/_jamb_2.ejs') %>
+
+    <!-- ===================== EXAM & ADMISSION INFO ===================== -->
+    <section class="container my-4">
+      <h2 class="text-color" style="text-align:center;margin-bottom:1.5rem;">Exam Updates & Career Guidance</h2>
       <div class="info-section">
-        <div class="info-card">
-          <h3>JAMB Info</h3>
-          <p>JAMB provides up-to-date information every year regarding registration guidelines, ePIN purchases, accredited CBT centers, exam dates, mock exams, result checking, and admission processes through the Central Admission Processing System (CAPS).</p>
-          <a href="/jamb-data/corrections/guide/page" class="cta-button">Explore More</a>
-        </div>
-        <div class="info-card">
-          <h3>WAEC and NECO Info</h3>
-          <p>Stay updated with the latest news and updates about WAEC (West African Examinations Council) and NECO (National Examinations Council), two of Nigeria's most important exam bodies for secondary school students.</p>
-          <a href="/waec-neco/freq/questions" class="cta-button">Explore More</a>
-        </div>
-        <div class="info-card">
-          <h3>Career Paths</h3>
-          <p>Choosing the right career path is a major step toward achieving personal and professional fulfillment. Whether you're a secondary school student, university graduate, or someone considering a change, understanding different career options can help you make informed decisions.</p>
-          <a href="/career/page" class="cta-button">Explore More</a>
-        </div>
+        <article class="info-card">
+          <h3>JAMB & CAPS Updates</h3>
+          <p>Stay informed on UTME registration guidelines, ePIN vending centers, CBT updates, result checking, and JAMB CAPS admission status verification.</p>
+          <a href="/jamb-data/corrections/guide/page" class="cta-button">Read JAMB Guides</a>
+        </article>
+        <article class="info-card">
+          <h3>WAEC & NECO Info</h3>
+          <p>Get reliable updates regarding Senior Secondary Certificate Examinations (SSCE), GCE registrations, timetables, and online result checker portals.</p>
+          <a href="/waec-neco/freq/questions" class="cta-button">Read SSCE Guides</a>
+        </article>
+        <article class="info-card">
+          <h3>Career & Degree Guidance</h3>
+          <p>Discover high-demand careers, prospective salary insights, and course relevance in the current job market to guide your degree selection.</p>
+          <a href="/career/page" class="cta-button">Explore Careers</a>
+        </article>
       </div>
     </section>
 
   </main>
-<script src="js/search.js"></script>
-  <!-- foooter ......................................... -->
+
+  <script src="js/search.js"></script>
+
+  <!-- ===================== FOOTER INCLUDES ===================== -->
   <%- include('./includeFolder/jambHot_link6.ejs') %>
   <script src="js/index.js"></script>
   <%- include('./includeFolder/_footer.ejs') %>
-  <!-- foooter ......................................... -->
+  <%- include('./includeFolder/monetagNative.ejs') %>
 
 </body>
 </html>

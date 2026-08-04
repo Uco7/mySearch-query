@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+<%
+  // Dynamic year so titles/meta never go stale — always reflects the current admission cycle
+  const currentYear = new Date().getFullYear();
+%>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>JAMB Correction of Name or Date of Birth (2025 Guide)</title>
+  <title>JAMB Correction of Name or Date of Birth (<%= currentYear %> Guide)</title>
 
   <!-- SEO Meta Tags -->
   <meta name="description" content="Need to fix your name or date of birth on your JAMB profile? Here's a complete step-by-step guide on how to apply for correction on the JAMB portal.">
-  <meta name="keywords" content="JAMB correction of name, JAMB date of birth correction, JAMB change of name 2025, JAMB portal correction, how to correct JAMB details">
+  <meta name="keywords" content="JAMB correction of name, JAMB date of birth correction, JAMB change of name <%= currentYear %>, JAMB portal correction, how to correct JAMB details">
   <meta name="author" content="mysearch-query.onrender">
 
   <!-- Open Graph / Facebook -->
-  <meta property="og:title" content="JAMB Correction of Name or Date of Birth (2025 Guide)">
+  <meta property="og:title" content="JAMB Correction of Name or Date of Birth (<%= currentYear %> Guide)">
   <meta property="og:description" content="Learn how to correct your name or date of birth on the JAMB portal easily. Includes requirements and step-by-step process.">
   <meta property="og:url" content="https://mysearch-query.onrender.com//jamb/data/correction/page">
   <meta property="og:type" content="article">
@@ -19,7 +23,7 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="JAMB Correction of Name or Date of Birth – Full Guide 2025">
+  <meta name="twitter:title" content="JAMB Correction of Name or Date of Birth – Full Guide <%= currentYear %>">
   <meta name="twitter:description" content="Step-by-step instructions on how to correct your name or date of birth on the JAMB website.">
   <meta name="twitter:image" content="https://mysearch-query.onrender.com/images/jamb-correction-guide.jpg">
   <style>

@@ -1,31 +1,35 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<%
+  // Dynamic year so the guide always refers to the upcoming admission cycle
+  const currentYear = new Date().getFullYear();
+%>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>JAMB Registration 2025 Start Date | Official Timetable & Guide</title>
+  <title>JAMB Registration <%= currentYear %> Start Date | Official Timetable & Guide</title>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Find out the official JAMB Registration 2025 start date, requirements, deadline, and complete step-by-step guide for UTME candidates.">
-  <meta name="keywords" content="JAMB Registration 2025, JAMB start date 2025, UTME registration, JAMB form 2025, JAMB 2025 date, JAMB registration guide">
+  <meta name="description" content="Find out the official JAMB Registration <%= currentYear %> start date, requirements, deadline, and complete step-by-step guide for UTME candidates.">
+  <meta name="keywords" content="JAMB Registration <%= currentYear %>, JAMB start date <%= currentYear %>, UTME registration, JAMB form <%= currentYear %>, JAMB <%= currentYear %> date, JAMB registration guide">
   <meta name="author" content="YourWebsiteName">
 
   <!-- Open Graph / Facebook -->
-  <meta property="og:title" content="JAMB Registration 2025 Start Date & Complete Guide">
-  <meta property="og:description" content="Learn when JAMB 2025 registration starts, requirements, deadline, and how to register correctly.">
+  <meta property="og:title" content="JAMB Registration <%= currentYear %> Start Date & Complete Guide">
+  <meta property="og:description" content="Learn when JAMB <%= currentYear %> registration starts, requirements, deadline, and how to register correctly.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://mysearch-query.onrender.com/jamb-reg-date/page">
   <meta property="og:image" content="https://mysearch-query.onrender.com/images/jamb-2025-registration.jpg">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="JAMB Registration 2025 Start Date & Steps">
-  <meta name="twitter:description" content="Discover everything you need to know about JAMB 2025 registration including start date, deadline, and requirements.">
+  <meta name="twitter:title" content="JAMB Registration <%= currentYear %> Start Date & Steps">
+  <meta name="twitter:description" content="Discover everything you need to know about JAMB <%= currentYear %> registration including start date, deadline, and requirements.">
   <meta name="twitter:image" content="https://mysearch-query.onrender.com/images/jamb-2025-registration.jpg">
 
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://mysearch-query.onrender.com/jamb-registration-2025">
+  <link rel="canonical" href="https://mysearch-query.onrender.com/jamb-registration-<%= currentYear %>">
   
 </head>
 <body>
@@ -33,7 +37,7 @@
 <%- include('../includeFolder/_headers.ejs') %>
 <!--include  header file -->
   <div class="container section-txt">
-    <h1 class="heading-top">📅 JAMB Registration 2025 Start Date – Everything You Need to Know</h1>
+    <h1 class="heading-top">📅 JAMB Registration <%= currentYear %> Start Date – Everything You Need to Know</h1>
 
     <div class="img-block">
       <img src="/images/download.jpg" alt="JAMB Registration Banner">
@@ -41,8 +45,8 @@
 <div class="text-center" style="text-align: center;padding: 1rem;">
     <p>The Joint Admissions and Matriculation Board (JAMB) is the body responsible for conducting the Unified Tertiary Matriculation Examination (UTME) in Nigeria. Every year, hundreds of thousands of candidates register to take this exam, which is a key requirement for gaining admission into universities, polytechnics, and colleges of education in Nigeria.</p>
 
-    <h2>🗓️ JAMB Registration 2025 Start Date</h2>
-    <p>JAMB has announced that the registration for the 2025 UTME will begin on <strong>Monday, January 20th, 2025</strong> and will end on <strong>Tuesday, February 20th, 2025</strong>.</p>
+    <h2>🗓️ JAMB Registration <%= currentYear %> Start Date</h2>
+    <p>JAMB typically opens registration for the <%= currentYear %> UTME between late January and February. Check back here or the official JAMB portal for the exact confirmed start and end dates once announced.</p>
   </div>
     <div class="img-block">
       <img src="/images/utme-jamb-1.png" alt="Candidates registering for JAMB">

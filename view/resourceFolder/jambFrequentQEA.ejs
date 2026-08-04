@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+<%
+  // Dynamic year so titles/meta never go stale — always reflects the current admission cycle
+  const currentYear = new Date().getFullYear();
+%>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>JAMB Data Correction & Portal Info (2025 Update)</title>
+  <title>JAMB Data Correction & Portal Info (<%= currentYear %> Update)</title>
 
   <!-- ✅ Basic SEO -->
-  <meta name="description" content="Learn how to access the JAMB portal and correct your personal data such as name, date of birth, state of origin, and more. 2025 updated guide.">
-  <meta name="keywords" content="JAMB correction of data, JAMB portal, JAMB change of name, JAMB change of birth, how to correct JAMB details, 2025 JAMB update">
+  <meta name="description" content="Learn how to access the JAMB portal and correct your personal data such as name, date of birth, state of origin, and more. <%= currentYear %> updated guide.">
+  <meta name="keywords" content="JAMB correction of data, JAMB portal, JAMB change of name, JAMB change of birth, how to correct JAMB details, <%= currentYear %> JAMB update">
   <meta name="author" content="mysearch-query.onrender">
 
   <!-- ✅ Open Graph for Facebook & LinkedIn -->
-  <meta property="og:title" content="JAMB Data Correction & Portal Info (2025 Update)">
+  <meta property="og:title" content="JAMB Data Correction & Portal Info (<%= currentYear %> Update)">
   <meta property="og:description" content="Need to correct your JAMB details? Here's a full step-by-step guide on how to access the portal and fix your information.">
   <meta property="og:image" content="https://mysearch-query.onrender.com/images/jamb-correction.jpg">
   <meta property="og:url" content="https://mysearch-query.onrender.com/jamb-data-correction">
@@ -19,8 +23,8 @@
 
   <!-- ✅ Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="JAMB Data Correction & Portal Info (2025 Update)">
-  <meta name="twitter:description" content="Learn how to correct your JAMB name, birth date, and other personal info on the portal. 2025 step-by-step guide.">
+  <meta name="twitter:title" content="JAMB Data Correction & Portal Info (<%= currentYear %> Update)">
+  <meta name="twitter:description" content="Learn how to correct your JAMB name, birth date, and other personal info on the portal. <%= currentYear %> step-by-step guide.">
   <meta name="twitter:image" content="https://mysearch-query.onrender.com/images/jamb-correction.jpg">
   <style>
     body {

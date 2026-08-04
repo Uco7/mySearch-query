@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>AE-FUNAI Admission Guide</title>
 
@@ -14,143 +13,138 @@
       const nextYear = year + 1;
       const session = `${year}/${nextYear}`;
       document.title = `AE-FUNAI ${session} Admission Application Guide | How to Apply Online`;
-      document.querySelector('.date').textContent = session;
+      const dateEl = document.querySelector('.date');
+      if (dateEl) dateEl.textContent = session;
     });
   </script>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Step-by-step guide on how to apply for AE-FUNAI ${new Date().getFullYear()}/${new Date().getFullYear() + 1} admission. Learn how to register, pay, and complete your screening application online." />
-  <meta name="keywords" content="AE-FUNAI admission, FUNAI application, 2025 admission guide, AE-FUNAI screening registration, how to apply for FUNAI" />
-  <meta name="author" content="AE-FUNAI Admission Portal" />
-  <link rel="canonical" href="https://mysearch-query.onrender.com/funai-admission-application-guide" />
+  <meta name="description" content="Step-by-step guide on how to apply for AE-FUNAI admission. Learn how to register, pay, and complete your screening application online.">
+  <meta name="keywords" content="AE-FUNAI admission, FUNAI application, admission guide, AE-FUNAI screening registration, how to apply for FUNAI">
+  <meta name="author" content="AE-FUNAI Admission Portal">
+  <link rel="canonical" href="https://mysearch-query.onrender.com/funai-admission-application-guide">
 
   <!-- Open Graph / Facebook -->
-  <meta property="og:title" content="AE-FUNAI Admission Guide ${new Date().getFullYear()}/${new Date().getFullYear() + 1}" />
-  <meta property="og:description" content="Detailed steps to apply for AE-FUNAI admission. Portal access, invoice generation, and screening details." />
-  <meta property="og:type" content="mysearch-query.onrender" />
-  <meta property="og:url" content="https://mysearch-query.onrender.com/funai-admission-application-guide" />
-  <meta property="og:image" content="https://mysearch-query.onrender.com/images/funai-campus.jpg" />
+  <meta property="og:title" content="AE-FUNAI Admission Guide">
+  <meta property="og:description" content="Detailed steps to apply for AE-FUNAI admission. Portal access, invoice generation, and screening details.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mysearch-query.onrender.com/funai-admission-application-guide">
+  <meta property="og:image" content="https://mysearch-query.onrender.com/images/funai-campus.jpg">
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AE-FUNAI Admission Guide ${new Date().getFullYear()}/${new Date().getFullYear() + 1}" />
-  <meta name="twitter:description" content="Step-by-step instructions for applying to AE-FUNAI. Everything you need to know about admission for this session." />
-  <meta name="twitter:image" content="https://mysearch-query.onrender.com/images/funai-campus.jpg" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AE-FUNAI Admission Guide">
+  <meta name="twitter:description" content="Step-by-step instructions for applying to AE-FUNAI. Everything you need to know about admission for this session.">
+  <meta name="twitter:image" content="https://mysearch-query.onrender.com/images/funai-campus.jpg">
 
-          
-    <!-- include header file -->
-<%- include('../includeFolder/_headers.ejs') %>
-<!--include  header file -->
-  
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
-    <header class="heading-top">
-        <h1>How to Apply for Admission to AE-FUNAI (<span class="date"></span>)</h1>
-    </header>
+  <!-- include header file -->
+  <%- include('../includeFolder/_headers.ejs') %>
+  <!-- include header file -->
+</head>
+<body>
 
-    <section class=" container section-txt">
-        <p>Follow these steps to apply for admission to Alex Ekwueme Federal University, Ndufu-Alike (AE-FUNAI) for the 2024/2025 academic session:</p>
+  <header class="heading-top">
+    <h1>How to Apply for Admission to AE-FUNAI (<span class="date"></span>)</h1>
+    <p>Step-by-step guide to online screening registration, requirements, and fee payments.</p>
+  </header>
 
-        <ul  class="child-ul">
-            <li><strong>Step 1: Visit the Official Admission Portal</strong>
-                <ul>
-                    <li>Navigate to the AE-FUNAI admission portal and click on "2024/2025 Admission Screening Registration."</li>
-                </ul>
-            </li>
-            <li><strong>Step 2: Generate Payment Invoice</strong>
-                <ul>
-                    <li>Enter your JAMB Registration Number and generate a Remita invoice for the application fee.</li>
-                </ul>
-            </li>
-            <li><strong>Step 3: Make Payment</strong>
-                <ul>
-                    <li>Proceed to any commercial bank with your Remita invoice to pay the application fee.</li>
-                </ul>
-            </li>
-            <li><strong>Step 4: Complete the Application Form</strong>
-                <ul>
-                    <li>Return to the application portal, enter your JAMB Registration Number, and complete the form with accurate details.</li>
-                </ul>
-            </li>
-            <li><strong>Step 5: Submit and Print Acknowledgement Slip</strong>
-                <ul>
-                    <li>Submit the application and print the acknowledgement slip for your records.</li>
-                </ul>
-            </li>
-        </ul>
-        </section>
-        <%- include('../includeFolder/hot_link_1.ejs') %>
+  <div class="container my-5">
+    <section class="section-txt">
+      <p>Follow these steps to apply for admission to Alex Ekwueme Federal University, Ndufu-Alike (AE-FUNAI):</p>
 
-        <!-- hot link_1...........................///////////// -->
-        <div class="faculty  note" style="margin-left: 2rem;margin-right: 2rem; margin-bottom: 2rem; margin-top: 4rem;">
-            <h2 style="color: white; text-align: left;">Important Notes:</h2>
-            <ul>
-                <li>Ensure you meet the specific admission requirements for your chosen program.</li>
-                <li>Regularly check the AE-FUNAI official website for updates on your admission status and further instructions.</li>
-            </ul>
-        </div>
+      <ul class="child-ul">
+        <li><strong>Step 1: Visit the Official Admission Portal</strong>
+          <ul>
+            <li>Navigate to the AE-FUNAI admission portal and click on "Admission Screening Registration."</li>
+          </ul>
+        </li>
+        <li><strong>Step 2: Generate Payment Invoice</strong>
+          <ul>
+            <li>Enter your JAMB Registration Number and generate a Remita invoice for the application fee.</li>
+          </ul>
+        </li>
+        <li><strong>Step 3: Make Payment</strong>
+          <ul>
+            <li>Proceed to any commercial bank with your Remita invoice to pay the application fee.</li>
+          </ul>
+        </li>
+        <li><strong>Step 4: Complete the Application Form</strong>
+          <ul>
+            <li>Return to the application portal, enter your JAMB Registration Number, and complete the form with accurate details.</li>
+          </ul>
+        </li>
+        <li><strong>Step 5: Submit and Print Acknowledgement Slip</strong>
+          <ul>
+            <li>Submit the application and print the acknowledgement slip for your records.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
 
-          <!-- General Queries Section -->
-        <%- include('../includeFolder/_admission_queryLink.ejs') %>
+    <div class="note my-4">
+      <h2 class="text-white">Important Notes:</h2>
+      <ul class="text-white">
+        <li>Ensure you meet the specific admission requirements for your chosen program.</li>
+        <li>Regularly check the AE-FUNAI official website for updates on your admission status and further instructions.</li>
+      </ul>
+    </div>
 
-        <!-- General Queries Section -->
-        <header class="heading-top">
-            <h1>AE-FUNAI 2024 Undergraduate Admission Requirements</h1>
-        </header>
-    
-        <section class="section-txt">
-            <h2>1. O'Level Requirements:</h2>
-            <ul class="child-ul">
-                <li>Obtain a minimum of five (5) credit passes in relevant subjects at the Senior Secondary School Certificate Examination (SSCE) or its equivalent.</li>
-                <li>The credit passes must include English Language and Mathematics.</li>
-                <li>These credits should be obtained at not more than two sittings.</li>
-            </ul>
-    
-            <h2>2. UTME (JAMB) Requirements:</h2>
-            <ul>
-                <li>Achieve an acceptable score in the Unified Tertiary Matriculation Examination (UTME) in subjects relevant to the chosen course of study.</li>
-            </ul>
-    
-            <h2>3. Direct Entry Requirements (for 200 Level Admission):</h2>
-            <ul class="child-ul">
-                <li>In addition to the O'Level requirements, candidates must possess:
-                    <ul>
-                        <li>At least two (2) A'Level passes in relevant subjects.</li>
-                        <li>National Certificate of Education (NCE) or National Diploma (ND) with credit passes.</li>
-                        <li>A good first degree in another field, where applicable.</li>
-                    </ul>
-                </li>
-            </ul>
-    
-            <h2>4. Faculty/Departmental Specific Requirements:</h2>
-            <ul>
-                <li>Each faculty and department may have additional specific requirements.</li>
-                <li>Prospective students should consult the university's official website or contact the admissions office for detailed information on departmental prerequisites.</li>
-            </ul>
-    
-        </section>
-        <div class="  note">
-            <p style="color: white;"><strong >Important Note:</strong></p>
-            <ul>
-                <li>Ensure that you meet the specific admission requirements for your chosen program.</li>
-                <li>Regularly check the AE-FUNAI official website for updates on your admission status and further instructions.</li>
-            </ul>
-        </div>
-        <%- include('../includeFolder/hot_link_2.ejs') %>
+    <!-- General Queries Section -->
+     <%- include('../includeFolder/_jamb_2.ejs') %>
+    <!-- General Queries Section -->
 
-        <!-- hot link_1...........................///////////// -->
-        <header>
-            <h1 class="heading">FUNAI Acceptance Fee</h1>
-        </header>
-    
-        <div class="container">
-            <p>The acceptance fee for newly admitted students at FUNAI is available online:</p>
-            <p><a href="https://funai.edu.ng/acceptance-fee" target="_blank">Click here for details on the acceptance fee</a>.</p>
-            <p>Make sure to pay the acceptance fee promptly to secure your admission.</p>
-        </div>
-    
-       
-            <!-- foooter................./////////////////// -->
-    <%- include('../includeFolder/_footer.ejs') %>
+    <section class="section-txt my-4">
+      <h2 class="heading">AE-FUNAI Undergraduate Admission Requirements</h2>
 
-    <!-- foooter................./////////////////// -->
+      <h3 class="text-color">1. O'Level Requirements:</h3>
+      <ul class="child-ul">
+        <li>Obtain a minimum of five (5) credit passes in relevant subjects at the Senior Secondary School Certificate Examination (SSCE) or its equivalent.</li>
+        <li>The credit passes must include English Language and Mathematics.</li>
+        <li>These credits should be obtained at not more than two sittings.</li>
+      </ul>
 
+      <h3 class="text-color">2. UTME (JAMB) Requirements:</h3>
+      <ul class="child-ul">
+        <li>Achieve an acceptable score in the Unified Tertiary Matriculation Examination (UTME) in subjects relevant to the chosen course of study.</li>
+      </ul>
+
+      <h3 class="text-color">3. Direct Entry Requirements (for 200 Level Admission):</h3>
+      <ul class="child-ul">
+        <li>In addition to the O'Level requirements, candidates must possess:
+          <ul>
+            <li>At least two (2) A'Level passes in relevant subjects.</li>
+            <li>National Certificate of Education (NCE) or National Diploma (ND) with credit passes.</li>
+            <li>A good first degree in another field, where applicable.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3 class="text-color">4. Faculty/Departmental Specific Requirements:</h3>
+      <ul class="child-ul">
+        <li>Each faculty and department may have additional specific requirements.</li>
+        <li>Prospective students should consult the university's official website or contact the admissions office for detailed information on departmental prerequisites.</li>
+      </ul>
+    </section>
+
+    <section class="section-txt my-4">
+      <h2 class="heading">FUNAI Acceptance Fee</h2>
+      <p>The acceptance fee for newly admitted students at FUNAI is available online:</p>
+      <p><a href="https://funai.edu.ng/acceptance-fee" target="_blank" rel="noopener">Click here for details on the acceptance fee</a>.</p>
+      <p>Make sure to pay the acceptance fee promptly to secure your admission.</p>
+    </section>
+  </div>
+
+  <!-- hot links...........................///////////// -->
+  <%- include('../includeFolder/hot_link_1.ejs') %>
+  <%- include('../includeFolder/hot_link_2.ejs') %>
+  <!-- hot links...........................///////////// -->
+
+  <!-- footer ......................................... -->
+  <script src="js/index.js"></script>
+  <%- include('../includeFolder/_footer.ejs') %>
+  <!-- footer ......................................... -->
+</body>
+</html>

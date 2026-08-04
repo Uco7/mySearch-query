@@ -1,34 +1,196 @@
-<%# ============================================================
-    Drop this into index.ejs (or your institution-directory page)
-    wherever the old `.university-list` markup lives. It now links
-    BOTH universities and polytechnics, and each entry deep-links
-    straight to the most-searched page (Cut-Off Mark) as well as
-    the full profile — two internal links per school instead of one,
-    which is good for both SEO crawl depth and user intent matching.
-   ============================================================ %>
+<%# ===========================================================
+ SEO Optimized Institution Directory
+ ============================================================ %>
 
-<section class="section-txt">
-  <h2>Nigerian Universities</h2>
+<section class="section-txt" aria-labelledby="universities-heading">
+
+  <h2 id="universities-heading">
+    Nigerian Universities
+  </h2>
+
+  <p>
+    Browse Nigerian universities and quickly access admission requirements,
+    cut-off marks, school fees, Post-UTME information, courses, and other
+    admission resources.
+  </p>
+
   <ul class="university-list">
+
     <% universities.forEach(u => { %>
-      <li>
-        <a href="/university/<%= u.slug %>"><%= u.name %> (<%= u.abbreviation %>)</a>
-        &nbsp;·&nbsp;
-        <a href="/university/<%= u.slug %>/cut-off-mark" style="font-size:0.85em;">Cut-Off Mark</a>
+
+      <li class="institution-item">
+
+        <h3 class="institution-title">
+          <a
+            href="/university/<%= u.slug %>"
+            title="<%= u.name %> Admission Information">
+            <%= u.name %> (<%= u.abbreviation %>)
+          </a>
+        </h3>
+
+        <div class="institution-links">
+
+          <a
+            href="/university/<%= u.slug %>/cut-off-mark"
+            title="<%= u.name %> Cut Off Mark">
+            Cut-Off Mark
+          </a>
+
+          |
+
+          <a
+            href="/university/<%= u.slug %>/school-fees"
+            title="<%= u.name %> School Fees">
+            School Fees
+          </a>
+
+          |
+
+          <a
+            href="/university/<%= u.slug %>/admission-requirements"
+            title="<%= u.name %> Admission Requirements">
+            Admission
+          </a>
+
+          |
+
+          <a
+            href="/university/<%= u.slug %>/courses"
+            title="<%= u.name %> Courses">
+            Courses
+          </a>
+
+          |
+
+          <a
+            href="/university/<%= u.slug %>/post-utme"
+            title="<%= u.name %> Post UTME">
+            Post-UTME
+          </a>
+
+        </div>
+
       </li>
+
     <% }) %>
+
   </ul>
+
 </section>
 
-<section class="section-txt">
-  <h2>Nigerian Polytechnics</h2>
+
+
+<section class="section-txt" aria-labelledby="polytechnics-heading">
+
+  <h2 id="polytechnics-heading">
+    Nigerian Polytechnics
+  </h2>
+
+  <p>
+    Explore Nigerian polytechnics, ND/HND admission requirements,
+    school fees, departmental cut-off marks, and available courses.
+  </p>
+
   <ul class="university-list">
+
     <% polytechnics.forEach(p => { %>
-      <li>
-        <a href="/polytechnic/<%= p.slug %>"><%= p.name %> (<%= p.abbreviation %>)</a>
-        &nbsp;·&nbsp;
-        <a href="/polytechnic/<%= p.slug %>/cut-off-mark" style="font-size:0.85em;">Cut-Off Mark</a>
+
+      <li class="institution-item">
+
+        <h3 class="institution-title">
+
+          <a
+            href="/polytechnic/<%= p.slug %>"
+            title="<%= p.name %> Admission Information">
+            <%= p.name %> (<%= p.abbreviation %>)
+          </a>
+
+        </h3>
+
+        <div class="institution-links">
+
+          <a
+            href="/polytechnic/<%= p.slug %>/cut-off-mark"
+            title="<%= p.name %> Cut Off Mark">
+            Cut-Off Mark
+          </a>
+
+          |
+
+          <a
+            href="/polytechnic/<%= p.slug %>/school-fees"
+            title="<%= p.name %> School Fees">
+            School Fees
+          </a>
+
+          |
+
+          <a
+            href="/polytechnic/<%= p.slug %>/admission-requirements"
+            title="<%= p.name %> Admission Requirements">
+            Admission
+          </a>
+
+          |
+
+          <a
+            href="/polytechnic/<%= p.slug %>/courses"
+            title="<%= p.name %> Courses">
+            Courses
+          </a>
+
+          |
+
+          <a
+            href="/polytechnic/<%= p.slug %>/post-utme"
+            title="<%= p.name %> Post UTME">
+            Post-UTME
+          </a>
+
+        </div>
+
       </li>
+
     <% }) %>
+
   </ul>
+
 </section>
+<style>
+  .institution-item{
+    margin-bottom:18px;
+    padding-bottom:18px;
+    border-bottom:1px solid #ddd;
+}
+
+.institution-title{
+    font-size:1.05rem;
+    margin-bottom:8px;
+}
+
+.institution-title a{
+    color:#1565c0;
+    text-decoration:none;
+    font-weight:700;
+}
+
+.institution-title a:hover{
+    text-decoration:underline;
+}
+
+.institution-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    font-size:.92rem;
+}
+
+.institution-links a{
+    color:#2e7d32;
+    text-decoration:none;
+}
+
+.institution-links a:hover{
+    text-decoration:underline;
+}
+</style>

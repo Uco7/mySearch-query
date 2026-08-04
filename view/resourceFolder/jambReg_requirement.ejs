@@ -1,27 +1,32 @@
+<% 
+  const year = typeof currentYear !== 'undefined' ? currentYear : (typeof seo !== 'undefined' && seo.year ? seo.year : new Date().getFullYear());
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>JAMB 2025: Exam Date, Centres & Registration Requirements</title>
+  <title>JAMB <%= year %>: CBT Exam Date, Accredited Centres & Registration Requirements</title>
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Get updated details on JAMB 2025 CBT exam date, accredited registration centres, and all requirements for successful registration.">
-  <meta name="keywords" content="JAMB 2025, JAMB exam date, JAMB centres, JAMB registration requirements, CBT exam 2025, accredited JAMB centres">
-  <meta name="author" content="mysearch-query.onrender">
+  <!-- ✅ Advanced SEO Meta Tags -->
+  <meta name="description" content="Get updated details on JAMB <%= year %> CBT exam dates, accredited registration centres, and complete requirements for a successful application.">
+  <meta name="keywords" content="JAMB <%= year %>, JAMB exam date <%= year %>, JAMB centres <%= year %>, JAMB registration requirements, CBT exam <%= year %>">
+  <meta name="author" content="MySchoolGist">
+  <link rel="canonical" href="https://mysearch-query.onrender.com/jamb-reg-date/page">
 
-  <!-- Open Graph / Facebook Meta Tags -->
-  <meta property="og:title" content="JAMB 2025: Exam Date, Centres & Registration Requirements">
-  <meta property="og:description" content="Learn about the official JAMB 2025 CBT exam schedule, accredited centres, and the full list of registration requirements in this guide.">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="JAMB <%= year %>: CBT Exam Date, Centres & Registration Requirements">
+  <meta property="og:description" content="Learn about the official JAMB <%= year %> CBT exam schedule, accredited centres, and full list of registration requirements.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://mysearch-query.onrender.com/jamb-reg-date/page">
   <meta property="og:image" content="https://www.schoolcontents.info/wp-content/uploads/2022/01/jamb-registration.jpg">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="JAMB 2025: Exam Date, Centres & Registration Requirements">
-  <meta name="twitter:description" content="Everything you need to know about JAMB 2025: exam dates, where to register, and what's required.">
+  <meta name="twitter:title" content="JAMB <%= year %>: Exam Date, Centres & Registration Requirements">
+  <meta name="twitter:description" content="Everything you need to know about JAMB <%= year %>: exam dates, accredited centers, and requirements.">
   <meta name="twitter:image" content="https://www.schoolcontents.info/wp-content/uploads/2022/01/jamb-registration.jpg">
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -63,16 +68,22 @@
       max-width: 100%;
       border-radius: 6px;
     }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
   </style>
-       <%- include('../includeFolder/_headers.ejs') %>
 
+  <%- include('../includeFolder/_headers.ejs') %>
+</head>
+<body>
 
   <div class="container">
-    <h1>JAMB 2025: CBT Exam Date, Accredited Centres & Registration Requirements</h1>
+    <h1>JAMB <%= year %>: CBT Exam Date, Accredited Centres & Registration Requirements</h1>
 
     <div class="section">
-      <h2>📅 JAMB CBT Exam Date 2025</h2>
-      <p>The Joint Admissions and Matriculation Board (JAMB) has announced that the 2025 UTME (Unified Tertiary Matriculation Examination) will take place from <strong>Saturday, April 19th to Monday, April 28th, 2025</strong>.</p>
+      <h2>📅 JAMB CBT Exam Date <%= year %></h2>
+      <p>The Joint Admissions and Matriculation Board (JAMB) schedules the annual Unified Tertiary Matriculation Examination (UTME) across accredited CBT centers nation-wide.</p>
       <p>All candidates who have successfully registered should prepare ahead and stay updated by visiting the official JAMB portal regularly.</p>
     </div>
 
@@ -81,36 +92,36 @@
       <p>You must register and sit for your exam at JAMB-accredited centres only. These centres are authorized to ensure a secure and standardized testing experience for all candidates.</p>
       <p>To find a JAMB CBT centre near you:</p>
       <ul>
-        <li>Visit the official <a href="https://www.jamb.gov.ng" target="_blank">JAMB Website</a>.</li>
-        <li>Click on "Accredited CBT Centres" under the UTME section.</li>
+        <li>Visit the official <a href="https://www.jamb.gov.ng" target="_blank">JAMB Portal</a>.</li>
+        <li>Click on "Accredited CBT Centres" under the UTME menu.</li>
         <li>Select your state to view approved centres in your area.</li>
       </ul>
       <div class="highlight">
-        <strong>Note:</strong> Do not register at cybercafés or unauthorized locations to avoid invalid registration or fraud.
+        <strong>Warning:</strong> Do not register at cybercafés or unauthorized locations to avoid invalid registration or scam centers.
       </div>
     </div>
 
     <div class="section">
-      <h2>📝 JAMB Registration Requirements</h2>
-      <p>Before registering for JAMB 2025, ensure you have the following:</p>
+      <h2>📝 JAMB Registration Requirements <%= year %></h2>
+      <p>Before registering for JAMB <%= year %>, ensure you have the following:</p>
       <ul>
-        <li><strong>NIN (National Identification Number)</strong> – It is compulsory for registration.</li>
-        <li><strong>Valid Email Address</strong> – Preferably Gmail for easier integration.</li>
-        <li><strong>Phone Number</strong> – Used for receiving codes and updates.</li>
-        <li><strong>Profile Code</strong> – Send your NIN via SMS to 55019 or 66019 to get your profile code.</li>
-        <li><strong>O’Level Results (WAEC/NECO/NABTEB)</strong> – You may apply with awaiting result too.</li>
-        <li><strong>Passport Photograph</strong> – Must be recent and meet JAMB standards.</li>
-        <li><strong>Registration Fee</strong> – Approximately ₦4,700 (with mock) or ₦3,500 (without mock).</li>
+        <li><strong>NIN (National Identification Number)</strong> – Mandatory for registration.</li>
+        <li><strong>Valid Email Address</strong> – Active personal email address for notifications.</li>
+        <li><strong>Phone Number</strong> – Unique personal number used for profile code generation.</li>
+        <li><strong>Profile Code</strong> – Generated by sending your NIN via SMS to 55019 or 66019.</li>
+        <li><strong>O’Level Results (WAEC/NECO/NABTEB)</strong> – Candidates awaiting results may also apply.</li>
+        <li><strong>Passport Photograph</strong> – Biometrically captured at approved CBT centers.</li>
       </ul>
-      <p>Once all documents and data are ready, proceed to any accredited centre to complete the biometric and form filling process.</p>
     </div>
 
-    <img src="https://jamb.gov.ng/images/logo.png" alt="JAMB Logo" class="img-center" />
+    <img src="https://jamb.gov.ng/images/logo.png" alt="JAMB Official Logo" class="img-center" />
 
-    <p style="text-align: center; margin-top: 2rem;"><em>Stay updated, stay informed. Good luck with your JAMB 2025 preparation!</em></p>
+    <p style="text-align: center; margin-top: 2rem;"><em>Stay updated, stay informed. Good luck with your JAMB <%= year %> preparation!</em></p>
   </div>
- <!-- foooter ......................................... -->
+
+  <!-- footer ......................................... -->
   <%- include('../includeFolder/jambHot_link6.ejs') %>
   <script src="js/index.js"></script>
   <%- include('../includeFolder/_footer.ejs') %>
-  <!-- foooter ......................................... -->
+</body>
+</html>

@@ -1,114 +1,148 @@
+<%
+const currentYear = new Date().getFullYear();
+const nextYear = currentYear + 1;
+const session = `${currentYear}/${nextYear}`;
+
+const pageTitle = `UNN JAMB Subject Combinations & O'Level Requirements ${session}`;
+const pageDescription = `Complete guide to subject combinations for all faculties at the University of Nigeria, Nsukka (UNN) for the ${session} academic session.`;
+const pageKeywords = `UNN JAMB subject combination ${session}, UNN departmental requirements, University of Nigeria Nsukka subject guide`;
+const pageUrl = `https://mysearch-query.onrender.com/unn-jamb/courses/programs`;
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>UNN Required Subjects - Admission Guide for All Courses</title>
+  <!-- ===================== PRIMARY SEO ===================== -->
+  <title><%= pageTitle %></title>
+  <meta name="description" content="<%= pageDescription %>" />
+  <meta name="keywords" content="<%= pageKeywords %>" />
+  <meta name="author" content="UC Tech Hub" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="<%= pageUrl %>" />
 
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Find the complete list of required O'Level and JAMB subjects for all courses at the University of Nigeria, Nsukka (UNN). Plan your admission process with accurate subject combinations.">
-    <meta name="keywords" content="UNN required subjects, UNN admission requirements, JAMB subject combination, UNN courses and requirements, University of Nigeria Nsukka, O'Level requirements UNN">
-    <meta name="author" content="mysearch-query">
+  <!-- ===================== OPEN GRAPH ===================== -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="UC Tech Hub" />
+  <meta property="og:title" content="UNN JAMB Subject Combinations <%= session %>" />
+  <meta property="og:description" content="<%= pageDescription %>" />
+  <meta property="og:url" content="<%= pageUrl %>" />
+  <meta property="og:image" content="https://mysearch-query.onrender.com/images/logo.jpg" />
 
-    <!-- Open Graph / Social Media Tags -->
-    <meta property="og:title" content="UNN Required Subjects - Admission Guide for All Courses">
-    <meta property="og:description" content="Discover the correct subject combinations for every course at UNN. Avoid mistakes in your JAMB or WAEC/NECO subject selections.">
-    <meta property="og:type" content="https://mysearch-query.onrender.com/unn-jamb/courses/programs">
-    <meta property="og:url" content="https://mysearch-query.onrender.com/unn-jamb/courses/programs"> <!-- Replace with actual page URL -->
-    <meta property="og:image" content="https://mysearch-query.onrender.com/images/unn-subjects-guide.jpg"> <!-- Replace with your image URL -->
+  <!-- ===================== TWITTER CARD ===================== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="UNN JAMB Subject Combinations <%= session %>" />
+  <meta name="twitter:description" content="<%= pageDescription %>" />
+  <meta name="twitter:image" content="https://mysearch-query.onrender.com/images/logo.jpg" />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="UNN Required Subjects - Admission Guide">
-    <meta name="twitter:description" content="Accurate JAMB and WAEC subject combinations for all UNN courses. Ensure you meet the requirements.">
-    <meta name="twitter:image" content="https://mysearch-query.onrender.com/images/unn-subjects-guide.jpg">
+  <link rel="icon" href="/images/logo.jpg" type="image/jpeg" />
 
-   <!-- include header file -->
-<%- include('../includeFolder/_headers.ejs') %>
-<!--include  header file -->
-    <div class="image">   </div>
-    <div class="container mt-4">
-        <h2 class="text-center">Jamb Subjects  Combination for Different Programs</h2>
-        
-        <!-- Search Bar -->
-        <div class="mb-3">
-            <input type="text" id="searchInput" class="form-control" placeholder="Search for a course..." onkeyup="searchCourse()">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <%- include('../includeFolder/_headers.ejs') %>
+</head>
+<body>
+
+  <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="nav-header" id="scrollHeader">
+    <div class="logo"><img src="/images/logo.jpg" alt="UC Tech Hub logo"></div>
+    <div class="menu-toggle" onclick="toggleMenu()" role="button" aria-label="Toggle navigation" tabindex="0">☰</div>
+    <ul class="header-nav-links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/nigeria/list-of-institution/page">Universities</a></li>
+      <li><a href="/calculate/cgpa/app">CGPA Calculator</a></li>
+      <li><a href="/calculate/jamb-aggregate/app">Aggregate Calculator</a></li>
+      <li><a href="/check/course-eligibility/app">Eligibility Checker</a></li>
+      <li class="contact-link"><a href="/contact-us/page">Contact Us</a></li>
+    </ul>
+  </header>
+  <script>
+    function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+  </script>
+
+  <main id="main-content">
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <a href="/">Home</a> &rsaquo;
+      <a href="/nigeria/list-of-institution/page">UNN Guides</a> &rsaquo;
+      <span>JAMB Subject Combinations</span>
+    </nav>
+
+    <section class="hero">
+      <h1>UNN JAMB Subject Combinations (<%= session %>)</h1>
+      <p>Official Departmental Subject Requirements & Guidelines</p>
+    </section>
+         <%- include('../includeFolder/_jamb_2.ejs') %>
+
+
+    <div class="container">
+      <div class="section-txt">
+        <h2>Course Requirement Search</h2>
+        <div style="margin-bottom: 1.5rem;">
+          <input type="text" id="searchInput" class="form-control" placeholder="Search for a course..." onkeyup="searchCourse()" style="width:100%; padding:0.75rem; border-radius:6px; border:1px solid #ccc;">
         </div>
 
-        <!-- Required Subjects Table -->
         <div class="table-responsive">
-            <table class="table table-bordered table-hover">
-                <thead class="table-dark">
-                    <tr>
-                        <th>Faculty</th>
-                        <th>Course</th>
-                        <th>Required Subjects</th>
-                    </tr>
-                </thead>
-                <tbody id="courseTable">
-                    <tr><td>Medicine</td><td>Medicine & Surgery</td><td>English, Biology, Chemistry, Physics</td></tr>
-                    <tr><td>Law</td><td>Law</td><td>English, Government, Literature, CRS/IRS</td></tr>
-                    <tr><td>Engineering</td><td>Electrical Engineering</td><td>English, Mathematics, Physics, Chemistry</td></tr>
-                    <tr><td>Engineering</td><td>Civil Engineering</td><td>English, Mathematics, Physics, Chemistry</td></tr>
-                    <tr><td>Engineering</td><td>Mechanical Engineering</td><td>English, Mathematics, Physics, Chemistry</td></tr>
-                    <tr><td>Business</td><td>Business Administration</td><td>English, Mathematics, Economics, Government</td></tr>
-                    <tr><td>Science</td><td>Computer Science</td><td>English, Mathematics, Physics, Chemistry</td></tr>
-                    <tr><td>Science</td><td>Microbiology</td><td>English, Biology, Chemistry, Physics</td></tr>
-                    <tr><td>Social Science</td><td>Economics</td><td>English, Mathematics, Economics, Government</td></tr>
-                    <tr><td>Social Science</td><td>Political Science</td><td>English, Government, CRS/IRS, Economics</td></tr>
-                    <tr><td>Education</td><td>Education Management</td><td>English, Mathematics, Economics, Government</td></tr>
-                    <tr><td>Education</td><td>Educational Psychology</td><td>English, Government, CRS/IRS, Literature</td></tr>
-                    <tr><td>Agriculture</td><td>Agricultural Science</td><td>English, Biology, Chemistry, Physics</td></tr>
-                </tbody>
-            </table>
+          <table class="table table-bordered table-hover" style="width:100%; border-collapse:collapse;">
+            <thead>
+              <tr style="background:#2c3e50; color:#fff;">
+                <th style="padding:10px;">Faculty</th>
+                <th style="padding:10px;">Course</th>
+                <th style="padding:10px;">Required Subjects</th>
+              </tr>
+            </thead>
+            <tbody id="courseTable">
+              <tr><td>Medicine</td><td>Medicine & Surgery</td><td>English, Biology, Chemistry, Physics</td></tr>
+              <tr><td>Law</td><td>Law</td><td>English, Government, Literature, CRS/IRS</td></tr>
+              <tr><td>Engineering</td><td>Electrical Engineering</td><td>English, Mathematics, Physics, Chemistry</td></tr>
+              <tr><td>Engineering</td><td>Civil Engineering</td><td>English, Mathematics, Physics, Chemistry</td></tr>
+              <tr><td>Engineering</td><td>Mechanical Engineering</td><td>English, Mathematics, Physics, Chemistry</td></tr>
+              <tr><td>Business</td><td>Business Administration</td><td>English, Mathematics, Economics, Government</td></tr>
+              <tr><td>Science</td><td>Computer Science</td><td>English, Mathematics, Physics, Chemistry</td></tr>
+              <tr><td>Science</td><td>Microbiology</td><td>English, Biology, Chemistry, Physics</td></tr>
+              <tr><td>Social Science</td><td>Economics</td><td>English, Mathematics, Economics, Government</td></tr>
+              <tr><td>Social Science</td><td>Political Science</td><td>English, Government, CRS/IRS, Economics</td></tr>
+              <tr><td>Education</td><td>Education Management</td><td>English, Mathematics, Economics, Government</td></tr>
+              <tr><td>Agriculture</td><td>Agricultural Science</td><td>English, Biology, Chemistry, Physics</td></tr>
+            </tbody>
+          </table>
         </div>
+      </div>
+
+      <div class="section-txt">
+        <h2>Useful Links</h2>
+        <div class="cta-row">
+          <a class="cta-button" href="/check/course-eligibility/app">Course Eligibility Checker</a>
+          <a class="cta-button" href="/calculate/jamb-aggregate/app">JAMB Aggregate Calculator</a>
+        </div>
+      </div>
     </div>
-    <div class="container section-txt">
-        <h2>Hot Links</h2>
-        <ul class="child-ul">
-            <li> <a href="school_grading_system.html">nigerian universities grading system</a></li>
-            <li> <a href="cgpaCalc.html">Learn how to calculate cgpa/gpa</a></li>
-            <li> <a href="funai/howToAplyFor_funaiPg.html">How to apply for funai post gradute programs</a></li>
-            <li> <a href="">Unn school fees charges for fresh students</a></li>
-        </ul>
-    </div>
+  </main>
 
-    <!-- Scroll to Top Button -->
-    <button class="scroll-top" onclick="scrollToTop()">↑ Top</button>
+  <script>
+    function searchCourse() {
+      let input = document.getElementById("searchInput").value.toLowerCase();
+      let table = document.getElementById("courseTable");
+      let rows = table.getElementsByTagName("tr");
 
-    <script>
-        // Search Function
-        function searchCourse() {
-            let input = document.getElementById("searchInput").value.toLowerCase();
-            let table = document.getElementById("courseTable");
-            let rows = table.getElementsByTagName("tr");
-
-            for (let i = 0; i < rows.length; i++) {
-                let course = rows[i].getElementsByTagName("td")[1];
-                if (course) {
-                    let textValue = course.textContent || course.innerText;
-                    rows[i].style.display = textValue.toLowerCase().indexOf(input) > -1 ? "" : "none";
-                }
-            }
+      for (let i = 0; i < rows.length; i++) {
+        let course = rows[i].getElementsByTagName("td")[1];
+        if (course) {
+          let textValue = course.textContent || course.innerText;
+          rows[i].style.display = textValue.toLowerCase().indexOf(input) > -1 ? "" : "none";
         }
+      }
+    }
+  </script>
 
-        // Scroll to Top Function
-        window.onscroll = function() {
-            let scrollTopBtn = document.querySelector(".scroll-top");
-            if (document.documentElement.scrollTop > 100) {
-                scrollTopBtn.style.display = "block";
-            } else {
-                scrollTopBtn.style.display = "none";
-            }
-        };
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-    </script>    
- <!-- foooter ......................................... -->
   <%- include('../includeFolder/jambHot_link6.ejs') %>
-  <script src="js/index.js"></script>
+  <script src="/js/index.js"></script>
   <%- include('../includeFolder/_footer.ejs') %>
-  <!-- foooter ......................................... -->
+
+</body>
+</html>

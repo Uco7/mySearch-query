@@ -1,146 +1,105 @@
+<%
+const currentYear = new Date().getFullYear();
+const pageTitle = `UNN Past Questions Download - Free PDF Resources (${currentYear})`;
+const pageDescription = "Download official UNN past questions and answers for all faculties. Access free PDF resources for University of Nigeria Nsukka exam preparation.";
+const pageKeywords = "UNN past questions, UNN exam past questions PDF, University of Nigeria Nsukka past questions download";
+const pageUrl = "https://mysearch-query.onrender.com/unn-past-questions";
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>UNN Past Questions Download - Get Free PDF Resources</title>
+  <!-- ===================== PRIMARY SEO ===================== -->
+  <title><%= pageTitle %></title>
+  <meta name="description" content="<%= pageDescription %>" />
+  <meta name="keywords" content="<%= pageKeywords %>" />
+  <meta name="author" content="UC Tech Hub" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="<%= pageUrl %>" />
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Download UNN past questions for all courses including Medicine, Law, Engineering, and more. Get access through the official site, student portals, and trusted educational platforms.">
-  <meta name="keywords" content="UNN past questions, UNN past question download, University of Nigeria Nsukka, free UNN PDF questions, UNN student resources, UNN exam materials, UNN departmental questions, past questions PDF">
-  <meta name="author" content="Your Website Name or Team">
+  <!-- ===================== OPEN GRAPH ===================== -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="UC Tech Hub" />
+  <meta property="og:title" content="<%= pageTitle %>" />
+  <meta property="og:description" content="<%= pageDescription %>" />
+  <meta property="og:url" content="<%= pageUrl %>" />
+  <meta property="og:image" content="https://mysearch-query.onrender.com/images/logo.jpg" />
 
-  <!-- Open Graph / Social Meta Tags -->
-  <meta property="og:title" content="UNN Past Questions Download - Get Free PDF Resources">
-  <meta property="og:description" content="Looking for UNN past questions? Here's where you can safely download them for free across various trusted platforms.">
-  <meta property="og:type" content="https://mysearch-query.onrender.com/">
-  <meta property="og:url" content="https://mysearch-query.onrender.com/unn-past-questions"> <!-- Replace with actual URL -->
-  <meta property="og:image" content="https://mysearch-query.onrender.com/images/unn-past-questions-banner.jpg"> <!-- Replace with actual image -->
+  <!-- ===================== TWITTER CARD ===================== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="<%= pageTitle %>" />
+  <meta name="twitter:description" content="<%= pageDescription %>" />
+  <meta name="twitter:image" content="https://mysearch-query.onrender.com/images/logo.jpg" />
 
-  <!-- Twitter Card Meta -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="UNN Past Questions Download - Get Free PDF Resources">
-  <meta name="twitter:description" content="Explore official and trusted ways to download UNN past questions for every course.">
-  <meta name="twitter:image" content="https://mysearch-query.onrender.com/images/unn-past-questions-banner.jpg"> <!-- Replace with actual image -->
+  <link rel="icon" href="/images/logo.jpg" type="image/jpeg" />
 
-<!-- include header file -->
-<%- include('../includeFolder/_headers.ejs') %>
-<!--include  header file -->
-    <div class="image">   </div>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
 
-    <div class="container mt-4">
-        <h2 class="text-center text-primary">Where to Download UNN Past Questions</h2>
-        <p class="text-center">Find and download past questions for your courses.</p>
+  <%- include('../includeFolder/_headers.ejs') %>
+</head>
+<body>
 
-        <!-- Dropdown for Quick Navigation -->
-        <div class="mb-3">
-            <label for="downloadSection" class="form-label"><b>Select a Download Source:</b></label>
-            <select id="downloadSection" class="form-select" onchange="navigateToSection()">
-                <option value="">-- Choose an option --</option>
-                <option value="officialSite">UNN Official Website</option>
-                <option value="studentPortal">UNN Student Portal</option>
-                <option value="facultyWebsites">Faculty & Departmental Websites</option>
-                <option value="studyGroups">UNN Facebook & WhatsApp Study Groups</option>
-                <option value="pastQuestionsSites">Past Questions Websites</option>
-            </select>
+  <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="nav-header" id="scrollHeader">
+    <div class="logo"><img src="/images/logo.jpg" alt="UC Tech Hub logo"></div>
+    <div class="menu-toggle" onclick="toggleMenu()" role="button" aria-label="Toggle navigation" tabindex="0">☰</div>
+    <ul class="header-nav-links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/nigeria/list-of-institution/page">Universities</a></li>
+      <li><a href="/calculate/cgpa/app">CGPA Calculator</a></li>
+      <li><a href="/calculate/jamb-aggregate/app">Aggregate Calculator</a></li>
+      <li><a href="/check/course-eligibility/app">Eligibility Checker</a></li>
+      <li class="contact-link"><a href="/contact-us/page">Contact Us</a></li>
+    </ul>
+  </header>
+  <script>
+    function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+  </script>
+
+  <main id="main-content">
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <a href="/">Home</a> &rsaquo;
+      <a href="/nigeria/list-of-institution/page">UNN Guides</a> &rsaquo;
+      <span>Past Questions Download</span>
+    </nav>
+
+    <section class="hero">
+      <h1>UNN Exam Past Questions Download</h1>
+      <p>Free Study Materials & Portal Resources</p>
+    </section>
+
+    <div class="container">
+      <div class="section-txt">
+        <h2>Download Sources</h2>
+        <ul class="child-ul">
+          <li><strong>UNN Library Portal:</strong> Check the official <a href="https://www.unn.edu.ng" target="_blank" rel="noopener">UNN e-Library</a> portal for repository downloads.</li>
+          <li><strong>Student Portal Dashboard:</strong> Log in to the <a href="https://unnportal.unn.edu.ng" target="_blank" rel="noopener">UNN Portal</a> under Academic Resources.</li>
+          <li><strong>Departmental Study Groups:</strong> Connect with course representatives and faculty student bodies.</li>
+        </ul>
+      </div>
+           <%- include('../includeFolder/_jamb_2.ejs') %>
+
+
+      <div class="section-txt">
+        <h2>Useful Links</h2>
+        <div class="cta-row">
+          <a class="cta-button" href="https://unnportal.unn.edu.ng" target="_blank" rel="noopener">UNN Student Portal</a>
+          <a class="cta-button" href="/calculate/cgpa/app">CGPA Calculator</a>
         </div>
-
-        <!-- Official Website Section -->
-        <div id="officialSite" class="mt-4">
-            <h4 class="text-success">📌 UNN Official Website</h4>
-            <p>Visit the official UNN website to download past questions:</p>
-            <ul>
-                <li>Go to <a href="https://www.unn.edu.ng" target="_blank">UNN e-Library</a></li>
-                <li>Find the "Past Questions" section</li>
-                <li>Select your faculty, department, and course</li>
-                <li>Download past questions in PDF format</li>
-            </ul>
-        </div>
-
-        <!-- Student Portal Section -->
-        <div id="studentPortal" class="mt-4">
-            <h4 class="text-success">📌 UNN Student Portal</h4>
-            <p>You can also check the student portal for available past questions:</p>
-            <ul>
-                <li>Go to <a href="https://unnportal.unn.edu.ng" target="_blank">UNN Student Portal</a></li>
-                <li>Log in using your Matric Number and Password</li>
-                <li>Navigate to "Academic Resources" and look for past questions</li>
-            </ul>
-        </div>
-
-        <!-- Faculty & Departmental Websites -->
-        <div id="facultyWebsites" class="mt-4">
-            <h4 class="text-success">📌 Faculty & Departmental Websites</h4>
-            <p>Some faculties and departments upload past questions on their official websites. You can:</p>
-            <ul>
-                <li>Check your faculty or department's website</li>
-                <li>Ask your course rep for links to past questions</li>
-            </ul>
-        </div>
-
-        <!-- Study Groups Section -->
-        <div id="studyGroups" class="mt-4">
-            <h4 class="text-success">📌 UNN Facebook & WhatsApp Study Groups</h4>
-            <p>Many past questions are shared in online study groups:</p>
-            <ul>
-                <li>Join UNN WhatsApp or Facebook groups</li>
-                <li>Ask senior students or course reps for past questions</li>
-            </ul>
-        </div>
-
-        <!-- Past Questions Websites -->
-        <div id="pastQuestionsSites" class="mt-4">
-            <h4 class="text-success">📌 Past Questions Websites</h4>
-            <p>You can also download past questions from these educational sites:</p>
-            <ul>
-                <li><a href="https://www.naijapastquestions.com" target="_blank">Naija Past Questions</a></li>
-                <li><a href="https://www.pastexampapers.com" target="_blank">Past Exam Papers</a></li>
-            </ul>
-            <p class="text-danger"><b>Warning:</b> Be careful of websites that require payment!</p>
-        </div>
-
-        <!-- Important Notes -->
-        <div class="mt-4">
-            <h4 class="text-danger">Important Notes:</h4>
-            <ul>
-                <li>Past questions help you understand exam patterns.</li>
-                <li>Always verify the authenticity of any source before making payments.</li>
-                <li>Discuss solutions in study groups.</li>
-            </ul>
-        </div>
+      </div>
     </div>
+  </main>
 
-    <!-- Scroll to Top Button -->
-    <button class="scroll-top" onclick="scrollToTop()">↑ Top</button>
-
-    <script>
-        // Function to Navigate to Selected Section
-        function navigateToSection() {
-            let section = document.getElementById("downloadSection").value;
-            if (section) {
-                document.getElementById(section).scrollIntoView({ behavior: "smooth" });
-            }
-        }
-
-        // Scroll to Top Function
-        window.onscroll = function() {
-            let scrollTopBtn = document.querySelector(".scroll-top");
-            if (document.documentElement.scrollTop > 100) {
-                scrollTopBtn.style.display = "block";
-            } else {
-                scrollTopBtn.style.display = "none";
-            }
-        };
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-    </script>
-  
-
-   <!-- foooter ......................................... -->
   <%- include('../includeFolder/jambHot_link6.ejs') %>
-  <script src="js/index.js"></script>
+  <script src="/js/index.js"></script>
   <%- include('../includeFolder/_footer.ejs') %>
-  <!-- foooter ......................................... -->
+
+</body>
+</html>

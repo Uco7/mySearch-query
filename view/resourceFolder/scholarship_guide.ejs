@@ -1,111 +1,67 @@
-
+<% 
+  const year = typeof currentYear !== 'undefined' ? currentYear : (typeof seo !== 'undefined' && seo.year ? seo.year : new Date().getFullYear());
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore a wide range of scholarships available for Nigerian university students, including government-funded, private, and corporate scholarships. Find detailed information and application links.">
-    <meta name="keywords" content="scholarships for Nigerian students, Nigerian university scholarships, federal government scholarships, PTDF scholarship, MTN Foundation scholarship, Agbami scholarship, Shell SPDC scholarship">
-    <meta name="author" content="Your Website Name">
-    <meta property="og:title" content="Scholarships for Nigerian University Students">
-    <meta property="og:description" content="Discover the best scholarships for Nigerian university students with direct application links. Apply for government, corporate, and private scholarships to fund your education.">
-    <meta property="og:image" content="URL_to_image_for_social_media">
+    <title>Scholarships for Nigerian University Students (<%= year %> Guide)</title>
+
+    <!-- ✅ Advanced SEO Meta Tags -->
+    <meta name="description" content="Explore verified undergraduate and postgraduate scholarships for Nigerian university students in <%= year %>. Get application links for government, PTDF, MTN, and corporate grants.">
+    <meta name="keywords" content="scholarships for Nigerian students <%= year %>, Nigerian university scholarships, federal government scholarship, PTDF, MTN foundation, Agbami scholarship">
+    <meta name="author" content="MySchoolGist">
+    <link rel="canonical" href="https://mysearch-query.onrender.com/scholarship/guid">
+
+    <meta property="og:title" content="Scholarships for Nigerian University Students (<%= year %>)">
+    <meta property="og:description" content="Discover verified scholarships available for Nigerian students with official application links.">
     <meta property="og:url" content="https://mysearch-query.onrender.com/scholarship/guid">
-    <meta name="twitter:title" content="Scholarships for Nigerian University Students">
-    <meta name="twitter:description" content="Find the top scholarships available for Nigerian students in universities. Access application links for federal, private, and corporate scholarships.">
-    <meta name="twitter:image" content="URL_to_image_for_twitter">
-    <meta name="twitter:card" content="summary_large_image">
-    <title>Scholarships for Nigerian University Students</title>
+    <meta property="og:type" content="article">
 
-
-    <!-- include header file -->
     <%- include('../includeFolder/_headers.ejs') %>
-    <!--include  header file -->
-   <!-- hot link_1...........................///////////// -->
+</head>
+<body>
    <%- include('../includeFolder/hot_link_1.ejs') %>
 
-   <!-- hot link_1...........................///////////// -->
     <div class="heading-top">
-    <h1>Scholarships for Nigerian University Students</h1>
-    <p>Here are some scholarships available for Nigerian university students with application links:</p>
-</div>
+      <h1>Scholarships for Nigerian University Students (<%= year %>)</h1>
+      <p>Here is a compiled list of active government, corporate, and international scholarship opportunities for Nigerian students:</p>
+    </div>
+
     <div class="container">
         <h2>1. Federal Government Scholarships</h2>
         <ul>
-            <li>For undergraduate and postgraduate students. <br>
+            <li>For undergraduate and postgraduate students in tertiary institutions. <br>
                 <a href="https://fsbn.com.ng/" target="_blank">Apply Here</a>
             </li>
         </ul>
 
         <h2>2. PTDF (Petroleum Technology Development Fund) Scholarship</h2>
         <ul>
-            <li>For students in oil and gas-related fields. <br>
+            <li>For undergraduate and postgraduate students in energy and engineering fields. <br>
                 <a href="https://ptdf.gov.ng/scholarship/" target="_blank">Apply Here</a>
             </li>
         </ul>
 
-        <h2>3. NNPC/TotalEnergies Scholarship</h2>
+        <h2>3. MTN Foundation Scholarship</h2>
         <ul>
-            <li>For 100-level students in accredited Nigerian universities. <br>
-                <a href="https://scholarships.totalenergiescsredu.com/" target="_blank">Apply Here</a>
-            </li>
-        </ul>
-
-        <h2>4. MTN Foundation Scholarship</h2>
-        <ul>
-            <li>For high-achieving students in STEM fields. <br>
+            <li>For high-performing 300-level STEM students in accredited Nigerian universities. <br>
                 <a href="https://www.mtn.ng/scholarships/" target="_blank">Apply Here</a>
             </li>
         </ul>
 
-        <h2>5. Agbami Medical and Engineering Scholarship</h2>
+        <h2>4. Seplat JV Scholarship</h2>
         <ul>
-            <li>For students in Medicine, Pharmacy, and Engineering. <br>
-                <a href="https://www.agbami-scholarship.com/" target="_blank">Apply Here</a>
-            </li>
-        </ul>
-
-        <h2>6. Shell (SPDC) Scholarship</h2>
-        <ul>
-            <li>For students in accredited Nigerian universities. <br>
-                <a href="https://www.shell.com.ng/careers/students-and-graduates/scholarships.html" target="_blank">Apply Here</a>
-            </li>
-        </ul>
-
-        <h2>7. Jim Ovia Foundation Scholarship</h2>
-        <ul>
-            <li>For undergraduate students based on academic excellence. <br>
-                <a href="https://www.jimoviafoundation.org/" target="_blank">Apply Here</a>
-            </li>
-        </ul>
-
-        <h2>8. Seplat JV Scholarship</h2>
-        <ul>
-            <li>For students in federal and state universities. <br>
+            <li>Open to undergraduate students in federal and state universities. <br>
                 <a href="https://seplatscholarship.com/" target="_blank">Apply Here</a>
             </li>
         </ul>
-
-        <h2>9. NLNG (Nigeria Liquefied Natural Gas) Scholarship</h2>
-        <ul>
-            <li>For undergraduate students in Nigerian universities. <br>
-                <a href="https://www.nigerialng.com/Our-CSR/Pages/Scholarships.aspx" target="_blank">Apply Here</a>
-            </li>
-        </ul>
-
-        <h2>10. Commonwealth Scholarship</h2>
-        <ul>
-            <li>For Nigerian students to study abroad with full funding. <br>
-                <a href="https://cscuk.fcdo.gov.uk/" target="_blank">Apply Here</a>
-            </li>
-        </ul>
     </div>
-      <!-- General Queries Section -->
-      <%- include('../includeFolder/_admission_queryLink.ejs') %>
 
-      <!-- General Queries Section -->
- <!-- foooter ......................................... -->
+  <%- include('../includeFolder/_admission_queryLink.ejs') %>
   <%- include('../includeFolder/jambHot_link6.ejs') %>
   <script src="js/index.js"></script>
   <%- include('../includeFolder/_footer.ejs') %>
-  <!-- foooter ......................................... -->
+</body>
+</html>

@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>FUNAI Admission Portal Login | Access Your Application</title>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Login to the official FUNAI Admission Portal to manage your application. Access screening info, admission status, and support contacts easily." />
-  <meta name="keywords" content="FUNAI portal login, FUNAI admission, AE-FUNAI admission portal, FUNAI  application login" />
-  <meta name="author" content="AE-FUNAI Admission Services" />
+  <meta name="description" content="Login to the official FUNAI Admission Portal to manage your application. Access screening info, admission status, and support contacts easily.">
+  <meta name="keywords" content="FUNAI portal login, FUNAI admission, AE-FUNAI admission portal, FUNAI application login">
+  <meta name="author" content="AE-FUNAI Admission Services">
 
-  <!-- Open Graph (Social Sharing) -->
-  <meta property="og:title" content="FUNAI Admission Portal Login" />
-  <meta property="og:description" content="Access the AE-FUNAI admission portal to continue your application, check your status, or contact support." />
-  <meta property="og:url" content="https://portal.funai.edu.ng" />
-  <meta property="og:type" content="mysearch-query.onrender" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="FUNAI Admission Portal Login">
+  <meta property="og:description" content="Access the AE-FUNAI admission portal to continue your application, check your status, or contact support.">
+  <meta property="og:url" content="https://portal.funai.edu.ng">
+  <meta property="og:type" content="website">
 
-<!-- include header file -->
-<%- include('../includeFolder/_headers.ejs') %>
-<!--include  header file -->
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- include header file -->
+  <%- include('../includeFolder/_headers.ejs') %>
+  <!-- include header file -->
+</head>
+<body>
+
+  <header class="heading-top">
+    <h1>FUNAI Admission Portal Login</h1>
+    <p>Access your application status, screening schedule, and registration details.</p>
+  </header>
+
+  <div class="container my-5">
     <!-- General Queries Section -->
     <%- include('../includeFolder/_admission_queryLink.ejs') %>
-
     <!-- General Queries Section -->
-    <header class="heading-top">
-        <h1>FUNAI Admission Portal Login</h1>
-    </header>
-    <%- include('../includeFolder/hot_link_2.ejs') %>
 
-    <!-- hot link_1...........................///////////// -->
-    <div class="container section-txt">
-        <p>Access the FUNAI Admission Portal to manage your application process:</p>
-        <p><a href="https://portal.funai.edu.ng" target="_blank">Click here to login to the Admission Portal</a></p>
-        <p>For any issues with your login credentials, contact the admissions office for assistance.</p>
+    <div class="section-txt my-4 text-center">
+      <p>Access the official FUNAI Admission Portal to manage your application process:</p>
+      <p><a href="https://portal.funai.edu.ng" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Login to the Admission Portal</a></p>
+      <p class="mt-3">For any issues with your login credentials, please contact the admissions office for technical assistance.</p>
     </div>
-      <!-- General Queries Section -->
-      <%- include('../includeFolder/_admission_queryLink.ejs') %>
+  </div>
 
-      <!-- General Queries Section -->
-      <%- include('../includeFolder/hot_link_1.ejs') %>
+  <!-- hot links...........................///////////// -->
+     <%- include('../includeFolder/_jamb_2.ejs') %>
+  <%- include('../includeFolder/hot_link_2.ejs') %>
+  <!-- hot links...........................///////////// -->
 
-      <!-- hot link_1...........................///////////// -->
-
-    <!-- foooter................./////////////////// -->
-    <%- include('../includeFolder/_footer.ejs') %>
-
-    <!-- foooter................./////////////////// -->
-
+  <!-- footer ......................................... -->
+  <script src="js/index.js"></script>
+  <%- include('../includeFolder/_footer.ejs') %>
+  <!-- footer ......................................... -->

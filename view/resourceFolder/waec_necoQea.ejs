@@ -1,143 +1,124 @@
+<%
+const currentYear = new Date().getFullYear();
+const nextYear = currentYear + 1;
+const session = `${currentYear}/${nextYear}`;
 
+const pageTitle = `Can I Get Admission into UI with 180 JAMB Score? (${session} Guide)`;
+const pageDescription = `Find out if a JAMB score of 180 is sufficient for admission into the University of Ibadan (UI) for the ${session} session. Learn about cut-off marks and alternative options.`;
+const pageKeywords = `UI admission ${session}, UI cut off mark 180 JAMB, University of Ibadan admission, UI minimum JAMB requirement`;
+const pageUrl = `https://mysearch-query.onrender.com/ui-180-jamb-admission`;
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Find answers to frequently asked questions about WAEC and NECO exams in Nigeria, including result checking, certificate retrieval, cost of scratch cards, and more.">
-  <meta name="keywords" content="WAEC, NECO, frequently asked questions, result checking, certificate, scratch card, upgrade result, NECO certificate, WAEC GCE, WAEC SSCE, Nigerian exams">
-  <meta name="author" content="mysearch-query">
-  
-  <!-- <meta name="robots" content="index, follow"> -->
-  <title>WAEC & NECO - Frequently Asked Questions</title>
-  <link rel="canonical" href="https://mysearch-query.onrender.com/waec-neco/freq/questions">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f9f9f9;
-      padding: 20px;
-      margin: 0;
-    }
+  <!-- ===================== PRIMARY SEO ===================== -->
+  <title><%= pageTitle %></title>
+  <meta name="description" content="<%= pageDescription %>" />
+  <meta name="keywords" content="<%= pageKeywords %>" />
+  <meta name="author" content="UC Tech Hub" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="<%= pageUrl %>" />
 
-    .container {
-      max-width: 800px;
-      margin: auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
+  <!-- ===================== OPEN GRAPH ===================== -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="UC Tech Hub" />
+  <meta property="og:title" content="Admission into UI with 180 JAMB Score (<%= session %>)" />
+  <meta property="og:description" content="<%= pageDescription %>" />
+  <meta property="og:url" content="<%= pageUrl %>" />
+  <meta property="og:image" content="https://mysearch-query.onrender.com/images/logo.jpg" />
 
-    h2 {
-      text-align: center;
-      color: #2c3e50;
-      margin-bottom: 20px;
-    }
+  <!-- ===================== TWITTER CARD ===================== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="UI Admission with 180 JAMB Score <%= session %>" />
+  <meta name="twitter:description" content="<%= pageDescription %>" />
+  <meta name="twitter:image" content="https://mysearch-query.onrender.com/images/logo.jpg" />
 
-    details {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      padding: 15px;
-      background: #fefefe;
-    }
+  <link rel="icon" href="/images/logo.jpg" type="image/jpeg" />
 
-    summary {
-      font-weight: 600;
-      font-size: 16px;
-      cursor: pointer;
-      color: #0077cc;
-    }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
 
-    p {
-      margin-top: 10px;
-      font-size: 15px;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    a {
-      color: #0077cc;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        padding: 15px;
-      }
-    }
-  </style>
+  <%- include('../includeFolder/_headers.ejs') %>
 </head>
 <body>
-    <!-- include header file -->
-        <%- include('../includeFolder/_headers.ejs') %>
-        <!--include  header file -->
-  <div class="container">
-    <h2>WAEC & NECO - Frequently Asked Questions</h2>
 
-    <details>
-      <summary>1. Can I combine WAEC and NECO results for admission?</summary>
-      <p>Yes, many universities and polytechnics in Nigeria accept the combination of WAEC and NECO results, provided the grades meet the course requirements.</p>
-    </details>
+  <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
 
-    <details>
-      <summary>2. How do I retrieve my lost WAEC or NECO certificate?</summary>
-      <p>You will need to visit the nearest WAEC or NECO office with a sworn affidavit, passport photo, and a valid ID. They will guide you through the process of obtaining a replacement or certified statement of result.</p>
-    </details>
+  <!-- ===================== HEADER ===================== -->
+  <header class="nav-header" id="scrollHeader">
+    <div class="logo"><img src="/images/logo.jpg" alt="UC Tech Hub logo"></div>
+    <div class="menu-toggle" onclick="toggleMenu()" role="button" aria-label="Toggle navigation" tabindex="0">☰</div>
+    <ul class="header-nav-links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/nigeria/list-of-institution/page">Universities</a></li>
+      <li><a href="/calculate/cgpa/app">CGPA Calculator</a></li>
+      <li><a href="/calculate/jamb-aggregate/app">Aggregate Calculator</a></li>
+      <li><a href="/check/course-eligibility/app">Eligibility Checker</a></li>
+      <li class="contact-link"><a href="/contact-us/page">Contact Us</a></li>
+    </ul>
+  </header>
+  <script>
+    function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+  </script>
 
-    <details>
-      <summary>3. How do I check my WAEC or NECO result?</summary>
-      <p>You can check online at:</p>
-      <ul>
-        <li><a href="https://www.waecdirect.org" target="_blank">WAEC Result Checker</a></li>
-        <li><a href="https://result.neco.gov.ng" target="_blank">NECO Result Checker</a></li>
-      </ul>
-      <p>You will need your exam number, PIN, and exam year to check your result.</p>
-    </details>
+  <main id="main-content">
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <a href="/">Home</a> &rsaquo;
+      <a href="/nigeria/list-of-institution/page">UI Guides</a> &rsaquo;
+      <span>180 JAMB Admission Chance</span>
+    </nav>
 
-    <details>
-      <summary>4. What is the cost of WAEC/NECO scratch cards?</summary>
-      <p>The scratch card (or e-PIN) costs between ₦500 to ₦1000 depending on the vendor and location. Always buy from an authorized source to avoid scams.</p>
-    </details>
+    <section class="hero">
+      <h1>Can I Get Admission into UI with a 180 JAMB Score?</h1>
+      <p>University of Ibadan &middot; Cut-off Mark Analysis for <%= session %></p>
+    </section>
 
-    <details>
-      <summary>5. Can I change my name or date of birth on WAEC/NECO certificates?</summary>
-      <p>Corrections can be difficult. WAEC does not support name changes after result release. NECO might allow some corrections with legal backing like affidavits and supporting documents. Visit the official office for proper guidance.</p>
-    </details>
+    <div class="container">
+      <%- include('../includeFolder/_admission_queryLink.ejs') %>
 
-    <details>
-      <summary>6. What is the difference between WAEC GCE and WAEC SSCE?</summary>
-      <p>WAEC SSCE is the school-based exam taken by students in SS3, while WAEC GCE is the private candidate exam for those not enrolled in secondary schools or repeating the exam independently.</p>
-    </details>
+      <div class="section-txt">
+        <h2>University of Ibadan Cut-off Benchmark</h2>
+        <p>The University of Ibadan (UI) remains one of Nigeria's premier academic institutions with high candidate demand and competitive admission benchmarks. For consecutive academic sessions, UI maintains a general institutional cut-off mark of <strong>200 and above</strong>.</p>
+      </div>
 
-    <details>
-      <summary>7. Is it possible to upgrade my WAEC/NECO result?</summary>
-      <p>No. Upgrading results is a scam. Both WAEC and NECO have warned against individuals or websites claiming to upgrade results. Avoid such frauds to protect your records.</p>
-    </details>
+      <div class="section-txt">
+        <h2>Evaluating Your Chances with a Score of 180</h2>
+        <ul class="child-ul">
+          <li><strong>Below Benchmark Cut-off:</strong> Because UI sets its baseline threshold at 200, a JAMB score of 180 fails to meet the basic Post-UTME application benchmark.</li>
+          <li><strong>High Competition Thresholds:</strong> Premier programs including Medicine, Law, Pharmacy, and Engineering generally demand scores exceeding 250 to stay competitive.</li>
+          <li><strong>Post-UTME Eligibility:</strong> Candidates below 200 are typically ineligible to register for UI Post-UTME screening exercises.</li>
+        </ul>
+      </div>
 
-    <details>
-      <summary>8. How long are WAEC and NECO certificates valid?</summary>
-      <p>They are valid for life. Once issued, they do not expire and can be used anytime for academic or job purposes.</p>
-    </details>
+      <div class="section-txt">
+        <h2>Recommended Strategic Options</h2>
+        <ul class="child-ul">
+          <li><strong>Process a Change of Institution:</strong> Switch your preferred choice on the JAMB portal to state universities, polytechnics, or federal institutions accepting baseline cut-off marks of 160–180.</li>
+          <li><strong>Enroll in Pre-Degree or JUPEB Programs:</strong> Alternative pathways like JUPEB allow candidate entry directly into the 200 level upon program completion.</li>
+          <li><strong>Prepare to Retake JAMB:</strong> If studying at UI is your primary target, consider reapplying for the upcoming UTME cycle to achieve a competitive score of 200+.</li>
+        </ul>
+      </div>
 
-    <details>
-      <summary>9. Can I use WAEC result abroad?</summary>
-      <p>Yes. You may need to apply for a WAEC “attestation of results” or verification, which can be sent directly to foreign institutions through WAEC International Office.</p>
-    </details>
+      <div class="section-txt">
+        <h2>Useful Links</h2>
+        <div class="cta-row">
+          <a class="cta-button" href="/calculate/jamb-aggregate/app">JAMB Aggregate Calculator</a>
+          <a class="cta-button" href="/check/course-eligibility/app">Eligibility Checker</a>
+        </div>
+      </div>
+    </div>
+  </main>
 
-    <details>
-      <summary>10. When will WAEC/NECO release results?</summary>
-      <p>WAEC typically releases results 45 days after the last paper. NECO usually releases results within 60 days. Always check their official websites for announcements.</p>
-    </details>
-  </div>
- <!-- foooter ......................................... -->
+  <%- include('../includeFolder/hot_link_1.ejs') %>
+  <%- include('../includeFolder/hot_link_2.ejs') %>
   <%- include('../includeFolder/jambHot_link6.ejs') %>
-  <script src="js/index.js"></script>
+  <script src="/js/index.js"></script>
   <%- include('../includeFolder/_footer.ejs') %>
-  <!-- foooter ......................................... -->
 
+</body>
+</html>

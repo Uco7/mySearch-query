@@ -1,15 +1,12 @@
 <%
-// currentYear / session is computed here so every page auto-updates itself
-// every January without anyone touching this file or the data file.
+// Dynamic session logic: auto-updates every January 1st
 const currentYear = new Date().getFullYear();
 const nextYear = currentYear + 1;
 const session = `${currentYear}/${nextYear}`;
 const category = uni.category || "Federal University";
 const ownership = uni.ownership || "Federal Government";
 
-// ---- SEO fields, all derived from the uni object so every one of the
-// 65 profile pages gets its own unique, keyword-rich title/description
-// instead of 65 pages competing with each other for the same tag.
+// Primary SEO & Meta variables
 const pageTitle = `${uni.name} (${uni.abbreviation}) Admission Requirements, Cut-Off Mark & Fees ${session}`;
 const pageDescription = `${uni.abbreviation} (${uni.name}) admission requirements, JAMB cut-off mark, school fees, faculties, and portal login for the ${session} session. Everything prospective ${uni.abbreviation} students need in one page.`;
 const pageKeywords = `${uni.abbreviation}, ${uni.name}, ${uni.abbreviation} admission requirements, ${uni.abbreviation} cut off mark, ${uni.abbreviation} school fees, ${uni.abbreviation} portal, ${uni.abbreviation} post utme, JAMB ${uni.abbreviation}`;
@@ -21,12 +18,12 @@ const pageUrl = `https://mysearch-query.onrender.com/university/${uni.slug}`;
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ===================== PRIMARY SEO (unique per university) ===================== -->
+  <!-- ===================== PRIMARY SEO ===================== -->
   <title><%= pageTitle %></title>
   <meta name="description" content="<%= pageDescription %>" />
   <meta name="keywords" content="<%= pageKeywords %>" />
-  <meta name="author" content="UC Tech Hub">
-  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="UC Tech Hub" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="<%= pageUrl %>" />
 
   <!-- ===================== OPEN GRAPH ===================== -->
@@ -43,10 +40,9 @@ const pageUrl = `https://mysearch-query.onrender.com/university/${uni.slug}`;
   <meta name="twitter:description" content="<%= pageDescription %>" />
   <meta name="twitter:image" content="https://mysearch-query.onrender.com/images/logo.jpg" />
 
-  <link rel="icon" href="/images/logo.jpg" type="image/jpeg">
+  <link rel="icon" href="/images/logo.jpg" type="image/jpeg" />
 
   <!-- ===================== STRUCTURED DATA ===================== -->
-  <!-- CollegeOrUniversity schema: eligible for Google's education knowledge-panel signals -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -64,7 +60,6 @@ const pageUrl = `https://mysearch-query.onrender.com/university/${uni.slug}`;
   }
   </script>
 
-  <!-- FAQPage schema: mirrors the visible FAQ section below -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -94,7 +89,6 @@ const pageUrl = `https://mysearch-query.onrender.com/university/${uni.slug}`;
   }
   </script>
 
-  <!-- BreadcrumbList schema: matches the visible breadcrumb nav below, extra rich-result eligibility -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -107,14 +101,13 @@ const pageUrl = `https://mysearch-query.onrender.com/university/${uni.slug}`;
   }
   </script>
 
-  <!-- Preconnect: shaves connection time off the Google Fonts request — page speed is a
-       direct Google ranking factor, so this isn't just cosmetic. -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/style.css">
-       <%- include('../includeFolder/_headers.ejs') %>
-
+  <link rel="stylesheet" href="/css/style.css" />
+  <%- include('../includeFolder/_headers.ejs') %>
+</head>
+<body>
 
   <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
 
@@ -136,8 +129,6 @@ const pageUrl = `https://mysearch-query.onrender.com/university/${uni.slug}`;
   </script>
 
   <main id="main-content">
-
-    <!-- Breadcrumb: helps both users and Google understand page hierarchy -->
     <nav aria-label="Breadcrumb" class="breadcrumb-nav">
       <a href="/">Home</a> &rsaquo;
       <a href="/nigeria/list-of-institution/page">Universities</a> &rsaquo;
@@ -151,7 +142,6 @@ const pageUrl = `https://mysearch-query.onrender.com/university/${uni.slug}`;
 
     <div class="container">
 
-      <!-- Quick facts -->
       <div class="info-section">
         <div class="info-card">
           <h3>Ownership</h3>
@@ -171,7 +161,6 @@ const pageUrl = `https://mysearch-query.onrender.com/university/${uni.slug}`;
         </div>
       </div>
 
-      <!-- Overview -->
       <div class="section-txt">
         <h2>About <%= uni.abbreviation %></h2>
         <p>
@@ -186,7 +175,6 @@ const pageUrl = `https://mysearch-query.onrender.com/university/${uni.slug}`;
         <% } %>
       </div>
 
-      <!-- Admission requirements -->
       <div class="section-txt">
         <h2><%= uni.abbreviation %> Admission Requirements</h2>
         <ul class="child-ul">
@@ -208,7 +196,6 @@ const pageUrl = `https://mysearch-query.onrender.com/university/${uni.slug}`;
         </ul>
       </div>
 
-      <!-- Cut-off marks -->
       <div class="section-txt">
         <h2><%= uni.abbreviation %> JAMB & Departmental Cut-Off Marks (<%= session %>)</h2>
         <p>
@@ -221,7 +208,6 @@ const pageUrl = `https://mysearch-query.onrender.com/university/${uni.slug}`;
         </p>
       </div>
 
-      <!-- Faculties & popular courses -->
       <div class="section-txt">
         <h2><%= uni.abbreviation %> Faculties & Departments</h2>
         <ul class="child-ul">
@@ -233,7 +219,6 @@ const pageUrl = `https://mysearch-query.onrender.com/university/${uni.slug}`;
         <p><%= uni.popularCourses.join(", ") %></p>
       </div>
 
-      <!-- Fees -->
       <div class="section-txt">
         <h2><%= uni.abbreviation %> School Fees & Acceptance Fee</h2>
         <p>
@@ -246,7 +231,6 @@ const pageUrl = `https://mysearch-query.onrender.com/university/${uni.slug}`;
         </p>
       </div>
 
-      <!-- Admission list, clearance, resumption -->
       <div class="section-txt">
         <h2>Admission List, Clearance & Resumption</h2>
         <ul class="child-ul">
@@ -265,7 +249,6 @@ const pageUrl = `https://mysearch-query.onrender.com/university/${uni.slug}`;
         </ul>
       </div>
 
-      <!-- Accommodation -->
       <div class="section-txt">
         <h2><%= uni.abbreviation %> Accommodation & Hostel</h2>
         <p>
@@ -276,7 +259,6 @@ const pageUrl = `https://mysearch-query.onrender.com/university/${uni.slug}`;
         </p>
       </div>
 
-      <!-- Portal & useful links -->
       <div class="section-txt">
         <h2>Useful Links</h2>
         <div class="cta-row">
@@ -288,7 +270,6 @@ const pageUrl = `https://mysearch-query.onrender.com/university/${uni.slug}`;
         </div>
       </div>
 
-      <!-- FAQs (mirrors the FAQPage schema above) -->
       <div class="section-txt">
         <h2>Frequently Asked Questions</h2>
         <ul class="child-ul">

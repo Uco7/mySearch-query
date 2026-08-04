@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+<%
+  // Dynamic year so titles/meta never go stale — always reflects the current admission cycle
+  const currentYear = new Date().getFullYear();
+%>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- ===================== PRIMARY SEO ===================== -->
-  <title>JAMB Course Eligibility Checker 2026 | Check Your Subject Combination – UC Tech Hub</title>
+  <title>JAMB Course Eligibility Checker <%= currentYear %> | Check Your Subject Combination – UC Tech Hub</title>
   <meta name="description" content="Free JAMB & O'Level subject combination checker for Nigerian university courses. Instantly find out if you're eligible for Medicine, Law, Engineering, Computer Science and more — then check your own subjects against the requirement." />
   <meta name="keywords" content="JAMB subject combination, course eligibility checker, JAMB requirements Nigeria, O'Level subject combination, subject combination for medicine, subject combination for law, subject combination for computer science, JAMB UTME brochure, WAEC requirements for university courses" />
   <meta name="author" content="UC Tech Hub">

@@ -1,95 +1,135 @@
+<%
+const currentYear = new Date().getFullYear();
+const nextYear = currentYear + 1;
+const session = `${currentYear}/${nextYear}`;
+
+const pageTitle = `University of Ibadan (UI) School Fees Schedule ${session} - Faculty Breakdown`;
+const pageDescription = `Updated University of Ibadan (UI) tuition and school fees breakdown by faculty for the ${session} academic session. Includes estimated charges for new and returning students.`;
+const pageKeywords = `UI school fees ${session}, University of Ibadan tuition, UI faculty fees breakdown, UI freshers acceptance fee`;
+const pageUrl = `https://mysearch-query.onrender.com/ui-tuition-fees-2025`;
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>University of Ibadan (UI) Tuition Fees 2025 | Updated Breakdown by Faculty</title>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const year = new Date().getFullYear();
-      const nextYear = year + 1;
-      const session = `${year}/${nextYear}`;
-      document.title = ` University of Ibadan (UI) Tuition Fees${session} | Updated Breakdown by Faculty`;
-    });
-  </script>
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Check the updated 2025 tuition fees for the University of Ibadan (UI). See cost breakdown by faculty including Medicine, Law, Engineering, and more." />
-  <meta name="keywords" content="UI tuition fees 2025, University of Ibadan fees, UI school fees, UI new students fees, UI faculty tuition, Nigerian university fees" />
-  <meta name="robots" content="index, follow" />
-  <meta name="author" content="Your Website Name or Team" />
+  <!-- ===================== PRIMARY SEO ===================== -->
+  <title><%= pageTitle %></title>
+  <meta name="description" content="<%= pageDescription %>" />
+  <meta name="keywords" content="<%= pageKeywords %>" />
+  <meta name="author" content="UC Tech Hub" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="<%= pageUrl %>" />
 
-  <!-- Social Media (Open Graph) -->
-  <meta property="og:title" content="University of Ibadan (UI) Tuition Fees 2025" />
-  <meta property="og:description" content="Discover the estimated 2025 tuition fees for various faculties at UI, including Medicine, Law, Engineering, and more." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yourdomain.com/ui-tuition-fees-2025" />
-  <meta property="og:image" content="https://yourdomain.com/images/ui-campus.jpg" />
+  <!-- ===================== OPEN GRAPH ===================== -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="UC Tech Hub" />
+  <meta property="og:title" content="UI School Fees Schedule <%= session %>" />
+  <meta property="og:description" content="<%= pageDescription %>" />
+  <meta property="og:url" content="<%= pageUrl %>" />
+  <meta property="og:image" content="https://mysearch-query.onrender.com/images/logo.jpg" />
 
-  <!-- Twitter Card -->
+  <!-- ===================== TWITTER CARD ===================== -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="University of Ibadan (UI) Tuition Fees 2025" />
-  <meta name="twitter:description" content="Breakdown of 2025 UI tuition fees by faculty. Learn what it costs for Medicine, Engineering, Law, and more." />
-  <meta name="twitter:image" content="https://yourdomain.com/images/ui-campus.jpg" />
+  <meta name="twitter:title" content="UI School Fees Schedule <%= session %>" />
+  <meta name="twitter:description" content="<%= pageDescription %>" />
+  <meta name="twitter:image" content="https://mysearch-query.onrender.com/images/logo.jpg" />
 
-  <!-- hearder...........................///////////// -->
-<%- include('../includeFolder/_headers.ejs') %>
-<!-- header...........................///////////// -->
-  
+  <link rel="icon" href="/images/logo.jpg" type="image/jpeg" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
 
-<div class="container">
-    <div class="section-txt">
-    <h1>University of Ibadan (UI) Tuition Fees 2025</h1>
-    <p>The University of Ibadan (UI) is one of the most prestigious universities in Nigeria. For the 2025 academic session, tuition fees vary depending on the faculty, course of study, and whether the student is a freshman or a returning student.</p>
+  <%- include('../includeFolder/_headers.ejs') %>
+</head>
+<body>
 
-    <h2>UI Tuition Fees for New Students (2025)</h2>
-    <p>The estimated tuition fees for new students at UI range between <span class="highlight">₦100,000 – ₦250,000</span>, depending on the course.</p>
-</div>
-    <h2 class="text-color">Estimated Fees by Faculty:</h2>
-    <ul class="child-ul">
-        <li><strong>Arts and Humanities:</strong> ₦100,000 – ₦120,000</li>
-        <li><strong>Science and Engineering:</strong> ₦150,000 – ₦180,000</li>
-        <li><strong>Law:</strong> ₦180,000 – ₦200,000</li>
-        <li><strong>Medicine and Surgery:</strong> ₦220,000 – ₦250,000</li>
-        <li><strong>Social Sciences:</strong> ₦120,000 – ₦150,000</li>
+  <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="nav-header" id="scrollHeader">
+    <div class="logo"><img src="/images/logo.jpg" alt="UC Tech Hub logo"></div>
+    <div class="menu-toggle" onclick="toggleMenu()" role="button" aria-label="Toggle navigation" tabindex="0">☰</div>
+    <ul class="header-nav-links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/nigeria/list-of-institution/page">Universities</a></li>
+      <li><a href="/calculate/cgpa/app">CGPA Calculator</a></li>
+      <li><a href="/calculate/jamb-aggregate/app">Aggregate Calculator</a></li>
+      <li><a href="/check/course-eligibility/app">Eligibility Checker</a></li>
+      <li class="contact-link"><a href="/contact-us/page">Contact Us</a></li>
     </ul>
+  </header>
+  <script>
+    function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+  </script>
 
-    <h2 class="text-color">Additional Charges</h2>
-    <ul class="child-ul">
-        <li><strong>Acceptance Fee:</strong> ₦35,000 – ₦50,000</li>
-        <li><strong>Accommodation Fee (Optional):</strong> ₦40,000 – ₦80,000</li>
-        <li><strong>Departmental and Faculty Dues:</strong> ₦5,000 – ₦15,000</li>
-        <li><strong>Medical and Registration Fees:</strong> ₦10,000 – ₦20,000</li>
-    </ul>
+  <main id="main-content">
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <a href="/">Home</a> &rsaquo;
+      <a href="/nigeria/list-of-institution/page">UI Guides</a> &rsaquo;
+      <span>Tuition Fees Schedule</span>
+    </nav>
 
-    <h2 class="text-color">Payment Guidelines</h2>
-    <ul class="child-ul">
-        <li>New students must pay their acceptance fee before school fees.</li>
-        <li>All fees should be paid via the official UI payment portal.</li>
-        <li>Late payment may attract extra charges.</li>
-    </ul>
+    <section class="hero">
+      <h1>University of Ibadan (UI) School Fees (<%= session %>)</h1>
+      <p>Estimated Fee Structure Breakdown Across Various Faculties</p>
+    </section>
 
-    <h2><i>Conclusion</i></h2>
-    <p>UI tuition fees for 2025 vary based on the course and faculty. Students are advised to visit the official UI website for the latest updates and payment instructions.</p>
-</div>
- <!-- hot link_1...........................///////////// -->
- <%- include('../includeFolder/hot_link_1.ejs') %>
+    <div class="container">
+      <div class="section-txt">
+        <h2>UI Estimated School Fees Structure</h2>
+        <p>Tuition and ancillary fees at the University of Ibadan depend on the chosen course, faculty, and student registration status (new vs returning students) for the <%= session %> academic session.</p>
+      </div>
 
- <!-- hot link_1...........................///////////// -->
-   <!-- hot link_1...........................///////////// -->
- <%- include('../includeFolder/hot_link_2.ejs') %>
+      <div class="section-txt">
+        <h2>Faculty Fee Estimates (Fresh Students)</h2>
+        <ul class="child-ul">
+          <li><strong>Arts & Humanities:</strong> ₦100,000 – ₦120,000</li>
+          <li><strong>Science & Technology:</strong> ₦150,000 – ₦180,000</li>
+          <li><strong>Faculty of Law:</strong> ₦180,000 – ₦200,000</li>
+          <li><strong>College of Medicine & Surgery:</strong> ₦220,000 – ₦250,000</li>
+          <li><strong>Social & Management Sciences:</strong> ₦120,000 – ₦150,000</li>
+        </ul>
+      </div>
 
- <!-- hot link_1...........................///////////// -->
-   <!-- General Queries Section -->
-   <%- include('../includeFolder/_admission_queryLink.ejs') %>
+      <div class="section-txt">
+        <h2>Mandatory & Ancillary Charges</h2>
+        <ul class="child-ul">
+          <li><strong>Acceptance Fee:</strong> ₦35,000 – ₦50,000</li>
+          <li><strong>Accommodation (Hostel Balloting):</strong> ₦40,000 – ₦80,000</li>
+          <li><strong>Faculty & Departmental Dues:</strong> ₦5,000 – ₦15,000</li>
+          <li><strong>Medical Registration & Verification:</strong> ₦10,000 – ₦20,000</li>
+        </ul>
+      </div>
 
-   <!-- General Queries Section -->
-   
+      <div class="section-txt">
+        <h2>Official Payment Instructions</h2>
+        <ul class="child-ul">
+          <li>Always pay acceptance fees first to confirm admission clearance.</li>
+          <li>Make payments exclusively using generated Remita Retrieval References (RRR) on the official UI portal.</li>
+          <li>Avoid third-party or personal account transfers.</li>
+        </ul>
+      </div>
 
+      <div class="section-txt">
+        <h2>Useful Links</h2>
+        <div class="cta-row">
+          <a class="cta-button" href="https://ui.edu.ng" target="_blank" rel="noopener">UI Official Portal</a>
+          <a class="cta-button" href="/calculate/cgpa/app">CGPA Calculator</a>
+        </div>
+      </div>
+    </div>
+  </main>
 
-    <!-- foooter ......................................... -->
+  <%- include('../includeFolder/hot_link_1.ejs') %>
+  <%- include('../includeFolder/hot_link_2.ejs') %>
+  <%- include('../includeFolder/_admission_queryLink.ejs') %>
   <%- include('../includeFolder/jambHot_link6.ejs') %>
-  <script src="js/index.js"></script>
+  <script src="/js/index.js"></script>
   <%- include('../includeFolder/_footer.ejs') %>
-  <!-- foooter ......................................... -->
+
+</body>
+</html>

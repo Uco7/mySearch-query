@@ -1,27 +1,24 @@
+<% 
+  const year = typeof currentYear !== 'undefined' ? currentYear : (typeof seo !== 'undefined' && seo.year ? seo.year : new Date().getFullYear());
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Top 10 Most Demanding Science Courses in Nigeria (2025)</title>
+  <title>Most Demanding Courses in Nigeria (<%= year %>) – Science & Arts</title>
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Explore the top 10 most competitive and high-paying science courses in Nigeria. Discover opportunities in Medicine, Engineering, Computer Science, and more.">
-  <meta name="keywords" content="Most demanding science courses in Nigeria, Top science courses 2025, Best science courses, Nigerian universities, Medicine, Engineering, Computer Science, Pharmacy, Nursing">
-  <meta name="author" content="mysearch-query">
+  <!-- ✅ Advanced SEO Meta Tags -->
+  <meta name="description" content="Discover top competitive and high-paying courses in Nigeria for <%= year %>. Full breakdown of Sciences, Arts, and Tech programs with career prospects.">
+  <meta name="keywords" content="Most demanding courses in Nigeria <%= year %>, top science courses, best art courses, high paying courses Nigeria">
+  <meta name="author" content="MySchoolGist">
+  <link rel="canonical" href="https://mysearch-query.onrender.com/most-demanding/courses">
 
-  <!-- Open Graph / Facebook Meta Tags -->
-  <meta property="og:title" content="Top 10 Most Demanding Science Courses in Nigeria (2025)">
-  <meta property="og:description" content="Looking to choose a science course? See the top choices in Nigeria including Medicine, Engineering, Pharmacy, and more.">
+  <meta property="og:title" content="Most Demanding Courses in Nigeria (<%= year %>)">
+  <meta property="og:description" content="Explore top competitive courses in Nigeria across Science and Arts for <%= year %>. Get insights into job prospects and industry demand.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://mysearch-query.onrender.com/most-demanding/courses">
-  <meta property="og:image" content="https://mysearch-query.onrender.com/images/science-courses-nigeria.jpg">
 
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Top 10 Most Demanding Science Courses in Nigeria (2025)">
-  <meta name="twitter:description" content="Discover Nigeria’s most competitive science courses and why they stand out in 2025.">
-  <meta name="twitter:image" content="https://mysearch-query.onrender.com/images/science-courses-nigeria.jpg">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -29,153 +26,78 @@
       margin: 0;
       padding: 20px;
     }
-
     .container {
       max-width: 900px;
-      margin: auto;
+      margin: auto auto 30px auto;
       background-color: #fff;
       padding: 30px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
-
     h2 {
       text-align: center;
       color: #2c3e50;
       margin-bottom: 30px;
     }
-
     .course {
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
-
     .course h3 {
       color: #0077cc;
       margin-bottom: 10px;
     }
-
     .course p {
       font-size: 15px;
       color: #333;
       line-height: 1.6;
       margin: 6px 0;
     }
-
-    @media (max-width: 600px) {
-      .container {
-        padding: 20px;
-      }
-
-      h2 {
-        font-size: 22px;
-      }
-
-      .course h3 {
-        font-size: 18px;
-      }
-    }
   </style>
-       <%- include('../includeFolder/_headers.ejs') %>
+
+  <%- include('../includeFolder/_headers.ejs') %>
+</head>
+<body>
 
   <div class="container">
-    <h2>Most Demanding Science Courses in Nigeria</h2>
+    <h2>Most Demanding Science Courses in Nigeria (<%= year %>)</h2>
 
     <div class="course">
       <h3>1. Medicine and Surgery</h3>
-      <p><strong>Overview:</strong> Trains students to become medical doctors and professionals.</p>
-      <p><strong>Why It’s Demanding:</strong> Long duration (6+ years), intensive practicals, and high academic requirements.</p>
-      <p><strong>Job Prospects:</strong> Very high – hospitals, clinics, research institutions, NGOs.</p>
-      <p><strong>Current Trend:</strong> Highly competitive and prestigious with steady job security.</p>
+      <p><strong>Overview:</strong> Trains students in clinical diagnosis, healthcare delivery, and surgery.</p>
+      <p><strong>Why It’s Demanding:</strong> 6+ years duration, high academic requirements, and mandatory clinical rotations.</p>
+      <p><strong>Job Prospects:</strong> Very high – hospitals, global health organizations, and medical research.</p>
     </div>
 
     <div class="course">
-      <h3>2. Pharmacy</h3>
-      <p><strong>Overview:</strong> Focuses on drug development, testing, and dispensation.</p>
-      <p><strong>Why It’s Demanding:</strong> Strong foundation in chemistry and biology with practical skills.</p>
-      <p><strong>Job Prospects:</strong> High – pharmaceutical companies, hospitals, NAFDAC, and drug stores.</p>
-      <p><strong>Current Trend:</strong> Increasing relevance in healthcare and research sectors.</p>
+      <h3>2. Computer Science & Software Engineering</h3>
+      <p><strong>Overview:</strong> Focuses on programming, algorithms, AI, systems architecture, and cybersecurity.</p>
+      <p><strong>Why It’s Demanding:</strong> Rapid technological changes and continuous skill requirements.</p>
+      <p><strong>Job Prospects:</strong> Massive local and international remote opportunities across all digital industries.</p>
     </div>
 
     <div class="course">
-      <h3>3. Nursing Science</h3>
-      <p><strong>Overview:</strong> Prepares students for careers as registered nurses in various healthcare settings.</p>
-      <p><strong>Why It’s Demanding:</strong> Clinical training, emotional resilience, and patient care responsibilities.</p>
-      <p><strong>Job Prospects:</strong> Excellent – local and international hospitals and clinics.</p>
-      <p><strong>Current Trend:</strong> High global demand due to shortages in the healthcare workforce.</p>
-    </div>
-
-    <div class="course">
-      <h3>4. Engineering (Civil, Mechanical, Electrical, Software)</h3>
-      <p><strong>Overview:</strong> Offers technical and problem-solving skills in infrastructure, power, and IT.</p>
-      <p><strong>Why It’s Demanding:</strong> Requires mathematics, physics, and design thinking.</p>
-      <p><strong>Job Prospects:</strong> Broad – construction companies, tech firms, manufacturing, oil & gas.</p>
-      <p><strong>Current Trend:</strong> Software and electrical engineering gaining traction due to tech boom.</p>
-    </div>
-
-    <div class="course">
-      <h3>5. Computer Science</h3>
-      <p><strong>Overview:</strong> Focuses on programming, software development, and computer systems.</p>
-      <p><strong>Why It’s Demanding:</strong> Requires strong logic, math, and continuous learning of new technologies.</p>
-      <p><strong>Job Prospects:</strong> Very high – tech startups, banks, telecoms, global remote jobs.</p>
-      <p><strong>Current Trend:</strong> Exploding demand due to digital transformation across industries.</p>
+      <h3>3. Pharmacy</h3>
+      <p><strong>Overview:</strong> Drug formulation, pharmacology, clinical trial safety, and medicine distribution.</p>
+      <p><strong>Job Prospects:</strong> High – pharmaceutical firms, hospital pharmacies, NAFDAC, and clinical research.</p>
     </div>
   </div>
+
   <div class="container">
-    <h2>Most Demanding Art Courses in Nigeria</h2>
+    <h2>Most Demanding Art & Social Science Courses (<%= year %>)</h2>
 
     <div class="course">
       <h3>1. Law</h3>
-      <p>Law remains one of the top choices for Art students. Lawyers are in high demand across corporate, public, and legal sectors in Nigeria.</p>
+      <p>Remains a top choice for Arts and Humanities students with career paths across legal practice, corporate compliance, and government service.</p>
     </div>
 
     <div class="course">
-      <h3>2. Mass Communication</h3>
-      <p>This course offers vast opportunities in journalism, media, advertising, and public relations. With the rise of digital platforms, its relevance continues to grow.</p>
+      <h3>2. Mass Communication & Digital Media</h3>
+      <p>Expanded significantly into digital publishing, broadcasting, PR, content marketing, and corporate communications.</p>
     </div>
-
-    <div class="course">
-      <h3>3. International Relations</h3>
-      <p>A popular course with job prospects in diplomacy, foreign service, NGOs, and international organizations.</p>
-    </div>
-
-    <div class="course">
-      <h3>4. Theatre Arts</h3>
-      <p>With Nigeria’s booming entertainment industry, Theatre Arts graduates find work in film, TV, stage production, and content creation.</p>
-    </div>
-
-    <div class="course">
-      <h3>5. Political Science</h3>
-      <p>This course is foundational for careers in politics, public administration, governance, and policy analysis.</p>
-    </div>
-
-    <div class="course">
-      <h3>6. English and Literary Studies</h3>
-      <p>Graduates can work as writers, editors, publishers, educators, and in content strategy roles across industries.</p>
-    </div>
-
-    <div class="course">
-      <h3>7. Psychology</h3>
-      <p>Psychology is increasingly relevant in education, healthcare, HR, counseling, and social services.</p>
-    </div>
-
-    <div class="course">
-      <h3>8. Linguistics</h3>
-      <p>Job prospects include translation, publishing, language development, and academic research, especially for indigenous language specialists.</p>
-    </div>
-
-    <div class="course">
-      <h3>9. Philosophy</h3>
-      <p>Graduates develop strong critical thinking and communication skills useful in education, law, journalism, and policy-making.</p>
-    </div>
-
-    <div class="course">
-      <h3>10. Criminology and Security Studies</h3>
-      <p>With growing concerns around security, this course has gained demand in both the private and public sectors.</p>
-    </div>
-
   </div>
- <!-- foooter ......................................... -->
+
   <%- include('../includeFolder/jambHot_link6.ejs') %>
   <script src="js/index.js"></script>
   <%- include('../includeFolder/_footer.ejs') %>
-  <!-- foooter ......................................... -->
+</body>
+</html>
